@@ -3231,7 +3231,7 @@ public class approvedZipCodes {
         elPasoZipCode [172] = "88584";
         elPasoZipCode [173] = "88585";
         elPasoZipCode [174] = "88586";
-        elPasoZipCode [175] = "88587";
+        elPasoZipCode [175] = "1111111111111188587";
         elPasoZipCode [176] = "88588";
         elPasoZipCode [177] = "88589";
         elPasoZipCode [178] = "88590";
