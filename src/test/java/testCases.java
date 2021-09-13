@@ -218,13 +218,16 @@ public class testCases {
     }
 
     @Nested
+    @DisplayName("Phone number field checks")
     class phoneNumberField{
         @Test
+        @DisplayName("Checking phone number field is required")
         public void phoneNumberRequiredTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.phoneNumberRequirementCheck(driver));
         }
 
         @Test
+        @DisplayName("Checking that only numeric characters can be used in the phone number field")
         public void badPhoneNumberTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.phoneNumberAlphaCharacterFieldCheck(driver));
         }
@@ -256,136 +259,163 @@ public class testCases {
     @DisplayName("Checking Zipcodes are linked to correct states")
     class zipCodeField {
         @Test
+        @DisplayName("Trying an unapproved zipcode")
         public void enteringOutOfAreaZipCodeTest() throws InterruptedException {
             Assertions.assertTrue(zipCodesChecks.enteringOutOfAreaZipCodeCheck(driver),"Was able to enter an unapproved zipcode");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Alabama")
         public void enteringRandomizedBirminghamMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedBirminghamMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Alabama")
         public void enteringRandomizedMobileMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedMobileMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Alabama")
         public void enterRandomizedMontgomeryMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedMontgomeryMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Arizona")
         public void enterRandomizedTucsonMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedTucsonMarketZipCode(driver),"Arizona","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaEastMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaEastMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaNorthMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaNorthMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaSouthMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaSouthMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAugustaMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedAugustaMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Indiana")
         public void enterRandomizedIndianapolisMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedIndianapolisMarketZipCode(driver),"Indiana","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Kentucky")
         public void enterRandomizedLouisvilleMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedLouisvilleMarketZipCode(driver),"Kentucky","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedBatonRougeMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedBatonRougeMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedLafayetteMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedLafayetteMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedNewOrleansWestMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedNewOrleansWestMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Mississippi")
         public void enterRandomizedJacksonMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedJacksonMarketZipCode(driver),"Mississippi","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - South Carolina")
         public void enterRandomizedCharlotteMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedCharlotteMarketZipCode(driver),"South Carolina","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - North Carolina")
         public void enterRandomizedWinstonSalemMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedWinstonSalemMarketZipCode(driver),"North Carolina","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedAkronMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedAkronMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedCantonMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedCantonMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedClevelandKirbyAvenueMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedClevelandKirbyAvenueMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedClevelandWestMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedClevelandWestMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - South Carolina")
         public void enterRandomizedColumbiaMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedColumbiaMarketZipCode(driver),"South Carolina","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedKnoxvilleMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedKnoxvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedMemphisMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedMemphisMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedNashvilleMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedNashvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Texas")
         public void enterRandomizedCorpusChristiMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedCorpusChristiMarketZipCode(driver),"Texas","Zipcode did not match state");
         }
 
         @Test
+        @DisplayName("Entering a zipcode - Texas")
         public void enterRandomizedElPasoMarketZipCodeTest() throws InterruptedException {
             Assertions.assertEquals(zipCodesChecks.enterApprovedElPasoMarketZipCode(driver),"Texas","Zipcode did not match state");
         }
@@ -395,21 +425,25 @@ public class testCases {
     @DisplayName("Checking Year Make Model dropdown requirements ")
     class makeModelYearDropdowns{
         @Test
+        @DisplayName("Checking Year of car is required")
         public void yearIsRequiredTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.yearIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
+        @DisplayName("Checking Make of car is required")
         public void makeIsRequiredTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.makeIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
+        @DisplayName("Checking Model of car is required")
         public void modelIsRequiredTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.modelIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
+        @DisplayName("Checking Year, Make, Model of car are all required")
         public void allYearMakeModelDropdownsAreRequiredTest() throws InterruptedException {
             Assertions.assertTrue(quoteWorkFlow.allYearMakeModelDropdownsAreRequired(driver),"Required on screen text was not displayed");
         }
