@@ -9,9 +9,7 @@ public class quoteWorkFlow {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-                Thread.sleep(1000);
         utilities.clickCallCodeButton();
-                Thread.sleep(1000);
         utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNextButton();
@@ -27,8 +25,8 @@ public class quoteWorkFlow {
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
         utilities.enterStaticFirstName();
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
+        utilities.clickNextButton();
+        utilities.clickNextButton();
         boolean lastNameRequiredRedText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -40,12 +38,12 @@ public class quoteWorkFlow {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
-        boolean requiredRedText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
+        utilities.clickNextButton();
+        utilities.clickNextButton();
+        boolean bothFirstNameAndLastNameRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
-        return requiredRedText;
+        return bothFirstNameAndLastNameRequiredText;
     }
 
     public static boolean phoneNumberRequirementCheck(WebDriver driver1) throws InterruptedException {
@@ -143,8 +141,8 @@ public class quoteWorkFlow {
         utilities.clickNextButton();
         utilities.clickNextButton();
         utilities.clickNextButton();
-                Thread.sleep(1000);
         boolean yearRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0;
+                Thread.sleep(1000);
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return yearRequiredText;
@@ -159,8 +157,8 @@ public class quoteWorkFlow {
         utilities.clickNextButton();
         utilities.clickNextButton();
         utilities.clickNextButton();
-                Thread.sleep(1000);
         boolean makeRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0;
+                Thread.sleep(1000);
         return makeRequiredText;
     }
 
@@ -174,8 +172,8 @@ public class quoteWorkFlow {
         utilities.clickNextButton();
         utilities.clickNextButton();
         utilities.clickNextButton();
-                Thread.sleep(1000);
         boolean modelRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
+                Thread.sleep(1000);
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return modelRequiredText;
