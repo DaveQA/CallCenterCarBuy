@@ -41,7 +41,7 @@ public class utilities {
 
     public static void goToLoginPage() throws InterruptedException {
         driver.get("https://qa-carbuy.pullapart.com/#/login");
-        Thread.sleep(2000);
+                Thread.sleep(2000);
     }
 
     public static void clickLogoButton() throws InterruptedException {
