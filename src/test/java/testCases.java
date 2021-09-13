@@ -53,43 +53,43 @@ public class testCases {
         @Test
         @DisplayName("Checking call code 833 codeID")
         public void clickingTheCallCode833ButtonTest() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
+            Assertions.assertEquals(callCodesChecks.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 500 codeID")
         public void clickingCallCode500Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162");
+            Assertions.assertEquals(callCodesChecks.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 501 codeID")
         public void clickingCallCode501Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163");
+            Assertions.assertEquals(callCodesChecks.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 502 codeID")
         public void clickingCallCode502Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164");
+            Assertions.assertEquals(callCodesChecks.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 503 codeID")
         public void clickingCallCode503Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165");
+            Assertions.assertEquals(callCodesChecks.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 504 codeID")
         public void clickingCallCode504Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166");
+            Assertions.assertEquals(callCodesChecks.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 510 codeID")
         public void clickingCallCode510Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193");
+            Assertions.assertEquals(callCodesChecks.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
         }
     }
 
@@ -99,55 +99,55 @@ public class testCases {
         @Test
         @DisplayName("Top nav link - Dashboard")
         public void topNavDashboardLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavDashboardLink(driver),"https://qa-carbuy.pullapart.com/#/dashboard");
+            Assertions.assertEquals(topNavChecks.clickTopNavDashboardLink(driver),"https://qa-carbuy.pullapart.com/#/dashboard","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Notification")
         public void topNavNotificationsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavNotificationsLink(driver),"https://qa-carbuy.pullapart.com/#/notifications");
+            Assertions.assertEquals(topNavChecks.clickTopNavNotificationsLink(driver),"https://qa-carbuy.pullapart.com/#/notifications","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Quote")
         public void topNavAdminAdvanceFeaturesQuoteLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesQuoteLink(driver),"https://qa-carbuy.pullapart.com/#/admin/quotes");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesQuoteLink(driver),"https://qa-carbuy.pullapart.com/#/admin/quotes","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Notification")
         public void topNavAdminAdvanceFeaturesNotificationLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesNotificationLink(driver),"https://qa-carbuy.pullapart.com/#/admin/notifications");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesNotificationLink(driver),"https://qa-carbuy.pullapart.com/#/admin/notifications","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Restriction")
         public void topNavAdminAdvanceFeaturesRestrictionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesRestrictionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/restrictions");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesRestrictionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/restrictions","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings State Laws")
         public void topNavAdminGeneralSettingsStateLawsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsStateLawsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/statelaws");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsStateLawsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/statelaws","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Dispositions")
         public void topNavAdminGeneralSettingsDispositionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsDispositionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/dispositions");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsDispositionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/dispositions","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Call Codes")
         public void topNavAdminGeneralSettingsCallCodesLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingCallCodesLink(driver),"https://qa-carbuy.pullapart.com/#/admin/callcodes");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingCallCodesLink(driver),"https://qa-carbuy.pullapart.com/#/admin/callcodes","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Users")
         public void topNavAdminGeneralSettingsUsersLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingUsersLink(driver),"https://qa-carbuy.pullapart.com/#/admin/users");
+            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingUsersLink(driver),"https://qa-carbuy.pullapart.com/#/admin/users","URL did not match expected");
         }
     }
 
@@ -157,7 +157,7 @@ public class testCases {
         @Test
         @DisplayName("Coming Soon Page - Notification Page")
         public void checkComingSoonTextOnNotificationsPageTest() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.adminGeneralSettingsNotificationPageComingSoonText(driver),"COMING SOON");
+            Assertions.assertEquals(topNavChecks.adminGeneralSettingsNotificationPageComingSoonText(driver),"COMING SOON","Coming Soon text ");
         }
 
         @Test
