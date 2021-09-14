@@ -1,13 +1,15 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class approvedZipCodes {
+
     private static WebDriver driver;
 
     public static boolean enteringOutOfAreaZipCodeCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringOutOfAreaZipCode();
+        listOfZipCodeNumbers.enteringOutOfAreaZipCode();
                 Thread.sleep(2000);
         boolean outOfAreaPeddleMessage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-horizontal > div > div:nth-child(5)")).size() > 0;
         utilities.clickTheRefreshButton();
@@ -20,7 +22,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeBirminghamZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeBirminghamZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -35,7 +37,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeMobileZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMobileZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -50,7 +52,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeMontgomeryZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMontgomeryZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -65,7 +67,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeTucsonZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeTucsonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -80,7 +82,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeAtlantaEastZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaEastZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -95,7 +97,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeAtlantaNorthZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaNorthZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -110,7 +112,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeAtlantaSouthZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaSouthZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -125,7 +127,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeAugustaZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAugustaZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -140,7 +142,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeIndianapolisZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeIndianapolisZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -155,7 +157,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeLouisvilleZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeLouisvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -170,7 +172,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeBatonRougeZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeBatonRougeZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -185,7 +187,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeLafayetteZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeLafayetteZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -200,7 +202,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeNewOrleansWestZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeNewOrleansWestZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -215,7 +217,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeJacksonZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeJacksonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -230,7 +232,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeCharlotteZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCharlotteZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -245,7 +247,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeWinstonSalemZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeWinstonSalemZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -260,7 +262,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeAkronZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAkronZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -275,7 +277,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeCantonZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCantonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -290,7 +292,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeClevelandKirbyAvenueZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeClevelandKirbyAvenueZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -305,7 +307,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeClevelandWestZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeClevelandWestZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -320,7 +322,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeColumbiaZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeColumbiaZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -335,7 +337,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeKnoxvilleZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeKnoxvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -350,7 +352,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeMemphisZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMemphisZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -365,7 +367,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeNashvilleZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeNashvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -380,7 +382,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeCorpusChristiZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCorpusChristiZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));
@@ -395,7 +397,7 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.clickSomething(By.cssSelector("#zipCode"));
-        String randomZipCodeUsed = listOfZipCode.randomizeElPasoZipCode();
+        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeElPasoZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         utilities.tabOnKeyBoard(By.cssSelector("#zipCode"));

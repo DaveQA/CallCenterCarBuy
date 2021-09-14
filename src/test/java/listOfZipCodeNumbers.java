@@ -1,4 +1,10 @@
-public class listOfZipCode {
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+public class listOfZipCodeNumbers {
+
+    private static WebDriver driver;
 
     public static String randomizeBirminghamZipCode(){
         String[] birminghamZipCode;
@@ -3238,5 +3244,16 @@ public class listOfZipCode {
         elPasoZipCode [179] = "88595";
         int randomElPasoZipCode = (int) (Math.random() * elPasoZipCode.length);
         return elPasoZipCode[randomElPasoZipCode];
+    }
+
+    public static void enteringOutOfAreaZipCode() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#zipCode"));
+        driver.findElement(By.cssSelector("#zipCode")).sendKeys("0", Keys.TAB);
+        Thread.sleep(2000);
+    }
+
+    public static void enteringZipCodeStatic() throws InterruptedException {
+        driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188",Keys.TAB);
+        Thread.sleep(1000);
     }
 }

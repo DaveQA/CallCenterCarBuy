@@ -14,8 +14,8 @@ public class quoteWorkFlow {
         utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterGoodPhoneNumber();
-        utilities.enterGoodEmailAddress();
+        phoneNumberAlternateNumberFields.enterGoodPhoneNumber();
+        emailAddressField.enterGoodEmailAddress();
         utilities.clickNextButton();
     }
 }

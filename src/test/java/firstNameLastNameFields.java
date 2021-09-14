@@ -10,7 +10,7 @@ public class firstNameLastNameFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticLastName();
+        enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean firstNameRequiredRedText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(1) > p")).size() > 0;
@@ -24,7 +24,7 @@ public class firstNameLastNameFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
+        enterStaticFirstName();
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean lastNameRequiredRedText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
@@ -45,5 +45,15 @@ public class firstNameLastNameFields {
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return bothFirstNameAndLastNameRequiredText;
+    }
+
+    public static void enterStaticFirstName() throws InterruptedException {
+        utilities.typeSomething(By.cssSelector("#firstname"),"John");
+        Thread.sleep(1000);
+    }
+
+    public static void enterStaticLastName() throws InterruptedException {
+        utilities.typeSomething(By.cssSelector("#lastname"),"Doe");
+        Thread.sleep(1000);
     }
 }

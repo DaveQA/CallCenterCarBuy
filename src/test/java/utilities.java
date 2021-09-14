@@ -66,16 +66,6 @@ public class utilities {
         driver.findElement(by).sendKeys(Keys.TAB);
     }
 
-    public static void enterStaticFirstName() throws InterruptedException {
-        typeSomething(By.cssSelector("#firstname"),"John");
-                Thread.sleep(1000);
-    }
-
-    public static void enterStaticLastName() throws InterruptedException {
-        typeSomething(By.cssSelector("#lastname"),"Doe");
-                Thread.sleep(1000);
-    }
-
     public static void clickCallCodeButton() throws InterruptedException {
         clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
                 Thread.sleep(2000);
@@ -95,54 +85,6 @@ public class utilities {
     public static void clickNewQuoteButton() throws InterruptedException {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(3) > button"));
                 Thread.sleep(1000);
-    }
-
-    public static void enterGoodPhoneNumber() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"5555555555");
-                Thread.sleep(1000);
-    }
-
-    public static void enterAlphaCharactersInPhoneNumberField() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"Not a Phone Number");
-                Thread.sleep(1000);
-    }
-
-    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"@#$%^&*(");
-                Thread.sleep(1000);
-    }
-
-    public static void enterAlternatePhoneNumber() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"),"4444444444");
-                Thread.sleep(1000);
-    }
-
-    public static void enterGoodEmailAddress() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"vip1000682431@gmail.com");
-                Thread.sleep(2000);
-    }
-
-    public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"NotaRealEmail");
-                Thread.sleep(2000);
-    }
-
-    public static void enteringFakeEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"NotaRealEmail@nope.com");
-                Thread.sleep(2000);
-    }
-
-    public static void enteringOutOfAreaZipCode() throws InterruptedException {
-        clickSomething(By.cssSelector("#zipCode"));
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("0",Keys.TAB);
-                Thread.sleep(2000);
     }
 
     public static String randomizeFirstName() {
@@ -231,10 +173,6 @@ public class utilities {
 
     public static void  clickingNoFireFloodOrRolloverAccidentRadioButton(){
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(3)"));
-    }
-
-    public static void enteringZipCodeStatic(){
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188",Keys.TAB);
     }
 
     public static void pickingYearOfCarStatic(){

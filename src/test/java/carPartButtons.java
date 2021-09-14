@@ -4,7 +4,11 @@ public class carPartButtons {
 
     private static WebDriver driver;
 
-    public static void pickingCarPartBattery(){}
+    public static void pickingCarPartBattery(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        quoteWorkFlow.fillingOutFirstScreen(driver);
+
+    }
 
     public static void pickingCarPartCatalyticConverter(){}
 

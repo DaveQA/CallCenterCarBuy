@@ -522,4 +522,14 @@ public class _01_testCases {
             Assertions.assertFalse(damageOnCarRadioButtons.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
         }
     }
+
+    @Nested
+    @DisplayName("Clicking car parts and testing part requirements")
+    class carPartListTests{
+        @Test
+        @DisplayName("Clicking just the battery part button")
+        public void clickingBatteryButtonTest() throws InterruptedException {
+            carPartButtons.pickingCarPartBattery(driver);
+        }
+    }
 }

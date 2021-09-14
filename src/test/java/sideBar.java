@@ -27,7 +27,7 @@ public class sideBar {
         utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterGoodPhoneNumber();
+        phoneNumberAlternateNumberFields.enterGoodPhoneNumber();
         String sideBarCustomerInfoPhoneName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(3)")).getText();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -43,7 +43,7 @@ public class sideBar {
         utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterAlternatePhoneNumber();
+        phoneNumberAlternateNumberFields.enterAlternatePhoneNumber();
         String sideBarCustomerInfoPhoneName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(4)")).getText();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -59,7 +59,7 @@ public class sideBar {
         utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterGoodEmailAddress();
+        emailAddressField.enterGoodEmailAddress();
         String sideBarCustomerInfoEmail = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(5)")).getText();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();

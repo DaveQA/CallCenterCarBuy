@@ -10,8 +10,8 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         utilities.clickNextButton();
@@ -26,11 +26,11 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterAlphaCharactersInPhoneNumberField();
+        enterAlphaCharactersInPhoneNumberField();
         boolean alphaCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -42,14 +42,38 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        utilities.enterSpecialCharactersInPhoneNumberField();
+        enterSpecialCharactersInPhoneNumberField();
         boolean specialCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return specialCharactersEnterErrorText;
+    }
+
+    public static void enterGoodPhoneNumber() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"5555555555");
+        Thread.sleep(1000);
+    }
+
+    public static void enterAlphaCharactersInPhoneNumberField() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"Not a Phone Number");
+        Thread.sleep(1000);
+    }
+
+    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"@#$%^&*(");
+        Thread.sleep(1000);
+    }
+
+    public static void enterAlternatePhoneNumber() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"),"4444444444");
+        Thread.sleep(1000);
     }
 }
