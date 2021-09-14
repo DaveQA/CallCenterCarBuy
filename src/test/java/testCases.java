@@ -521,6 +521,5 @@ public class testCases {
         public void checkingDetailDamageNotesContainerIsEditableTest() throws InterruptedException {
             Assertions.assertFalse(quoteWorkFlow.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
         }
-
     }
 }
