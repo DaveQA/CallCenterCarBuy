@@ -201,19 +201,19 @@ public class testCases {
         @Test
         @DisplayName("Checking firstname field is required")
         public void firstNameLastNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringOnlyLastNameCheck(driver),"Was able to continue without a Firstname");
+            Assertions.assertTrue(firstNameLastNameFields.enteringOnlyLastNameCheck(driver),"Was able to continue without a Firstname");
         }
 
         @Test
         @DisplayName("Checking lastname field is required")
         public void lastNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringOnlyFirstNameCheck(driver),"Was able to continue without entering a Lastname");
+            Assertions.assertTrue(firstNameLastNameFields.enteringOnlyFirstNameCheck(driver),"Was able to continue without entering a Lastname");
         }
 
         @Test
         @DisplayName("Checking both Firstname and Lastname fields are required")
         public void noNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringNeitherFirstNameNorLastNameCheck(driver),"Was able to continue without entering an Firstname and Lastname");
+            Assertions.assertTrue(firstNameLastNameFields.enteringNeitherFirstNameNorLastNameCheck(driver),"Was able to continue without entering an Firstname and Lastname");
         }
     }
 
@@ -223,19 +223,19 @@ public class testCases {
         @Test
         @DisplayName("Checking phone number field is required")
         public void phoneNumberFieldRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringNothingInPhoneNumberFieldCheck(driver),"Was able to continue without a phone number");
+            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringNothingInPhoneNumberFieldCheck(driver),"Was able to continue without a phone number");
         }
 
         @Test
         @DisplayName("Checking that alpha characters are not accepted in the phone number field")
         public void phoneNumberFieldAlphaCharacterTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringAlphaCharactersInPhoneNumberFieldCheck(driver), "Was able continue with alpha characters in the phone number field");
+            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringAlphaCharactersInPhoneNumberFieldCheck(driver), "Was able continue with alpha characters in the phone number field");
         }
 
         @Test
         @DisplayName("Checking that special characters are not accepted in the phone number field")
         public void phoneNumberFieldSpecialCharacterTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.enteringSpecialCharactersInPhoneNumberFieldCheck(driver),"Was able to continue with special characters in the phone number field");
+            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringSpecialCharactersInPhoneNumberFieldCheck(driver),"Was able to continue with special characters in the phone number field");
         }
     }
 
@@ -253,23 +253,23 @@ public class testCases {
 
     @Nested
     @DisplayName("Checking requirements for the email address field")
-    class emailAddressField{
+    class emailAddress{
         @Test
         @DisplayName("Checking an email address is needed to continue")
         public void emailRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.emailRequirementCheck(driver),"Was able to continue without entering an email address");
+            Assertions.assertTrue(emailAddressField.emailRequirementCheck(driver),"Was able to continue without entering an email address");
         }
 
         @Test
         @DisplayName("Checking that a valid email address is needed to continue")
         public void enteringInvalidEmailAddressInformationTest() throws InterruptedException {
-            Assertions.assertEquals(quoteWorkFlow.enteringInvalidEmailAddressInformationCheck(driver),"The email field must be a valid email.","Was able to continue with an invalid email address");
+            Assertions.assertEquals(emailAddressField.enteringInvalidEmailAddressInformationCheck(driver),"The email field must be a valid email.","Was able to continue with an invalid email address");
         }
 
         @Test
         @DisplayName("Checking a real email address is needed to continue")
         public void enteringFakeEmailAddressInformationCheck() throws InterruptedException {
-            Assertions.assertEquals(quoteWorkFlow.enteringFakeEmailAddressInformationCheck(driver),"ZeroBounce status not valid, status:invalid","Was able to continue with a fake email address");
+            Assertions.assertEquals(emailAddressField.enteringFakeEmailAddressInformationCheck(driver),"ZeroBounce status not valid, status:invalid","Was able to continue with a fake email address");
         }
     }
 
@@ -473,19 +473,19 @@ public class testCases {
         @Test
         @DisplayName("Radio button picking damage - Neither")
         public void notPickingEitherOptionForDamageTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButton.pickingNeitherRadioButtonIfThereIsDamage(driver),"Was able to continue without answering damage check");
+            Assertions.assertFalse(damageOnCarRadioButtons.pickingNeitherRadioButtonIfThereIsDamage(driver),"Was able to continue without answering damage check");
         }
 
         @Test
         @DisplayName("Radio button picking damage - Yes")
         public void pickingYesToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButton.RadioButtonYesThereIsDamageOnCarCheck(driver),"The type of damage options did not show on screen");
+            Assertions.assertTrue(damageOnCarRadioButtons.RadioButtonYesThereIsDamageOnCarCheck(driver),"The type of damage options did not show on screen");
         }
 
         @Test
         @DisplayName("Radio button picking damage - No")
         public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButton.radioButtonNoThereIsNotDamageOnCarCheck(driver),"The type of damage options show on screen");
+            Assertions.assertFalse(damageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver),"The type of damage options show on screen");
         }
     }
 
@@ -495,31 +495,31 @@ public class testCases {
         @Test //Will need to redo if depending on DEV response
         @DisplayName("Not picking Yes or No to type of damage option and clicking next button")
         public void pickingNeitherTypeOfDamageOptionTest() throws InterruptedException {
-            Assertions.assertEquals(damageOnCarRadioButton.pickingNeitherTypeOfDamageOptionCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
+            Assertions.assertEquals(damageOnCarRadioButtons.pickingNeitherTypeOfDamageOptionCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
         }
 
         @Test
         @DisplayName("Picking Yes there is Fire, Flood, Rollover damage")
         public void radioButtonYesToFireRolloverDamageOnCarWithNotesTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButton.radioButtonYesToFireRolloverDamageOnCarCheck(driver),"The peddle response script was not displayed on screen");
+            Assertions.assertTrue(damageOnCarRadioButtons.radioButtonYesToFireRolloverDamageOnCarCheck(driver),"The peddle response script was not displayed on screen");
         }
 
         @Test
         @DisplayName("Checking for detail damage notes contain shows")
         public void radioButtonYesToTypeOfDamageOptionWithNoNotesTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButton.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver),"Detail Damage Notes container did not show on screen");
+            Assertions.assertTrue(damageOnCarRadioButtons.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver),"Detail Damage Notes container did not show on screen");
         }
 
         @Test
         @DisplayName("Picking No to type of damage without entering notes and clicking next button")
         public void detailDamageNotesIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButton.detailDamageNotesIsRequiredCheck(driver),"Was able to continue without entering detail damage notes");
+            Assertions.assertTrue(damageOnCarRadioButtons.detailDamageNotesIsRequiredCheck(driver),"Was able to continue without entering detail damage notes");
         }
 
         @Test
         @DisplayName("Checking Detail Damage container notes")
         public void checkingDetailDamageNotesContainerIsEditableTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButton.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
+            Assertions.assertFalse(damageOnCarRadioButtons.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
         }
     }
 }

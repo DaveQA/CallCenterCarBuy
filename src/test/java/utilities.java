@@ -145,20 +145,6 @@ public class utilities {
                 Thread.sleep(2000);
     }
 
-    public static void fillingOutFirstScreen(WebDriver driver1) throws InterruptedException {
-        driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
-        clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        clickNextButton();
-        clickNewQuoteButton();
-        enterGoodPhoneNumber();
-        enterGoodEmailAddress();
-        clickNextButton();
-    }
-
     public static String randomizeFirstName() {
         String[] firstNameOptions;
         firstNameOptions = new String[10];

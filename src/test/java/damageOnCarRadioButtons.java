@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class damageOnCarRadioButton {
+public class damageOnCarRadioButtons {
 
     private static WebDriver driver;
 
