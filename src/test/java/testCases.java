@@ -445,25 +445,25 @@ public class testCases {
         @Test
         @DisplayName("Checking Year of car is required")
         public void yearIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.yearIsRequiredCheck(driver),"Required on screen text was not displayed");
+            Assertions.assertTrue(yearMakeModelDropdowns.yearIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
         @DisplayName("Checking Make of car is required")
         public void makeIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.makeIsRequiredCheck(driver),"Required on screen text was not displayed");
+            Assertions.assertTrue(yearMakeModelDropdowns.makeIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
         @DisplayName("Checking Model of car is required")
         public void modelIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.modelIsRequiredCheck(driver),"Required on screen text was not displayed");
+            Assertions.assertTrue(yearMakeModelDropdowns.modelIsRequiredCheck(driver),"Required on screen text was not displayed");
         }
 
         @Test
         @DisplayName("Checking Year, Make, Model of car are all required")
         public void allYearMakeModelDropdownsAreRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.allYearMakeModelDropdownsAreRequired(driver),"Required on screen text was not displayed");
+            Assertions.assertTrue(yearMakeModelDropdowns.allYearMakeModelDropdownsAreRequired(driver),"Required on screen text was not displayed");
         }
     }
 
@@ -473,19 +473,19 @@ public class testCases {
         @Test
         @DisplayName("Radio button picking damage - Neither")
         public void notPickingEitherOptionForDamageTest() throws InterruptedException {
-            Assertions.assertFalse(quoteWorkFlow.pickingNeitherRadioButtonIfThereIsDamage(driver),"Was able to continue without answering damage check");
+            Assertions.assertFalse(damageOnCarRadioButton.pickingNeitherRadioButtonIfThereIsDamage(driver),"Was able to continue without answering damage check");
         }
 
         @Test
         @DisplayName("Radio button picking damage - Yes")
         public void pickingYesToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.RadioButtonYesThereIsDamageOnCarCheck(driver),"The type of damage options did not show on screen");
+            Assertions.assertTrue(damageOnCarRadioButton.RadioButtonYesThereIsDamageOnCarCheck(driver),"The type of damage options did not show on screen");
         }
 
         @Test
         @DisplayName("Radio button picking damage - No")
         public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertFalse(quoteWorkFlow.radioButtonNoThereIsNotDamageOnCarCheck(driver),"The type of damage options show on screen");
+            Assertions.assertFalse(damageOnCarRadioButton.radioButtonNoThereIsNotDamageOnCarCheck(driver),"The type of damage options show on screen");
         }
     }
 
@@ -495,31 +495,31 @@ public class testCases {
         @Test //Will need to redo if depending on DEV response
         @DisplayName("Not picking Yes or No to type of damage option and clicking next button")
         public void pickingNeitherTypeOfDamageOptionTest() throws InterruptedException {
-            Assertions.assertEquals(quoteWorkFlow.pickingNeitherTypeOfDamageOptionCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
+            Assertions.assertEquals(damageOnCarRadioButton.pickingNeitherTypeOfDamageOptionCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
         }
 
         @Test
         @DisplayName("Picking Yes there is Fire, Flood, Rollover damage")
         public void radioButtonYesToFireRolloverDamageOnCarWithNotesTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.radioButtonYesToFireRolloverDamageOnCarCheck(driver),"The peddle response script was not displayed on screen");
+            Assertions.assertTrue(damageOnCarRadioButton.radioButtonYesToFireRolloverDamageOnCarCheck(driver),"The peddle response script was not displayed on screen");
         }
 
         @Test
         @DisplayName("Checking for detail damage notes contain shows")
         public void radioButtonYesToTypeOfDamageOptionWithNoNotesTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver),"Detail Damage Notes container did not show on screen");
+            Assertions.assertTrue(damageOnCarRadioButton.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver),"Detail Damage Notes container did not show on screen");
         }
 
         @Test
         @DisplayName("Picking No to type of damage without entering notes and clicking next button")
         public void detailDamageNotesIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(quoteWorkFlow.detailDamageNotesIsRequiredCheck(driver),"Was able to continue without entering detail damage notes");
+            Assertions.assertTrue(damageOnCarRadioButton.detailDamageNotesIsRequiredCheck(driver),"Was able to continue without entering detail damage notes");
         }
 
         @Test
         @DisplayName("Checking Detail Damage container notes")
         public void checkingDetailDamageNotesContainerIsEditableTest() throws InterruptedException {
-            Assertions.assertFalse(quoteWorkFlow.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
+            Assertions.assertFalse(damageOnCarRadioButton.checkingDetailDamageNotesContainerIsEditableCheck(driver),"Detail Damage Notes container may not have been editable");
         }
     }
 }
