@@ -109,6 +109,12 @@ public class utilities {
                 Thread.sleep(1000);
     }
 
+    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"@#$%^&*(");
+                Thread.sleep(1000);
+    }
+
     public static void enterAlternatePhoneNumber() throws InterruptedException {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
         typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"),"4444444444");
@@ -228,11 +234,16 @@ public class utilities {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-group > div > div > label:nth-child(3)"));
     }
 
-    public static void fireFloodOrRolloverAccidentYes(){
+    public static void clickingYesFireFloodOrRolloverAccidentRadioButton(){
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(2)"));
     }
 
-    public static void  fireFloodOrRolloverAccidentNo(){
+    public static void enteringDetailDamageNotes(){
+        clickSomething(By.cssSelector("#detailDamage"));
+        typeSomething(By.cssSelector("#detailDamage"),"Test Detail Damage Notes");
+    }
+
+    public static void  clickingNoFireFloodOrRolloverAccidentRadioButton(){
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(3)"));
     }
 

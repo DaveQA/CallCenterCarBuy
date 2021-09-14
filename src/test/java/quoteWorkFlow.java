@@ -5,7 +5,7 @@ public class quoteWorkFlow {
 
     private static WebDriver driver;
 
-    public static boolean firstNameRequirementCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean enteringOnlyLastNameCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
@@ -19,7 +19,7 @@ public class quoteWorkFlow {
         return firstNameRequiredRedText;
     }
 
-    public static boolean lastNameRequirementCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean enteringOnlyFirstNameCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
@@ -33,20 +33,21 @@ public class quoteWorkFlow {
         return lastNameRequiredRedText;
     }
 
-    public static boolean noNameRequirementCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean enteringNeitherFirstNameNorLastNameCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
         utilities.clickNextButton();
         utilities.clickNextButton();
-        boolean bothFirstNameAndLastNameRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
+        boolean bothFirstNameAndLastNameRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(1) > p")).size() > 0
+                && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return bothFirstNameAndLastNameRequiredText;
     }
 
-    public static boolean phoneNumberRequirementCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean enteringNothingInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
@@ -62,7 +63,7 @@ public class quoteWorkFlow {
         return requiredText;
     }
 
-    public static boolean phoneNumberAlphaCharacterFieldCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean enteringAlphaCharactersInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
@@ -72,10 +73,26 @@ public class quoteWorkFlow {
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         utilities.enterAlphaCharactersInPhoneNumberField();
-        boolean alphaNumbersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
+        boolean alphaCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
-        return alphaNumbersEnterErrorText;
+        return alphaCharactersEnterErrorText;
+    }
+
+    public static boolean enteringSpecialCharactersInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.enterGoodLoginInfo(driver);
+        utilities.clickTheLoginButton();
+        utilities.clickCallCodeButton();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
+        utilities.clickNextButton();
+        utilities.clickNewQuoteButton();
+        utilities.enterSpecialCharactersInPhoneNumberField();
+        boolean specialCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        return specialCharactersEnterErrorText;
     }
 
     public static boolean emailRequirementCheck(WebDriver driver1) throws InterruptedException {
@@ -193,7 +210,7 @@ public class quoteWorkFlow {
         return nextButtonEnableStatus;
     }
 
-    public static boolean notPickingEitherOptionForDamageCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingNeitherRadioButtonIfThereIsDamage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
@@ -208,7 +225,7 @@ public class quoteWorkFlow {
         return nextButtonEnableStatus;
     }
 
-    public static boolean pickingYesToDamageQuestionCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean RadioButtonYesThereIsDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
@@ -222,7 +239,7 @@ public class quoteWorkFlow {
         return  typeOfDamageOptionsContainer;
     }
 
-    public static boolean pickingNoToDamageQuestionCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean radioButtonNoThereIsNotDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
@@ -252,7 +269,7 @@ public class quoteWorkFlow {
         return currentURL;
     }
 
-    public static boolean pickingYesToFireRolloverDamageOnCar(WebDriver driver1) throws InterruptedException {
+    public static boolean radioButtonYesToFireRolloverDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
@@ -262,11 +279,12 @@ public class quoteWorkFlow {
         utilities.pickingModelOfCarStatic();
         utilities.clickNextButton();
         utilities.clickingYesRadioButtonIsThereDamageToCar();
+        utilities.clickingYesFireFloodOrRolloverAccidentRadioButton();
         boolean sendToPeddleMessageDueToDamage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > p")).size() > 0;
         return sendToPeddleMessageDueToDamage;
     }
 
-    public static boolean pickingNoFireRollOverDamageOnCar(WebDriver driver1) throws InterruptedException {
+    public static boolean thereIsNoFireFloodRolloverDamageRadioButtonCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
@@ -275,10 +293,50 @@ public class quoteWorkFlow {
         utilities.pickingMakeOfCarStatic();
         utilities.pickingModelOfCarStatic();
         utilities.clickNextButton();
-        utilities.clickingNoRadioButtonIsThereDamageToCar();
+        utilities.clickingYesRadioButtonIsThereDamageToCar();
+        utilities.clickingNoFireFloodOrRolloverAccidentRadioButton();
+        boolean detailDamageEditableTextField = driver.findElements(By.cssSelector("#detailDamage")).size() > 0;
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        return  detailDamageEditableTextField;
+    }
+
+    public static boolean detailDamageNotesIsRequiredCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.fillingOutFirstScreen(driver);
+        utilities.enteringZipCodeStatic();
+        utilities.clickNextButton();
+        utilities.pickingYearOfCarStatic();
+        utilities.pickingMakeOfCarStatic();
+        utilities.pickingModelOfCarStatic();
+        utilities.clickNextButton();
+        utilities.clickingYesRadioButtonIsThereDamageToCar();
+        utilities.clickingNoFireFloodOrRolloverAccidentRadioButton();
         utilities.clickNextButton();
         utilities.clickNextButton();
-        boolean clickableCarPartList = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div")).size() > 0;
-        return  clickableCarPartList;
+        boolean detailDamageNotesRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(4) > p.text-danger")).size() > 0;
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        return  detailDamageNotesRequiredText;
+    }
+
+    public static boolean checkingDetailDamageNotesContainerIsEditableCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.fillingOutFirstScreen(driver);
+        utilities.enteringZipCodeStatic();
+        utilities.clickNextButton();
+        utilities.pickingYearOfCarStatic();
+        utilities.pickingMakeOfCarStatic();
+        utilities.pickingModelOfCarStatic();
+        utilities.clickNextButton();
+        utilities.clickingYesRadioButtonIsThereDamageToCar();
+        utilities.clickingNoFireFloodOrRolloverAccidentRadioButton();
+        utilities.enteringDetailDamageNotes();
+        utilities.clickNextButton();
+        utilities.clickNextButton();
+        boolean detailDamageNotesRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(4) > p.text-danger")).size() > 0;
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        return detailDamageNotesRequiredText;
     }
 }
