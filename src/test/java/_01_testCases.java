@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class testCases {
+public class _01_testCases {
 
     private static WebDriver driver;
     private static String prefix = "qa";
