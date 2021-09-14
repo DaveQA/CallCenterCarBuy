@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
-public class loginPageChecks {
+public class loginPage {
 
     private static WebDriver driver;
 

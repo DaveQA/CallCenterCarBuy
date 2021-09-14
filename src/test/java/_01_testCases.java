@@ -27,177 +27,177 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Checking the login page process")
-    class loginPage{
+    class loginPageTest{
         @Test
         @DisplayName("Tried entering nothing and login")
         public void enteringBadUserInformationOnLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPageChecks.enteringBadUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
+            Assertions.assertEquals(loginPage.enteringBadUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
         @DisplayName("Tried entering bad user information and login")
         public void enteringNoLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPageChecks.enteringNoUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
+            Assertions.assertEquals(loginPage.enteringNoUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
         @DisplayName("Tried entering good user information and login")
         public void enteringGoodLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPageChecks.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to login");
+            Assertions.assertEquals(loginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to login");
         }
     }
 
     @Nested
     @DisplayName("Call code buttons - speed dail")
-    class callCodeButtons{
+    class callCodeButtonsTests{
         @Test
         @DisplayName("Checking call code 833 codeID")
         public void clickingTheCallCode833ButtonTest() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 500 codeID")
         public void clickingCallCode500Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 501 codeID")
         public void clickingCallCode501Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 502 codeID")
         public void clickingCallCode502Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 503 codeID")
         public void clickingCallCode503Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 504 codeID")
         public void clickingCallCode504Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 510 codeID")
         public void clickingCallCode510Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesChecks.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
+            Assertions.assertEquals(callCodesButtons.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
         }
     }
 
     @Nested
     @DisplayName("Checking top navigation links")
-    class topNavLinks{
+    class topNavLinksTests{
         @Test
         @DisplayName("Top nav link - Dashboard")
         public void topNavDashboardLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavDashboardLink(driver),"https://qa-carbuy.pullapart.com/#/dashboard","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavDashboardLink(driver),"https://qa-carbuy.pullapart.com/#/dashboard","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Notification")
         public void topNavNotificationsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavNotificationsLink(driver),"https://qa-carbuy.pullapart.com/#/notifications","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavNotificationsLink(driver),"https://qa-carbuy.pullapart.com/#/notifications","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Quote")
         public void topNavAdminAdvanceFeaturesQuoteLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesQuoteLink(driver),"https://qa-carbuy.pullapart.com/#/admin/quotes","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesQuoteLink(driver),"https://qa-carbuy.pullapart.com/#/admin/quotes","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Notification")
         public void topNavAdminAdvanceFeaturesNotificationLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesNotificationLink(driver),"https://qa-carbuy.pullapart.com/#/admin/notifications","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesNotificationLink(driver),"https://qa-carbuy.pullapart.com/#/admin/notifications","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin Advance Features Restriction")
         public void topNavAdminAdvanceFeaturesRestrictionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminAdvanceFeaturesRestrictionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/restrictions","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesRestrictionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/restrictions","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings State Laws")
         public void topNavAdminGeneralSettingsStateLawsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsStateLawsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/statelaws","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingsStateLawsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/statelaws","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Dispositions")
         public void topNavAdminGeneralSettingsDispositionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingsDispositionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/dispositions","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingsDispositionsLink(driver),"https://qa-carbuy.pullapart.com/#/admin/dispositions","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Call Codes")
         public void topNavAdminGeneralSettingsCallCodesLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingCallCodesLink(driver),"https://qa-carbuy.pullapart.com/#/admin/callcodes","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingCallCodesLink(driver),"https://qa-carbuy.pullapart.com/#/admin/callcodes","URL did not match expected");
         }
 
         @Test
         @DisplayName("Top nav link - Admin General Settings Users")
         public void topNavAdminGeneralSettingsUsersLink() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.clickTopNavAdminGeneralSettingUsersLink(driver),"https://qa-carbuy.pullapart.com/#/admin/users","URL did not match expected");
+            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingUsersLink(driver),"https://qa-carbuy.pullapart.com/#/admin/users","URL did not match expected");
         }
     }
 
     @Nested
     @DisplayName("Coming Soon pages")
-    class comingSoonPages{
+    class comingSoonPagesTests{
         @Test
         @DisplayName("Coming Soon Page - Notification Page")
         public void checkComingSoonTextOnNotificationsPageTest() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.adminGeneralSettingsNotificationPageComingSoonText(driver),"COMING SOON","Coming Soon text ");
+            Assertions.assertEquals(topNav.adminGeneralSettingsNotificationPageComingSoonText(driver),"COMING SOON","Coming Soon text ");
         }
 
         @Test
         @DisplayName("Coming Soon Page - Restriction Page")
         public void checkComingSoonTextOnRestrictionsPageTest() throws InterruptedException {
-            Assertions.assertEquals(topNavChecks.adminGeneralSettingsRestrictionsPageComingSoonText(driver),"COMING SOON");
+            Assertions.assertEquals(topNav.adminGeneralSettingsRestrictionsPageComingSoonText(driver),"COMING SOON");
         }
     }
 
     @Nested
     @DisplayName("Sidebar Checks")
-    class sideBar{
+    class sideBarTests{
         @Test
         @DisplayName("Sidebar matches information entered - Firstname and Lastname")
         public void customerSideBarInfoMatchesFirstLastNameEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBarChecks.customerInfoSideBarMatchesFirstLastNameEnteredCheck(driver),"Name: John Doe");
+            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesFirstLastNameEnteredCheck(driver),"Name: John Doe");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Phone number")
         public void customerSideBarInfoMatchesPhoneNumberEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBarChecks.customerInfoSideBarMatchesPhoneNumberEnteredCheck(driver),"Phone: 5555555555");
+            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesPhoneNumberEnteredCheck(driver),"Phone: 5555555555");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Alternate number")
         public void customerSideBarInfoMatchesAlternateNumberEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBarChecks.customerInfoSideBarMatchesAlternateNumberEnteredCheck(driver),"Alt. Phone: 4444444444");
+            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesAlternateNumberEnteredCheck(driver),"Alt. Phone: 4444444444");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Email address")
         public void customerSideBarInfoMatchesEmailEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBarChecks.customerInfoSideBarMatchesEmailEnteredCheck(driver),"Email: vip1000682431@gmail.com");
+            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesEmailEnteredCheck(driver),"Email: vip1000682431@gmail.com");
         }
     }
 
     @Nested
     @DisplayName("Firstname and Lastname field checks")
-    class firstNameField{
+    class firstNameFieldTests{
         @Test
         @DisplayName("Checking firstname field is required")
         public void firstNameLastNameRequirementTest() throws InterruptedException {
@@ -219,7 +219,7 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Phone number field checks")
-    class phoneNumberField{
+    class phoneNumberFieldTests{
         @Test
         @DisplayName("Checking phone number field is required")
         public void phoneNumberFieldRequiredTest() throws InterruptedException {
@@ -253,7 +253,7 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Checking requirements for the email address field")
-    class emailAddress{
+    class emailAddressTests{
         @Test
         @DisplayName("Checking an email address is needed to continue")
         public void emailRequiredTest() throws InterruptedException {
@@ -275,173 +275,173 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Checking Zipcodes are linked to correct states")
-    class zipCodeField {
+    class zipCodeFieldTests{
         @Test
         @DisplayName("Trying an unapproved zipcode")
         public void enteringOutOfAreaZipCodeTest() throws InterruptedException {
-            Assertions.assertTrue(zipCodesChecks.enteringOutOfAreaZipCodeCheck(driver),"Was able to enter an unapproved zipcode");
+            Assertions.assertTrue(approvedZipCodes.enteringOutOfAreaZipCodeCheck(driver),"Was able to enter an unapproved zipcode");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Alabama")
         public void enteringRandomizedBirminghamMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedBirminghamMarketZipCode(driver),"Alabama","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedBirminghamMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Alabama")
         public void enteringRandomizedMobileMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedMobileMarketZipCode(driver),"Alabama","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedMobileMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Alabama")
         public void enterRandomizedMontgomeryMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedMontgomeryMarketZipCode(driver),"Alabama","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedMontgomeryMarketZipCode(driver),"Alabama","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Arizona")
         public void enterRandomizedTucsonMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedTucsonMarketZipCode(driver),"Arizona","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedTucsonMarketZipCode(driver),"Arizona","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaEastMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaEastMarketZipCode(driver),"Georgia","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedAtlantaEastMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaNorthMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaNorthMarketZipCode(driver),"Georgia","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedAtlantaNorthMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAtlantaSouthMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedAtlantaSouthMarketZipCode(driver),"Georgia","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedAtlantaSouthMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Georgia")
         public void enterRandomizedAugustaMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedAugustaMarketZipCode(driver),"Georgia","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedAugustaMarketZipCode(driver),"Georgia","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Indiana")
         public void enterRandomizedIndianapolisMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedIndianapolisMarketZipCode(driver),"Indiana","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedIndianapolisMarketZipCode(driver),"Indiana","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Kentucky")
         public void enterRandomizedLouisvilleMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedLouisvilleMarketZipCode(driver),"Kentucky","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedLouisvilleMarketZipCode(driver),"Kentucky","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedBatonRougeMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedBatonRougeMarketZipCode(driver),"Louisiana","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedBatonRougeMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedLafayetteMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedLafayetteMarketZipCode(driver),"Louisiana","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedLafayetteMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Louisiana")
         public void enterRandomizedNewOrleansWestMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedNewOrleansWestMarketZipCode(driver),"Louisiana","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedNewOrleansWestMarketZipCode(driver),"Louisiana","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Mississippi")
         public void enterRandomizedJacksonMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedJacksonMarketZipCode(driver),"Mississippi","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedJacksonMarketZipCode(driver),"Mississippi","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - South Carolina")
         public void enterRandomizedCharlotteMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedCharlotteMarketZipCode(driver),"South Carolina","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedCharlotteMarketZipCode(driver),"South Carolina","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - North Carolina")
         public void enterRandomizedWinstonSalemMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedWinstonSalemMarketZipCode(driver),"North Carolina","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedWinstonSalemMarketZipCode(driver),"North Carolina","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedAkronMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedAkronMarketZipCode(driver),"Ohio","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedAkronMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedCantonMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedCantonMarketZipCode(driver),"Ohio","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedCantonMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedClevelandKirbyAvenueMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedClevelandKirbyAvenueMarketZipCode(driver),"Ohio","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedClevelandKirbyAvenueMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Ohio")
         public void enterRandomizedClevelandWestMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedClevelandWestMarketZipCode(driver),"Ohio","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedClevelandWestMarketZipCode(driver),"Ohio","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - South Carolina")
         public void enterRandomizedColumbiaMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedColumbiaMarketZipCode(driver),"South Carolina","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedColumbiaMarketZipCode(driver),"South Carolina","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedKnoxvilleMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedKnoxvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedKnoxvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedMemphisMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedMemphisMarketZipCode(driver),"Tennessee","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedMemphisMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Tennessee")
         public void enterRandomizedNashvilleMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedNashvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedNashvilleMarketZipCode(driver),"Tennessee","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Texas")
         public void enterRandomizedCorpusChristiMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedCorpusChristiMarketZipCode(driver),"Texas","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedCorpusChristiMarketZipCode(driver),"Texas","Zipcode did not match state");
         }
 
         @Test
         @DisplayName("Entering a zipcode - Texas")
         public void enterRandomizedElPasoMarketZipCodeTest() throws InterruptedException {
-            Assertions.assertEquals(zipCodesChecks.enterApprovedElPasoMarketZipCode(driver),"Texas","Zipcode did not match state");
+            Assertions.assertEquals(approvedZipCodes.enterApprovedElPasoMarketZipCode(driver),"Texas","Zipcode did not match state");
         }
     }
 
     @Nested
     @DisplayName("Checking Year Make Model dropdown requirements ")
-    class makeModelYearDropdowns{
+    class makeModelYearDropdownsTests{
         @Test
         @DisplayName("Checking Year of car is required")
         public void yearIsRequiredTest() throws InterruptedException {
@@ -469,7 +469,7 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Damage radio buttons")
-    class carDamageRadioButtons{
+    class carDamageRadioButtonsTests{
         @Test
         @DisplayName("Radio button picking damage - Neither")
         public void notPickingEitherOptionForDamageTest() throws InterruptedException {
@@ -491,7 +491,7 @@ public class _01_testCases {
 
     @Nested
     @DisplayName("Filling out the type of damage section")
-    class fillingOutTypeOfDamageSection {
+    class fillingOutTypeOfDamageSectionTests{
         @Test //Will need to redo if depending on DEV response
         @DisplayName("Not picking Yes or No to type of damage option and clicking next button")
         public void pickingNeitherTypeOfDamageOptionTest() throws InterruptedException {

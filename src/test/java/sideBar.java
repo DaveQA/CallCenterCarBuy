@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class sideBarChecks {
+public class sideBar {
 
     private static WebDriver driver;
 
