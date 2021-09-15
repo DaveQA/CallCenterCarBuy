@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class quoteWorkFlow {
@@ -10,12 +9,25 @@ public class quoteWorkFlow {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         phoneNumberAlternateNumberFields.enterGoodPhoneNumber();
         emailAddressField.enterGoodEmailAddress();
+        utilities.clickNextButton();
+    }
+
+    public static void gettingToCarPartListContainer(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        quoteWorkFlow.fillingOutFirstScreen(driver);
+        utilities.enteringZipCodeStatic();
+        utilities.clickNextButton();
+        utilities.pickingYearOfCarRandom();
+        utilities.pickingModelOfCarRandom();
+        utilities.pickingMakeOfCarRandom();
+        utilities.clickNextButton();
+        utilities.clickingNoRadioButtonIsThereDamageToCar();
         utilities.clickNextButton();
     }
 }

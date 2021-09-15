@@ -121,39 +121,6 @@ public class utilities {
         return lastNameOptions[randomLastName];
     }
 
-    public static void pickingYearOfCarRandom(){
-        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > select"));
-        Select objSel = new Select(drpDwnList);
-        List<WebElement> yearOptions = objSel.getOptions();
-        int iCnt = yearOptions.size();
-        Random num = new Random();
-        int iSelect = num.nextInt(iCnt);
-        objSel.selectByIndex(iSelect);
-//        System.out.println(drpDwnList.getText());
-    }
-
-    public static void pickingMakeOfCarRandom(){
-        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > select"));
-        Select objSel = new Select(drpDwnList);
-        List<WebElement> makeOptions = objSel.getOptions();
-        int iCnt = makeOptions.size();
-        Random num = new Random();
-        int iSelect = num.nextInt(iCnt);
-        objSel.selectByIndex(iSelect);
-//        System.out.println(drpDwnList.getText());
-    }
-
-    public static void pickingModelOfCarRandom(){
-        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > select"));
-        Select objSel = new Select(drpDwnList);
-        List<WebElement> modelOptions = objSel.getOptions();
-        int iCnt = modelOptions.size();
-        Random num = new Random();
-        int iSelect = num.nextInt(iCnt);
-        objSel.selectByIndex(iSelect);
-//        System.out.println(drpDwnList.getText());
-    }
-
     public static void clickingYesRadioButtonIsThereDamageToCar(){
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-group > div > div > label:nth-child(2)"));
     }
@@ -216,5 +183,49 @@ public class utilities {
     public static void pickingCarPartTransmission() throws InterruptedException {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(7)"));
                 Thread.sleep(1000);
+    }
+
+    public static void enteringOutOfAreaZipCode() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#zipCode"));
+        driver.findElement(By.cssSelector("#zipCode")).sendKeys("0", Keys.TAB);
+        Thread.sleep(2000);
+    }
+
+    public static void enteringZipCodeStatic() throws InterruptedException {
+        driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188",Keys.TAB);
+        Thread.sleep(1000);
+    }
+
+    public static void pickingYearOfCarRandom(){
+        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > select"));
+        Select objSel = new Select(drpDwnList);
+        List<WebElement> yearOptions = objSel.getOptions();
+        int iCnt = yearOptions.size();
+        Random num = new Random();
+        int iSelect = num.nextInt(iCnt);
+        objSel.selectByIndex(iSelect);
+//        System.out.println(drpDwnList.getText());
+    }
+
+    public static void pickingMakeOfCarRandom(){
+        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > select"));
+        Select objSel = new Select(drpDwnList);
+        List<WebElement> makeOptions = objSel.getOptions();
+        int iCnt = makeOptions.size();
+        Random num = new Random();
+        int iSelect = num.nextInt(iCnt);
+        objSel.selectByIndex(iSelect);
+//        System.out.println(drpDwnList.getText());
+    }
+
+    public static void pickingModelOfCarRandom(){
+        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > select"));
+        Select objSel = new Select(drpDwnList);
+        List<WebElement> modelOptions = objSel.getOptions();
+        int iCnt = modelOptions.size();
+        Random num = new Random();
+        int iSelect = num.nextInt(iCnt);
+        objSel.selectByIndex(iSelect);
+//        System.out.println(drpDwnList.getText());
     }
 }

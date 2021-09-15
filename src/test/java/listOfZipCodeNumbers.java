@@ -3245,15 +3245,4 @@ public class listOfZipCodeNumbers {
         int randomElPasoZipCode = (int) (Math.random() * elPasoZipCode.length);
         return elPasoZipCode[randomElPasoZipCode];
     }
-
-    public static void enteringOutOfAreaZipCode() throws InterruptedException {
-        utilities.clickSomething(By.cssSelector("#zipCode"));
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("0", Keys.TAB);
-        Thread.sleep(2000);
-    }
-
-    public static void enteringZipCodeStatic() throws InterruptedException {
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188",Keys.TAB);
-        Thread.sleep(1000);
-    }
 }

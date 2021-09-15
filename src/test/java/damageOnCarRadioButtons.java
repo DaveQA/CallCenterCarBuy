@@ -8,7 +8,7 @@ public class damageOnCarRadioButtons {
     public static boolean pickingNeitherRadioButtonIfThereIsDamage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -23,7 +23,7 @@ public class damageOnCarRadioButtons {
     public static boolean RadioButtonYesThereIsDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -37,7 +37,7 @@ public class damageOnCarRadioButtons {
     public static boolean radioButtonNoThereIsNotDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -52,7 +52,7 @@ public class damageOnCarRadioButtons {
     public static String pickingNeitherTypeOfDamageOptionCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -67,7 +67,7 @@ public class damageOnCarRadioButtons {
     public static boolean radioButtonYesToFireRolloverDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -82,7 +82,7 @@ public class damageOnCarRadioButtons {
     public static boolean thereIsNoFireFloodRolloverDamageRadioButtonCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -99,7 +99,7 @@ public class damageOnCarRadioButtons {
     public static boolean detailDamageNotesIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();
@@ -118,7 +118,7 @@ public class damageOnCarRadioButtons {
     public static boolean checkingDetailDamageNotesContainerIsEditableCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringZipCodeStatic();
+        utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
         utilities.pickingYearOfCarStatic();
         utilities.pickingMakeOfCarStatic();

@@ -528,8 +528,39 @@ public class _01_testCases {
     class carPartListTests{
         @Test
         @DisplayName("Clicking just the battery part button")
-        public void clickingBatteryButtonTest() throws InterruptedException {
-            carPartButtons.pickingCarPartBattery(driver);
+        public void pickingCarPartBatteryTest() throws InterruptedException {
+            carPartButtons.pickingCarPartBatteryCheck(driver);
         }
+
+        @Test
+        @DisplayName("Clicking just the catalytic converter part button")
+        public void pickingCarPartCatalyticConverterTest(){}
+
+        @Test@DisplayName("Clicking just the Engine part button")
+        public void pickingCarPartEngineTest(){}
+
+        @Test
+        @DisplayName("Clicking just the radiator part button")
+        public void pickingCarPartRadiatorTest(){}
+
+        @Test
+        @DisplayName("Clicking just the tires part button")
+        public void pickingCarPartTiresTest(){}
+
+        @Test
+        @DisplayName("Clicking just the transmission part button")
+        public void pickingCarPartTransmissionTest(){}
+
+        @Test
+        @DisplayName("Not picking any car parts")
+        public void pickingNoCarPartsTest(){}
+
+        @Test
+        @DisplayName("Clicking all car parts")
+        public void pickingAllCarPartsTest(){}
+
+        @Test
+        @DisplayName("Clicking only the engine and transmission parts")
+        public void pickingOnlyEngineTransmissionPartTest(){}
     }
 }

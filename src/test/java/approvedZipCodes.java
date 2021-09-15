@@ -9,7 +9,7 @@ public class approvedZipCodes {
     public static boolean enteringOutOfAreaZipCodeCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        listOfZipCodeNumbers.enteringOutOfAreaZipCode();
+        utilities.enteringOutOfAreaZipCode();
                 Thread.sleep(2000);
         boolean outOfAreaPeddleMessage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-horizontal > div > div:nth-child(5)")).size() > 0;
         utilities.clickTheRefreshButton();

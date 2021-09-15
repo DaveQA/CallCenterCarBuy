@@ -10,8 +10,8 @@ public class sideBar {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         String sideBarCustomerInfoFirstNameLastName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(2)")).getText();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -23,8 +23,8 @@ public class sideBar {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         phoneNumberAlternateNumberFields.enterGoodPhoneNumber();
@@ -39,8 +39,8 @@ public class sideBar {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         phoneNumberAlternateNumberFields.enterAlternatePhoneNumber();
@@ -55,8 +55,8 @@ public class sideBar {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
+        firstNameLastNameFields.enterStaticFirstName();
+        firstNameLastNameFields.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         emailAddressField.enterGoodEmailAddress();
