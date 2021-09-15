@@ -50,46 +50,65 @@ public class _01_testCases {
     @Nested
     @DisplayName("Call code buttons - speed dail")
     class callCodeButtonsTests{
+
+//        @Test
+//        @DisplayName("Typing in active call code")
+//        public void typingInGoodCallCodeTest() throws InterruptedException {
+//            Assertions.assertEquals(speedDailContainer.typingInGoodCallCodeCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Check URL, call code did not match");
+//        }
+
+//        @Test
+//        @DisplayName("Typing in bad call code")
+//        public void typingInBadCallCodeTest() throws InterruptedException {
+//            Assertions.assertEquals(speedDailContainer.typingInBadCallCodeCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue with a bad call code number");
+//        }
+
+        @Test
+        @DisplayName("Trying to continue with no call code entered")
+        public void typingNothingInTheCallCodeContainerTest() throws InterruptedException {
+            Assertions.assertEquals(speedDailContainer.typingNothingInTheCallCodeContainerCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue without entering a call code");
+        }
+
         @Test
         @DisplayName("Checking call code 833 codeID")
         public void clickingTheCallCode833ButtonTest() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 500 codeID")
         public void clickingCallCode500Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode500Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 501 codeID")
         public void clickingCallCode501Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode501Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 502 codeID")
         public void clickingCallCode502Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode502Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 503 codeID")
         public void clickingCallCode503Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode503Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 504 codeID")
         public void clickingCallCode504Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode504Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166","Call code ID did not match expected");
         }
 
         @Test
         @DisplayName("Checking call code 510 codeID")
         public void clickingCallCode510Button() throws InterruptedException {
-            Assertions.assertEquals(callCodesButtons.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
         }
     }
 

@@ -1,5 +1,7 @@
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Random;
@@ -35,8 +37,9 @@ public class utilities {
     }
 
     public static void logOutOfApplication() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
         clickSomething(By.cssSelector("#app > div > div:nth-child(1) > div > div > div.page-header-top > div > div.top-menu > ul > li.dropdown.dropdown-extended.quick-sidebar-toggler > i"));
-                Thread.sleep(2000);
     }
 
     public static void goToLoginPage() throws InterruptedException {
@@ -227,5 +230,26 @@ public class utilities {
         int iSelect = num.nextInt(iCnt);
         objSel.selectByIndex(iSelect);
 //        System.out.println(drpDwnList.getText());
+    }
+
+    public static void clickCallCodeInputFieldInSpeedDail() throws InterruptedException {
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"));
+                Thread.sleep(1000);
+    }
+
+    public static void typeInGoodCallCodeStatic() throws InterruptedException {
+        typeSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"),"501");
+                Thread.sleep(1000);
+    }
+
+    public static void typingInBadCallCodeStatic() throws InterruptedException {
+        typeSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"),"000");
+        driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button")).sendKeys(Keys.ENTER);
+                Thread.sleep(1000);
+    }
+
+    public static void clickingCallCodeDashboardSearchButton() throws InterruptedException {
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button"));
+                Thread.sleep(1000);
     }
 }

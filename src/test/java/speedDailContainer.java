@@ -1,7 +1,8 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class callCodesButtons {
+public class speedDailContainer {
 
     private static WebDriver driver;
 
@@ -87,5 +88,44 @@ public class callCodesButtons {
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return callCode510URL;
+    }
+
+    public static String typingInGoodCallCodeCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.enterGoodLoginInfo(driver);
+        utilities.clickTheLoginButton();
+        utilities.clickCallCodeInputFieldInSpeedDail();
+        utilities.typeInGoodCallCodeStatic();
+                Thread.sleep(1000);
+        driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button")).sendKeys(Keys.ENTER);
+//        utilities.clickingCallCodeDashboardSearchButton();
+        String currentURL = driver.getCurrentUrl();
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        return currentURL;
+    }
+
+    public static String typingInBadCallCodeCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.enterGoodLoginInfo(driver);
+        utilities.clickTheLoginButton();
+        utilities.clickCallCodeInputFieldInSpeedDail();
+        utilities.typingInBadCallCodeStatic();
+        utilities.clickingCallCodeDashboardSearchButton();
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
+        String currentURL = driver.getCurrentUrl();
+        return currentURL;
+    }
+
+    public static String typingNothingInTheCallCodeContainerCheck(WebDriver driver1) throws InterruptedException {
+        driver = driver1;
+        utilities.enterGoodLoginInfo(driver);
+        utilities.clickTheLoginButton();
+        utilities.clickCallCodeInputFieldInSpeedDail();
+        utilities.clickingCallCodeDashboardSearchButton();
+        String currentURL = driver.getCurrentUrl();
+        utilities.logOutOfApplication();
+        return currentURL;
     }
 }
