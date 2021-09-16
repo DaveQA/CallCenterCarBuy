@@ -35,7 +35,9 @@ public class yearMakeModelDropdowns {
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean makeRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0;
-        Thread.sleep(1000);
+                Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return makeRequiredText;
     }
 
@@ -50,7 +52,7 @@ public class yearMakeModelDropdowns {
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean modelRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
-        Thread.sleep(1000);
+                Thread.sleep(1000);
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return modelRequiredText;
@@ -65,8 +67,11 @@ public class yearMakeModelDropdowns {
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean nextButtonEnableStatus = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0
-                && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0
-                && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
+            && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0
+            && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
+                Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return nextButtonEnableStatus;
     }
 }

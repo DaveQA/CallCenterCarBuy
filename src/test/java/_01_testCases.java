@@ -543,43 +543,64 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("Clicking car parts and testing part requirements")
+    @DisplayName("Checking that car parts are clickable")
     class carPartListTests{
         @Test
         @DisplayName("Clicking just the battery part button")
         public void pickingCarPartBatteryTest() throws InterruptedException {
-            carPartButtons.pickingCarPartBatteryCheck(driver);
+            Assertions.assertEquals(carPartButtons.pickingCarPartBatteryCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
         }
 
         @Test
         @DisplayName("Clicking just the catalytic converter part button")
-        public void pickingCarPartCatalyticConverterTest(){}
+        public void pickingCarPartCatalyticConverterTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingCarPartCatalyticConverterCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+        }
 
         @Test@DisplayName("Clicking just the Engine part button")
-        public void pickingCarPartEngineTest(){}
+        public void pickingCarPartEngineTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingCarPartEngineCheck(driver),"We can't buy your vehicle without the following component: Transmission.","Required text does not match expected");
+        }
 
         @Test
         @DisplayName("Clicking just the radiator part button")
-        public void pickingCarPartRadiatorTest(){}
+        public void pickingCarPartRadiatorTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingCarPartRadiatorCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+        }
 
         @Test
         @DisplayName("Clicking just the tires part button")
-        public void pickingCarPartTiresTest(){}
+        public void pickingCarPartTiresTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingCarPartTiresCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+        }
 
         @Test
         @DisplayName("Clicking just the transmission part button")
-        public void pickingCarPartTransmissionTest(){}
+        public void pickingCarPartTransmissionTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingCarPartTransmissionCheck(driver),"We can't buy your vehicle without the following component: Engine.","Required text does not match expected");
+        }
 
         @Test
         @DisplayName("Not picking any car parts")
-        public void pickingNoCarPartsTest(){}
+        public void pickingNoCarPartsTest() throws InterruptedException {
+            Assertions.assertEquals(carPartButtons.pickingNoCarPartsCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+        }
 
         @Test
         @DisplayName("Clicking all car parts")
-        public void pickingAllCarPartsTest(){}
+        public void pickingAllCarPartsTest() throws InterruptedException {
+            Assertions.assertTrue(carPartButtons.pickingAllCarPartsCheck(driver),"Required text was displayed on screen");
+        }
+    }
 
+    @Nested
+    @DisplayName("Quote Amount Screen")
+    class quoteAmountScreen{
         @Test
-        @DisplayName("Clicking only the engine and transmission parts")
-        public void pickingOnlyEngineTransmissionPartTest(){}
+        @DisplayName("Getting a quote amount")
+        public void pickingOnlyEngineTransmissionPartTest() throws InterruptedException {
+            Assertions.assertTrue(carPartButtons.pickingOnlyEngineTransmissionPartCheck(driver));
+        }
+
     }
 }

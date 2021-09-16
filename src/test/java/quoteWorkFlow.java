@@ -23,9 +23,9 @@ public class quoteWorkFlow {
         quoteWorkFlow.fillingOutFirstScreen(driver);
         utilities.enteringZipCodeStatic();
         utilities.clickNextButton();
-        utilities.pickingYearOfCarRandom();
-        utilities.pickingModelOfCarRandom();
-        utilities.pickingMakeOfCarRandom();
+        utilities.pickingYearOfCarStatic();
+        utilities.pickingMakeOfCarStatic();
+        utilities.pickingModelOfCarStatic();
         utilities.clickNextButton();
         utilities.clickingNoRadioButtonIsThereDamageToCar();
         utilities.clickNextButton();

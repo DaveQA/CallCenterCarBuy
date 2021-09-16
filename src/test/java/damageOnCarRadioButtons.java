@@ -31,6 +31,9 @@ public class damageOnCarRadioButtons {
         utilities.clickNextButton();
         utilities.clickingYesRadioButtonIsThereDamageToCar();
         boolean typeOfDamageOptionsContainer = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div")).size() > 0;
+            Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return  typeOfDamageOptionsContainer;
     }
 
@@ -46,6 +49,9 @@ public class damageOnCarRadioButtons {
         utilities.clickingNoRadioButtonIsThereDamageToCar();
         boolean typeOfDamageOptionContainer = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div")).size() > 0;
         utilities.clickNextButton();
+            Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return typeOfDamageOptionContainer;
     }
 
@@ -61,6 +67,9 @@ public class damageOnCarRadioButtons {
         utilities.clickingYesRadioButtonIsThereDamageToCar();
         utilities.clickNextButton();
         String currentURL = driver.getCurrentUrl();
+                Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return currentURL;
     }
 
@@ -76,6 +85,9 @@ public class damageOnCarRadioButtons {
         utilities.clickingYesRadioButtonIsThereDamageToCar();
         utilities.clickingYesFireFloodOrRolloverAccidentRadioButton();
         boolean sendToPeddleMessageDueToDamage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > p")).size() > 0;
+                Thread.sleep(1000);
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return sendToPeddleMessageDueToDamage;
     }
 
