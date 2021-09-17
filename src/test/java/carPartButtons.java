@@ -73,15 +73,15 @@ public class carPartButtons {
         return carPartRequiredText;
     }
 
-    public static String pickingNoCarPartsCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingNoCarPartsCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartTransmission();
         utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        utilities.clickNextButton();
+        boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
-        return carPartRequiredText;
+        return nextButtonEnableStatus;
     }
 
     public static boolean pickingAllCarPartsCheck(WebDriver driver1) throws InterruptedException {

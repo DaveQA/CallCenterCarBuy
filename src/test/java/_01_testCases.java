@@ -583,7 +583,7 @@ public class _01_testCases {
         @Test
         @DisplayName("Not picking any car parts")
         public void pickingNoCarPartsTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingNoCarPartsCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+            Assertions.assertFalse(carPartButtons.pickingNoCarPartsCheck(driver));
         }
 
         @Test
