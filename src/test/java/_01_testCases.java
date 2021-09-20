@@ -256,6 +256,16 @@ public class _01_testCases {
         public void phoneNumberFieldSpecialCharacterTest() throws InterruptedException {
             Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringSpecialCharactersInPhoneNumberFieldCheck(driver),"Was able to continue with special characters in the phone number field");
         }
+
+        @Test
+        @DisplayName("Not enough numbers entered")
+        public void notEnoughNumbersEnteredTest(){}
+
+        @Test
+        @DisplayName("To many numbers entered")
+        public void toManyNumbersEnteredTest() throws InterruptedException {
+            Assertions.assertTrue(phoneNumberAlternateNumberFields.toManyNumbersEnteredCheck(driver));
+        }
     }
 
 //    @Nested
@@ -268,6 +278,14 @@ public class _01_testCases {
 //        @Test
 //        @DisplayName("Checking that special characters are not accepted in the phone number field")
 //        public void specialCharacterTest(){}
+//
+//        @Test
+//        @DisplayName("Not enough numbers entered")
+//        public void toFewNumbersTest(){}
+//
+//        @Test
+//        @DisplayName("To many numbers entered")
+//        public void toManyNumbersTest(){}
 //    }
 
     @Nested

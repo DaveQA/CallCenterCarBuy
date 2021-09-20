@@ -31,7 +31,7 @@ public class utilities {
     }
 
     public static void clickTheLoginButton() throws InterruptedException {
-        clickSomething(By.cssSelector("#app > div > div.content > form > div.form-actions > button"));
+        clickSomething(By.cssSelector("#app > div > div.content > form > div.row > div > button"));
                 Thread.sleep(2000);
     }
 
@@ -249,6 +249,11 @@ public class utilities {
 
     public static void clickingCallCodeDashboardSearchButton() throws InterruptedException {
         clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button"));
+                Thread.sleep(1000);
+    }
+
+    public static void clickPhoneNumberField() throws InterruptedException {
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
                 Thread.sleep(1000);
     }
 }
