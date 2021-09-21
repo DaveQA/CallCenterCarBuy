@@ -617,8 +617,8 @@ public class _01_testCases {
     class passQuoteScreen{
         @Test
         @DisplayName("")
-        public void passquotescreenstest() throws InterruptedException {
-            quoteWorkFlow.passTheQuoteScreen(driver);
+        public void gettingToDoesVehicleRunQuestionScreenTest() throws InterruptedException {
+            quoteWorkFlow.gettingToDoesVehicleRunQuestionScreen(driver);
         }
     }
 }
