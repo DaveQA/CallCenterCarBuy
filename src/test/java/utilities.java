@@ -31,8 +31,29 @@ public class utilities {
     }
 
     public static void clickTheLoginButton() throws InterruptedException {
+        waitOnBothErrorMessageAndLoadingGif();
         clickSomething(By.cssSelector("#app > div > div.content > form > div.row > div > button"));
-                Thread.sleep(2000);
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void waitOnButtonToBeClickable(By by){
+        WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver,30);
+        waitOnButtonToBeClickable.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static void waitOnLoadingGif(){
+        WebDriverWait loadingGifWait = new WebDriverWait(driver, 30);
+        loadingGifWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#app > div.loading-container > div.loading")));
+    }
+
+    public static void waitOnErrorMessagePopup(){
+        WebDriverWait errorPopupWait = new WebDriverWait(driver, 30);
+        errorPopupWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
+    }
+
+    public static void waitOnBothErrorMessageAndLoadingGif(){
+        waitOnLoadingGif();
+        waitOnErrorMessagePopup();
     }
 
     public static void logOutOfApplication() throws InterruptedException {
@@ -69,6 +90,7 @@ public class utilities {
     }
 
     public static void clickCallCodeButton() throws InterruptedException {
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
         clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
                 Thread.sleep(2000);
     }
@@ -256,4 +278,8 @@ public class utilities {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
                 Thread.sleep(1000);
     }
+
+    public static void doesVehicleRunRadioButtonYes(){}
+
+    public static void doesVehicleRunRadioButtonNo(){}
 }
