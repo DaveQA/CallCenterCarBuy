@@ -17,6 +17,8 @@ public class damageOnCarRadioButtons {
         utilities.clickNextButton();
         utilities.clickNextButton();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
+        utilities.clickTheRefreshButton();
+        utilities.logOutOfApplication();
         return nextButtonEnableStatus;
     }
 
