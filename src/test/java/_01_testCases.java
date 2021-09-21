@@ -557,36 +557,36 @@ public class _01_testCases {
         @Test
         @DisplayName("Clicking just the battery part button")
         public void pickingCarPartBatteryTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartBatteryCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartBatteryCheck(driver),"Battery button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the catalytic converter part button")
         public void pickingCarPartCatalyticConverterTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartCatalyticConverterCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartCatalyticConverterCheck(driver),"Catalytic Converter button was not clicked");
         }
 
         @Test@DisplayName("Clicking just the Engine part button")
         public void pickingCarPartEngineTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartEngineCheck(driver),"We can't buy your vehicle without the following component: Transmission.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartEngineCheck(driver),"Engine button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the radiator part button")
         public void pickingCarPartRadiatorTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartRadiatorCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartRadiatorCheck(driver),"Radiator button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the tires part button")
         public void pickingCarPartTiresTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartTiresCheck(driver),"We can't buy your vehicle without the following component: Engine,Transmission.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartTiresCheck(driver),"Tire button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the transmission part button")
         public void pickingCarPartTransmissionTest() throws InterruptedException {
-            Assertions.assertEquals(carPartButtons.pickingCarPartTransmissionCheck(driver),"We can't buy your vehicle without the following component: Engine.","Required text does not match expected");
+            Assertions.assertTrue(carPartButtons.pickingCarPartTransmissionCheck(driver),"Transmission button was not clicked");
         }
 
         @Test
@@ -613,12 +613,12 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("")
+    @DisplayName("Vehicle Run Buttons")
     class passQuoteScreen{
         @Test
-        @DisplayName("")
-        public void passquotescreenstest() throws InterruptedException {
-            quoteWorkFlow.passTheQuoteScreen(driver);
+        @DisplayName("Clicking yes the vehicle runs")
+        public void vehicleRunYesTest() throws InterruptedException {
+            quoteWorkFlow.gettingToDoesTheVehicleRunQuestion(driver);
         }
     }
 }

@@ -30,7 +30,7 @@ public class utilities {
                 Thread.sleep(2000);
     }
 
-    public static void clickTheLoginButton() throws InterruptedException {
+    public static void clickTheLoginButton() {
         waitOnBothErrorMessageAndLoadingGif();
         clickSomething(By.cssSelector("#app > div > div.content > form > div.row > div > button"));
         waitOnBothErrorMessageAndLoadingGif();
@@ -96,6 +96,8 @@ public class utilities {
     }
 
     public static void clickNextButton() throws InterruptedException {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
         WebElement scrollToButton = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
                 + "var elementTop = arguments[0].getBoundingClientRect().top;"
@@ -104,6 +106,7 @@ public class utilities {
                 Thread.sleep(1000);
         clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
                 Thread.sleep(1500);
+        waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clickNewQuoteButton() throws InterruptedException {
@@ -279,7 +282,17 @@ public class utilities {
                 Thread.sleep(1000);
     }
 
-    public static void doesVehicleRunRadioButtonYes(){}
+    public static void doesVehicleRunRadioButtonYes(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
 
-    public static void doesVehicleRunRadioButtonNo(){}
+    public static void doesVehicleRunRadioButtonNo(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
 }

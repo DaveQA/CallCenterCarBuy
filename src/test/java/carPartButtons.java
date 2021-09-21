@@ -7,67 +7,61 @@ public class carPartButtons {
 
     private static WebDriver driver;
 
-    public static String pickingCarPartBatteryCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartBatteryCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartBattery();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
     }
 
-    public static String pickingCarPartCatalyticConverterCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartCatalyticConverterCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartCatalyticConverter();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
     }
 
-    public static String pickingCarPartEngineCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartEngineCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartEngine();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
     }
 
-    public static String pickingCarPartRadiatorCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartRadiatorCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartRadiator();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
     }
 
-    public static String pickingCarPartTiresCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartTiresCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartTires();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
     }
 
-    public static String pickingCarPartTransmissionCheck(WebDriver driver1) throws InterruptedException {
+    public static boolean pickingCarPartTransmissionCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartTransmission();
-        utilities.clickNextButton();
-        String carPartRequiredText = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).getText();
+        boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return carPartRequiredText;
@@ -76,7 +70,6 @@ public class carPartButtons {
     public static boolean pickingNoCarPartsCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.clickNextButton();
         utilities.clickNextButton();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         utilities.clickTheRefreshButton();
