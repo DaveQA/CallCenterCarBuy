@@ -279,7 +279,15 @@ public class utilities {
                 Thread.sleep(1000);
     }
 
-    public static void doesVehicleRunRadioButtonYes(){}
+    public static void doesVehicleRunRadioButtonYes(){
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
 
-    public static void doesVehicleRunRadioButtonNo(){}
+    public static void doesVehicleRunRadioButtonNo(){
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
 }

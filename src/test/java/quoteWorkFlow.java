@@ -34,7 +34,7 @@ public class quoteWorkFlow {
         utilities.clickNextButton();
     }
 
-    public static void passTheQuoteScreen (WebDriver driver1) throws InterruptedException {
+    public static void gettingToDoesVehicleRunQuestionScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         utilities.pickingCarPartEngine();
