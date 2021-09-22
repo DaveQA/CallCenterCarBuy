@@ -64,5 +64,12 @@ public class quoteWorkFlow {
         fillingOutFirstScreen(driver);
         fillingOutSecondScreen(driver);
         fillingOutQuoteOfferScreen(driver);
+        utilities.clickNextButton();
+        utilities.doesVehicleRunRadioButton_Yes();
+        utilities.whereIsVehicleParkedButton_Business();
+        utilities.clickNextButton();
+        utilities.clickNextButton();
+        utilities.clickNextButton();
+        utilities.datePicker();
     }
 }
