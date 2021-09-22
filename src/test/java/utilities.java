@@ -13,21 +13,21 @@ public class utilities {
         driver = driver1;
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(3) > input"),"mf");
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(4) > input"),"mf");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
     }
 
     public static void enterBadLoginInfo(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(3) > input"),"THISISNOTTHEUSERNAME");
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(4) > input"),"THISISNOTTHEPASSWORD");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
     }
 
     public static void enterNoLoginInfo(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(3) > input"),"");
         typeSomething(By.cssSelector("#app > div > div.content > form > div:nth-child(4) > input"),"");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
     }
 
     public static void clickTheLoginButton() {
@@ -282,17 +282,130 @@ public class utilities {
                 Thread.sleep(1000);
     }
 
-    public static void doesVehicleRunRadioButtonYes(){
+    public static void doesVehicleRunRadioButton_Yes(){
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
-        waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void doesVehicleRunRadioButtonNo(){
+    public static void doesVehicleRunRadioButton_No(){
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+    }
+
+    public static void whereIsVehicleParkedButton_Residence(){
         waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
+    }
+
+    public static void whereIsVehicleParkedButton_Business(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
+    }
+
+    public static void proofOfOwnership_Title(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(2) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(2) > label"));
+    }
+
+    public static void proofOfOwnership_VehicleRegistration(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(3) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(3) > label"));
+    }
+
+    public static void proofOfOwnership_BillOfSaleWithKeys(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(4) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(4) > label"));
+    }
+
+    public static void proofOfOwnership_InsuranceCardWithKeys(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(5) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(5) > label"));
+    }
+
+    public static void proofOfIdentification_DriversLicense(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > label"));
+    }
+
+    public static void proofOfIdentification_StateID(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > label"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void proofOfIdentification_Passport(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(4) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(4) > label"));
+    }
+
+    public static void proofOfIdentification_MilitaryID(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(5) > label"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(5) > label"));
+    }
+
+    public static void haulerScreenAddress1Field(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"),"Address 1 Field");
+    }
+
+    public static void haulerScreenAddress2Field(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"),"Address 2 Field");
+    }
+
+    public static void haulerScreenCityField(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"),"City Field");
+    }
+
+    public static void haulerScreenNotesField(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"),"Hauler Notes Field");
+    }
+
+    public static void clickOnDataPicker(){
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void datePicker() {
+        driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input")).click();
+        String month = "Apr 2024";
+        String day = "30";
+        while(true)
+        {
+            String displayedMonthYear = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.day__month_btn.up")).getText();
+            System.out.println(displayedMonthYear);
+            if(displayedMonthYear.equals(month))
+            {
+                break;
+            }
+            else
+            {
+                driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.next")).click();
+            }
+        }
     }
 }
