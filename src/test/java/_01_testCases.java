@@ -112,12 +112,12 @@ public class _01_testCases {
 //        public void typingInBadCallCodeTest() throws InterruptedException {
 //            Assertions.assertEquals(speedDailContainer.typingInBadCallCodeCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue with a bad call code number");
 //        }
-
-        @Test
-        @DisplayName("Trying to continue with no call code entered")
-        public void typingNothingInTheCallCodeContainerTest() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.typingNothingInTheCallCodeContainerCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue without entering a call code");
-        }
+//
+//        @Test
+//        @DisplayName("Trying to continue with no call code entered")
+//        public void typingNothingInTheCallCodeContainerTest() throws InterruptedException {
+//            Assertions.assertEquals(speedDailContainer.typingNothingInTheCallCodeContainerCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue without entering a call code");
+//        }
 
         @Test
         @DisplayName("Checking call code 833 codeID")
