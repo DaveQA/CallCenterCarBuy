@@ -392,6 +392,62 @@ public class utilities {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
+    public static void enterGoodEmailAddress() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"vip1000682431@gmail.com");
+        Thread.sleep(2000);
+    }
+
+    public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"NotaRealEmail");
+        Thread.sleep(2000);
+    }
+
+    public static void enteringFakeEmailAddressInformation() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"),"NotaRealEmail@nope.com");
+        Thread.sleep(2000);
+    }
+
+    public static void enterStaticFirstName() throws InterruptedException {
+        utilities.typeSomething(By.cssSelector("#firstname"),"John");
+        Thread.sleep(1000);
+    }
+
+    public static void enterStaticLastName() throws InterruptedException {
+        utilities.typeSomething(By.cssSelector("#lastname"),"Doe");
+        Thread.sleep(1000);
+    }
+
+    public static void enterGoodPhoneNumber() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"5555555555");
+        Thread.sleep(1000);
+    }
+
+    public static void enterAlphaCharactersInPhoneNumberField() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"Not a Phone Number");
+        Thread.sleep(1000);
+    }
+
+    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"@#$%^&*(");
+        Thread.sleep(1000);
+    }
+
+    public static void enterAlternatePhoneNumber() throws InterruptedException {
+        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"),"4444444444");
+        Thread.sleep(1000);
+    }
+
+    public static void enteringToManyNumbers(){
+        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"11122233440");
+    }
+
     public static void datePicker() {
         driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input")).click();
         String month = "Apr 2024";
@@ -409,6 +465,6 @@ public class utilities {
                 driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.next")).click();
             }
         }
-        }
     }
+}
 

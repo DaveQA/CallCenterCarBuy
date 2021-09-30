@@ -12,12 +12,12 @@ public class quoteWorkFlow {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        firstNameLastNameFields.enterStaticFirstName();
-        firstNameLastNameFields.enterStaticLastName();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        phoneNumberAlternateNumberFields.enterGoodPhoneNumber();
-        emailAddressField.enterGoodEmailAddress();
+        utilities.enterGoodPhoneNumber();
+        utilities.enterGoodEmailAddress();
         utilities.clickNextButton();
     }
 
