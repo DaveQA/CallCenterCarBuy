@@ -6,24 +6,25 @@ public class speedDailContainer {
 
     private static WebDriver driver;
 
-    public static String clickCallCode833Button(WebDriver driver1) throws InterruptedException {
+    public static String clickCallCode_OnlineQuoteCallbackNumberOLD_Button(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
-                Thread.sleep(3000);
-        String callCode833URL = driver.getCurrentUrl();
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+        utilities.waitOnBothErrorMessageAndLoadingGif();
+                Thread.sleep(1000);
+        String callCodeCallBackNumberOldURL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
-        return callCode833URL;
+        return callCodeCallBackNumberOldURL;
     }
 
     public static String clickCallCode500Button(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
-                Thread.sleep(3000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode500URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -34,8 +35,8 @@ public class speedDailContainer {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(3) > div > div.details > div.number"));
-                Thread.sleep(4000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(3) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode501URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -46,8 +47,8 @@ public class speedDailContainer {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(4) > div > div.details > div.number"));
-                Thread.sleep(3000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode502URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -58,8 +59,8 @@ public class speedDailContainer {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(5) > div > div.details > div.number"));
-                Thread.sleep(3000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode503URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -70,8 +71,8 @@ public class speedDailContainer {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(6) > div > div.details > div.number"));
-                Thread.sleep(3000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode504URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -82,8 +83,8 @@ public class speedDailContainer {
         driver = driver1;
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
-        utilities.clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(7) > div > div.details > div.number"));
-                Thread.sleep(3000);
+        utilities.clickSomething(By.cssSelector("div.col-auto:nth-child(7) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+                Thread.sleep(1000);
         String callCode510URL = driver.getCurrentUrl();
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();

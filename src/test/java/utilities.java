@@ -68,12 +68,14 @@ public class utilities {
     }
 
     public static void clickLogoButton() throws InterruptedException {
+        waitOnBothErrorMessageAndLoadingGif();
         clickSomething(By.cssSelector("#app > div > div:nth-child(1) > div > div > div.page-header-top > div > div.page-logo > a"));
                 Thread.sleep(2000);
     }
 
     public static void clickTheRefreshButton() throws InterruptedException {
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a > i"));
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
                 Thread.sleep(2000);
     }
 
@@ -407,5 +409,6 @@ public class utilities {
                 driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.next")).click();
             }
         }
+        }
     }
-}
+

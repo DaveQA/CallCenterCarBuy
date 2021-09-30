@@ -1,7 +1,13 @@
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.File;
+import java.io.IOException;
 
 public class _01_testCases {
 
@@ -14,7 +20,12 @@ public class _01_testCases {
         options.addArguments("--incognito", "--start-maximized");
         driver = new ChromeDriver(options);
         driver.get("https://qa-carbuy.pullapart.com/#/login");
-        //testtesttesttest
+    }
+
+    public void screenshot() throws IOException {
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(source,new File("C:\\Users\\dholliday\\Desktop.png"));
     }
 
     @Nested
@@ -101,28 +112,10 @@ public class _01_testCases {
     @DisplayName("Call code buttons - speed dail")
     class callCodeButtonsTests{
 
-//        @Test
-//        @DisplayName("Typing in active call code")
-//        public void typingInGoodCallCodeTest() throws InterruptedException {
-//            Assertions.assertEquals(speedDailContainer.typingInGoodCallCodeCheck(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163","Check URL, call code did not match");
-//        }
-
-//        @Test
-//        @DisplayName("Typing in bad call code")
-//        public void typingInBadCallCodeTest() throws InterruptedException {
-//            Assertions.assertEquals(speedDailContainer.typingInBadCallCodeCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue with a bad call code number");
-//        }
-//
-//        @Test
-//        @DisplayName("Trying to continue with no call code entered")
-//        public void typingNothingInTheCallCodeContainerTest() throws InterruptedException {
-//            Assertions.assertEquals(speedDailContainer.typingNothingInTheCallCodeContainerCheck(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to continue without entering a call code");
-//        }
-
         @Test
-        @DisplayName("Checking call code 833 codeID")
+        @DisplayName("Checking call code Online Quote Callback Number (OLD) button ID")
         public void clickingTheCallCode833ButtonTest() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode833Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
+            Assertions.assertEquals(speedDailContainer.clickCallCode_OnlineQuoteCallbackNumberOLD_Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3","Call code ID did not match expected");
         }
 
         @Test
