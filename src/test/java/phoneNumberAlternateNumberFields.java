@@ -10,8 +10,8 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        firstNameLastNameFields.enterStaticFirstName();
-        firstNameLastNameFields.enterStaticLastName();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
         utilities.clickNextButton();
@@ -26,11 +26,11 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        firstNameLastNameFields.enterStaticFirstName();
-        firstNameLastNameFields.enterStaticLastName();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        enterAlphaCharactersInPhoneNumberField();
+        utilities.enterAlphaCharactersInPhoneNumberField();
         boolean alphaCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -42,11 +42,11 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        firstNameLastNameFields.enterStaticFirstName();
-        firstNameLastNameFields.enterStaticLastName();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        enterSpecialCharactersInPhoneNumberField();
+        utilities.enterSpecialCharactersInPhoneNumberField();
         boolean specialCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
@@ -58,42 +58,14 @@ public class phoneNumberAlternateNumberFields {
         utilities.enterGoodLoginInfo(driver);
         utilities.clickTheLoginButton();
         utilities.clickCallCodeButton();
-        firstNameLastNameFields.enterStaticFirstName();
-        firstNameLastNameFields.enterStaticLastName();
+        utilities.enterStaticFirstName();
+        utilities.enterStaticLastName();
         utilities.clickNextButton();
         utilities.clickNewQuoteButton();
-        enteringToManyNumbers();
+        utilities.enteringToManyNumbers();
         boolean toManyNumberEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         utilities.clickTheRefreshButton();
         utilities.logOutOfApplication();
         return toManyNumberEnterErrorText;
-    }
-
-    public static void enterGoodPhoneNumber() throws InterruptedException {
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"5555555555");
-        Thread.sleep(1000);
-    }
-
-    public static void enterAlphaCharactersInPhoneNumberField() throws InterruptedException {
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"Not a Phone Number");
-        Thread.sleep(1000);
-    }
-
-    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"@#$%^&*(");
-        Thread.sleep(1000);
-    }
-
-    public static void enterAlternatePhoneNumber() throws InterruptedException {
-        utilities.clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
-        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"),"4444444444");
-        Thread.sleep(1000);
-    }
-
-    public static void enteringToManyNumbers(){
-        utilities.typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"),"11122233440");
     }
 }
