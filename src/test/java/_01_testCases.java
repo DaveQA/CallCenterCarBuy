@@ -29,7 +29,7 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("Checking the login page process")TESTTEST
+    @DisplayName("Checking the login page process")
     class loginPageTest{
         @Test
         @DisplayName("Tried entering nothing and login")
