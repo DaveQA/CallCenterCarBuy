@@ -1,13 +1,7 @@
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.io.File;
-import java.io.IOException;
 
 public class _01_testCases {
 
@@ -15,38 +9,32 @@ public class _01_testCases {
 
     @BeforeAll
     public static void browserSetup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dholliday\\Desktop\\Automated Testing\\Selenium\\Selenium Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dholliday\\Desktop\\Automated Testing\\Selenium\\WebDrivers\\Chrome\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito", "--start-maximized");
         driver = new ChromeDriver(options);
         driver.get("https://qa-carbuy.pullapart.com/#/login");
     }
 
-    public void screenshot() throws IOException {
-        TakesScreenshot ts = (TakesScreenshot)driver;
-        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(source,new File("C:\\Users\\dholliday\\Desktop.png"));
-    }
-
     @Nested
     @DisplayName("Checking the login page process")
-    class loginPageTest{
+    class mainLoginPageTest {
         @Test
         @DisplayName("Tried entering nothing and login")
         public void enteringBadUserInformationOnLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPage.enteringBadUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
+            Assertions.assertEquals(mainLoginPage.enteringBadUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
         @DisplayName("Tried entering bad user information and login")
         public void enteringNoLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPage.enteringNoUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
+            Assertions.assertEquals(mainLoginPage.enteringNoUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
         @DisplayName("Tried entering good user information and login")
         public void enteringGoodLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(loginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to login");
+            Assertions.assertEquals(mainLoginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to login");
         }
     }
 
