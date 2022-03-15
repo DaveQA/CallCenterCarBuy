@@ -20,19 +20,19 @@ public class _01_testCases {
     @DisplayName("Checking the login page process")
     class mainLoginPageTest {
         @Test
-        @DisplayName("Tried entering nothing and login")
+        @DisplayName("Try entering nothing and login")
         public void enteringBadUserInformationOnLoginScreenTest() throws InterruptedException {
             Assertions.assertEquals(mainLoginPage.enteringBadUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
-        @DisplayName("Tried entering bad user information and login")
+        @DisplayName("Try entering bad user information and login")
         public void enteringNoLoginInformationOnTheLoginScreenTest() throws InterruptedException {
             Assertions.assertEquals(mainLoginPage.enteringNoUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/login","Was able to login");
         }
 
         @Test
-        @DisplayName("Tried entering good user information and login")
+        @DisplayName("Try entering good user information and login")
         public void enteringGoodLoginInformationOnTheLoginScreenTest() throws InterruptedException {
             Assertions.assertEquals(mainLoginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Was able to login");
         }
