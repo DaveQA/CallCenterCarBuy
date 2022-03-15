@@ -17,7 +17,7 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("Checking the login page process")//TESTsadsadassadsa
+    @DisplayName("Checking the login page process")//TEST 2022_03_15_04
     class mainLoginPageTest {
         @Test
         @DisplayName("Tried entering nothing and login")
