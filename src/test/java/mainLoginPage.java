@@ -1,4 +1,8 @@
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import static ClickLinkUtilities.clickLinks.*;
 
 public class mainLoginPage {
 
@@ -6,8 +10,8 @@ public class mainLoginPage {
 
     public static String enteringNoUserInformationOnTheLoginPage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        utilities.enterNoLoginInfo(driver);
-        utilities.clickTheLoginButton();
+        enterNoLoginInfo(driver);
+        clickTheLoginButton();
         String currentURLAfterNoUserInfoEntered = driver.getCurrentUrl();
                 Thread.sleep(1000);
         return currentURLAfterNoUserInfoEntered;
@@ -15,8 +19,8 @@ public class mainLoginPage {
 
     public static String enteringBadUserInformationOnTheLoginPage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        utilities.enterBadLoginInfo(driver);
-        utilities.goToLoginPage();
+        enterBadLoginInfo(driver);
+        goToLoginPage();
         String currentURLAfterBadUserInfoEntered = driver.getCurrentUrl();
                 Thread.sleep(1000);
         return currentURLAfterBadUserInfoEntered;
@@ -24,12 +28,12 @@ public class mainLoginPage {
 
     public static String enteringGoodUserInformationOnTheLoginPage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        utilities.enterGoodLoginInfo(driver);
-        utilities.clickTheLoginButton();
+        enterGoodLoginInfo(driver);
+        clickTheLoginButton();
         String currentURLAfterGoodInfoEntered = driver.getCurrentUrl();
-                Thread.sleep(2000);
-        utilities.clickSkipButton();
-        utilities.logOutOfApplication();
+        clickSkipButton();
+        logOutOfApplication();
+        logOutOfApplication();
         return currentURLAfterGoodInfoEntered;
     }
 }

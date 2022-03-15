@@ -3,6 +3,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static ClickLinkUtilities.clickLinks.*;
+
 public class carPartButtons {
 
     private static WebDriver driver;
@@ -10,94 +12,94 @@ public class carPartButtons {
     public static boolean pickingCarPartBatteryCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartBattery();
+        pickingCarPartBattery();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingCarPartCatalyticConverterCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartCatalyticConverter();
+        pickingCarPartCatalyticConverter();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingCarPartEngineCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartEngine();
+        pickingCarPartEngine();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingCarPartRadiatorCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartRadiator();
+        pickingCarPartRadiator();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingCarPartTiresCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartTires();
+        pickingCarPartTires();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingCarPartTransmissionCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartTransmission();
+        pickingCarPartTransmission();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return carPartRequiredText;
     }
 
     public static boolean pickingNoCarPartsCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.clickNextButton();
+        clickNextButton();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return nextButtonEnableStatus;
     }
 
     public static boolean pickingAllCarPartsCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartBattery();
-        utilities.pickingCarPartCatalyticConverter();
-        utilities.pickingCarPartEngine();
-        utilities.pickingCarPartRadiator();
-        utilities.pickingCarPartTires();
-        utilities.pickingCarPartTransmission();
+        pickingCarPartBattery();
+        pickingCarPartCatalyticConverter();
+        pickingCarPartEngine();
+        pickingCarPartRadiator();
+        pickingCarPartTires();
+        pickingCarPartTransmission();
         boolean currentURL = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return currentURL;
     }
 
     public static boolean pickingOnlyEngineTransmissionPartCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        utilities.pickingCarPartEngine();
-        utilities.pickingCarPartTransmission();
-        utilities.clickNextButton();
+        pickingCarPartEngine();
+        pickingCarPartTransmission();
+        clickNextButton();
                 Thread.sleep(1000);
         boolean quoteOfferContainer = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > p")).getText().endsWith("buy your vehicle?");
         WebElement scrollToTopOfWizard = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.caption"));
@@ -106,8 +108,8 @@ public class carPartButtons {
                 + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToTopOfWizard);
                 Thread.sleep(1000);
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return quoteOfferContainer;
     }
 }

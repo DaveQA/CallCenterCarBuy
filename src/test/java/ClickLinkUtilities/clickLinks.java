@@ -5,12 +5,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
+
+//import static ClickLinkUtilities.typingStuff.*;
+
+//import static ClickLinkUtilities.waitOnThings.*;
 
 public class clickLinks {
 
     private static WebDriver driver;
+
+    public static void typeSomething(By by, String value){
+        driver.findElement(by).sendKeys(value);
+    }
 
     public static void enterGoodLoginInfo(WebDriver driver1) throws InterruptedException {
         driver = driver1;
@@ -39,35 +48,21 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void waitOnButtonToBeClickable(By by){
-        WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver,30);
-        waitOnButtonToBeClickable.until(ExpectedConditions.elementToBeClickable(by));
-    }
-
-    public static void waitOnLoadingGif(){
-        WebDriverWait loadingGifWait = new WebDriverWait(driver, 30);
-        loadingGifWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#app > div.loading-container > div.loading")));
-    }
-
-    public static void waitOnErrorMessagePopup(){
-        WebDriverWait errorPopupWait = new WebDriverWait(driver, 30);
-        errorPopupWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
-    }
-
-    public static void waitOnBothErrorMessageAndLoadingGif(){
-        waitOnLoadingGif();
-        waitOnErrorMessagePopup();
-    }
-
     public static void logOutOfApplication() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
-        clickSomething(By.cssSelector("#app > div > div:nth-child(1) > div > div > div.page-header-top > div > div.top-menu > ul > li.dropdown.dropdown-extended.quick-sidebar-toggler > i"));
+        waitOnBothErrorMessageAndLoadingGif();
+//        waitOnButtonToBeClickable(By.xpath("//i[@class='icon-logout']"));
+        Thread.sleep(2000);
+        clickSomething(By.xpath("//i[@class='icon-logout']"));
     }
 
     public static void goToLoginPage() throws InterruptedException {
         driver.get("https://qa-carbuy.pullapart.com/#/login");
         Thread.sleep(2000);
+    }
+
+    public static void clickSkipButton(){
+        waitOnBothErrorMessageAndLoadingGif();
+        driver.findElement(By.xpath("//button[@type='button']")).click();
     }
 
     public static void clickLogoButton() throws InterruptedException {
@@ -84,10 +79,6 @@ public class clickLinks {
 
     public static void clickSomething(By by){
         driver.findElement(by).click();
-    }
-
-    public static void typeSomething(By by, String value){
-        driver.findElement(by).sendKeys(value);
     }
 
     public static void tabOnKeyBoard(By by){
@@ -469,4 +460,26 @@ public class clickLinks {
             }
         }
     }
+
+
+    public static void waitOnButtonToBeClickable(By by){
+        WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitOnButtonToBeClickable.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static void waitOnLoadingGif(){
+        WebDriverWait loadingGifWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        loadingGifWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#app > div.loading-container > div.loading")));
+    }
+
+    public static void waitOnErrorMessagePopup(){
+        WebDriverWait errorPopupWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        errorPopupWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
+    }
+
+    public static void waitOnBothErrorMessageAndLoadingGif(){
+        waitOnLoadingGif();
+        waitOnErrorMessagePopup();
+    }
+
 }
