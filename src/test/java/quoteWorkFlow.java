@@ -3,37 +3,39 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static ClickLinkUtilities.clickLinks.*;
+
 public class quoteWorkFlow {
 
     private static WebDriver driver;
 
     public static void fillingOutFirstScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        utilities.enterGoodLoginInfo(driver);
-        utilities.clickTheLoginButton();
-        utilities.clickCallCodeButton();
-        utilities.enterStaticFirstName();
-        utilities.enterStaticLastName();
-        utilities.clickNextButton();
-        utilities.clickNewQuoteButton();
-        utilities.enterGoodPhoneNumber();
-        utilities.enterGoodEmailAddress();
-        utilities.clickNextButton();
+        enterGoodLoginInfo(driver);
+        clickTheLoginButton();
+        clickCallCodeButton();
+        enterStaticFirstName();
+        enterStaticLastName();
+        clickNextButton();
+        clickNewQuoteButton();
+        enterGoodPhoneNumber();
+        enterGoodEmailAddress();
+        clickNextButton();
     }
 
     public static void fillingOutSecondScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.pickingYearOfCarStatic();
-        utilities.pickingMakeOfCarStatic();
-        utilities.pickingModelOfCarStatic();
-        utilities.clickNextButton();
-        utilities.clickingNoRadioButtonIsThereDamageToCar();
-        utilities.clickNextButton();
-        utilities.pickingCarPartEngine();
-        utilities.pickingCarPartTransmission();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        pickingYearOfCarStatic();
+        pickingMakeOfCarStatic();
+        pickingModelOfCarStatic();
+        clickNextButton();
+        clickingNoRadioButtonIsThereDamageToCar();
+        clickNextButton();
+        pickingCarPartEngine();
+        pickingCarPartTransmission();
+        clickNextButton();
     }
 
     public static void fillingOutQuoteOfferScreen(WebDriver driver1) throws InterruptedException {
@@ -43,20 +45,20 @@ public class quoteWorkFlow {
                 + "var elementTop = arguments[0].getBoundingClientRect().top;"
                 + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToTopOfWizard);
-        utilities.clickNextButton();
+        clickNextButton();
     }
 
     public static void gettingToCarPartListContainer(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.pickingYearOfCarStatic();
-        utilities.pickingMakeOfCarStatic();
-        utilities.pickingModelOfCarStatic();
-        utilities.clickNextButton();
-        utilities.clickingNoRadioButtonIsThereDamageToCar();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        pickingYearOfCarStatic();
+        pickingMakeOfCarStatic();
+        pickingModelOfCarStatic();
+        clickNextButton();
+        clickingNoRadioButtonIsThereDamageToCar();
+        clickNextButton();
     }
 
     public static void gettingToDoesTheVehicleRunQuestion(WebDriver driver1) throws InterruptedException {
@@ -64,12 +66,12 @@ public class quoteWorkFlow {
         fillingOutFirstScreen(driver);
         fillingOutSecondScreen(driver);
         fillingOutQuoteOfferScreen(driver);
-        utilities.clickNextButton();
-        utilities.doesVehicleRunRadioButton_Yes();
-        utilities.whereIsVehicleParkedButton_Business();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.datePicker();
+        clickNextButton();
+        doesVehicleRunRadioButton_Yes();
+        whereIsVehicleParkedButton_Business();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
+        datePicker();
     }
 }

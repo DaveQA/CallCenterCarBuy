@@ -9,7 +9,7 @@ public class _01_testCases {
 
     @BeforeAll
     public static void browserSetup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dholliday\\Desktop\\Automated Testing\\Selenium\\WebDrivers\\Chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dholliday\\Desktop\\QA Resources\\Selenium Project Items\\WebDrivers\\Chrome\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito", "--start-maximized");
         driver = new ChromeDriver(options);

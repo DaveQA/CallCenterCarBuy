@@ -1,10 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-import java.util.Random;
+import static ClickLinkUtilities.clickLinks.*;
 
 public class yearMakeModelDropdowns {
 
@@ -13,65 +10,65 @@ public class yearMakeModelDropdowns {
     public static boolean yearIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
         boolean yearRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0;
         Thread.sleep(1000);
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return yearRequiredText;
     }
 
     public static boolean makeIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.pickingYearOfCarRandom();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        pickingYearOfCarRandom();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
         boolean makeRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0;
                 Thread.sleep(1000);
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return makeRequiredText;
     }
 
     public static boolean modelIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.pickingYearOfCarRandom();
-        utilities.pickingMakeOfCarRandom();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        pickingYearOfCarRandom();
+        pickingMakeOfCarRandom();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
         boolean modelRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
                 Thread.sleep(1000);
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return modelRequiredText;
     }
 
     public static boolean allYearMakeModelDropdownsAreRequired(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        utilities.enteringZipCodeStatic();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
-        utilities.clickNextButton();
+        enteringZipCodeStatic();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
+        clickNextButton();
         boolean nextButtonEnableStatus = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0
             && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0
             && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
                 Thread.sleep(1000);
-        utilities.clickTheRefreshButton();
-        utilities.logOutOfApplication();
+        clickTheRefreshButton();
+        logOutOfApplication();
         return nextButtonEnableStatus;
     }
 }
