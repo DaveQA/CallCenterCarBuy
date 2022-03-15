@@ -28,6 +28,7 @@ public class mainLoginPage {
         utilities.clickTheLoginButton();
         String currentURLAfterGoodInfoEntered = driver.getCurrentUrl();
                 Thread.sleep(2000);
+        utilities.clickSkipButton();
         utilities.logOutOfApplication();
         return currentURLAfterGoodInfoEntered;
     }

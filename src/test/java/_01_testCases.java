@@ -17,7 +17,7 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("Checking the login page process")//TEST
+    @DisplayName("Checking the login page process")
     class mainLoginPageTest {
         @Test
         @DisplayName("Tried entering nothing and login")
@@ -34,7 +34,7 @@ public class _01_testCases {
         @Test
         @DisplayName("Tried entering good user information and login")
         public void enteringGoodLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(mainLoginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Was able to login");
+            Assertions.assertEquals(mainLoginPage.enteringGoodUserInformationOnTheLoginPage(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Was able to login");
         }
     }
 
@@ -140,22 +140,6 @@ public class _01_testCases {
         @DisplayName("Checking call code 510 codeID")
         public void clickingCallCode510Button() throws InterruptedException {
             Assertions.assertEquals(speedDailContainer.clickCallCode510Button(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193","Call code ID did not match expected");
-        }
-    }
-
-    @Nested
-    @DisplayName("Coming Soon pages")
-    class comingSoonPagesTests{
-        @Test
-        @DisplayName("Coming Soon Page - Notification Page")
-        public void checkComingSoonTextOnNotificationsPageTest() throws InterruptedException {
-            Assertions.assertEquals(topNav.adminGeneralSettingsNotificationPageComingSoonText(driver),"COMING SOON","Coming Soon text ");
-        }
-
-        @Test
-        @DisplayName("Coming Soon Page - Restriction Page")
-        public void checkComingSoonTextOnRestrictionsPageTest() throws InterruptedException {
-            Assertions.assertEquals(topNav.adminGeneralSettingsRestrictionsPageComingSoonText(driver),"COMING SOON");
         }
     }
 
