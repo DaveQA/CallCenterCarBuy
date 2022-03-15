@@ -11,10 +11,10 @@ public class approvedZipCodes {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         clickLinks.enteringOutOfAreaZipCode();
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         boolean outOfAreaPeddleMessage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-horizontal > div > div:nth-child(5)")).size() > 0;
         clickLinks.clickTheRefreshButton();
-                Thread.sleep(3000);
+        Thread.sleep(3000);
         clickLinks.logOutOfApplication();
         return outOfAreaPeddleMessage;
     }
@@ -27,7 +27,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -42,7 +42,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -57,7 +57,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -72,7 +72,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -87,7 +87,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -102,7 +102,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -117,7 +117,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -132,7 +132,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -147,7 +147,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -162,7 +162,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -177,7 +177,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -192,7 +192,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -207,7 +207,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -222,7 +222,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -237,7 +237,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -252,7 +252,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -267,7 +267,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -282,7 +282,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -297,7 +297,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -312,7 +312,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -327,7 +327,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -342,7 +342,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -357,7 +357,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -372,7 +372,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -387,7 +387,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
@@ -402,7 +402,7 @@ public class approvedZipCodes {
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.cssSelector("#zipCode")).sendKeys(randomZipCodeUsed);
         clickLinks.tabOnKeyBoard(By.cssSelector("#zipCode"));
-                Thread.sleep(2000);
+        Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
         clickLinks.logOutOfApplication();
