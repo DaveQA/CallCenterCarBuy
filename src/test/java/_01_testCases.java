@@ -50,25 +50,26 @@ public class _01_testCases {
         @Test
         @DisplayName("Empty - Try entering nothing and login")
         public void empty_InformationOnTheMainLoginScreenTest() {
-            Assertions.assertEquals(mitelLoginScreen.empty_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on Mitel Login screen");
+            Assertions.assertEquals(mitelLoginScreen.empty_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
         }
 
         @Test
         @DisplayName("Bad - Try entering bad user information and login")
         public void bad_InformationOnTheMainLoginScreenTest() {
-            Assertions.assertEquals(mitelLoginScreen.bad_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on the Mitel Login screen");
+            Assertions.assertEquals(mitelLoginScreen.bad_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
         @DisplayName("Fake - Try entering bad user information and login")
         public void fake_InformationOnTheMainLoginScreenTest() {
-            Assertions.assertEquals(mitelLoginScreen.fake_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on the Mitel Login screen");
+            Assertions.assertEquals(mitelLoginScreen.fake_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
-        @DisplayName("Good - Try entering good user information and login")// might be better to check the mitel status on the dashboard
+        @DisplayName("Good - Try entering good user information and login")
+// might be better to check the mitel status on the dashboard
         public void good_InformationOnTheMainLoginScreenTest() {
-            Assertions.assertEquals(mitelLoginScreen.good_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Not on the Mitel Login screen");
+            Assertions.assertEquals(mitelLoginScreen.good_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
         }
     }
 
@@ -76,57 +77,39 @@ public class _01_testCases {
     @DisplayName("Checking top navigation links")
     class TopNavLinksTests {
         @Test
-        @DisplayName("Top nav link - Dashboard")
+        @DisplayName("Clicking on link in top nav - Dashboard")
         public void topNavDashboardLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavDashboardLink(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Top nav link - Notification")
+        @DisplayName("Clicking on link in top nav - Notification")
         public void topNavNotificationsLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavNotificationsLink(driver), "https://qa-carbuy.pullapart.com/#/notifications", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Notifications(driver), "https://qa-carbuy.pullapart.com/#/notifications", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Top nav link - Admin Advance Features Quote")
+        @DisplayName("Clicking on link in top nav - Admin Advance Features Quote")
         public void topNavAdminAdvanceFeaturesQuoteLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesQuoteLink(driver), "https://qa-carbuy.pullapart.com/#/admin/quotes", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Quote(driver), "https://qa-carbuy.pullapart.com/#/admin/quotes", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Top nav link - Admin Advance Features Notification")
-        public void topNavAdminAdvanceFeaturesNotificationLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesNotificationLink(driver), "https://qa-carbuy.pullapart.com/#/admin/notifications", "URL did not match expected");
-        }
-
-        @Test
-        @DisplayName("Top nav link - Admin Advance Features Restriction")
-        public void topNavAdminAdvanceFeaturesRestrictionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminAdvanceFeaturesRestrictionsLink(driver), "https://qa-carbuy.pullapart.com/#/admin/restrictions", "URL did not match expected");
-        }
-
-        @Test
-        @DisplayName("Top nav link - Admin General Settings State Laws")
-        public void topNavAdminGeneralSettingsStateLawsLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingsStateLawsLink(driver), "https://qa-carbuy.pullapart.com/#/admin/statelaws", "URL did not match expected");
-        }
-
-        @Test
-        @DisplayName("Top nav link - Admin General Settings Dispositions")
+        @DisplayName("Clicking on link in top nav - Admin General Settings Dispositions")
         public void topNavAdminGeneralSettingsDispositionsLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingsDispositionsLink(driver), "https://qa-carbuy.pullapart.com/#/admin/dispositions", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Dispositions(driver), "https://qa-carbuy.pullapart.com/#/admin/dispositions", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Top nav link - Admin General Settings Call Codes")
+        @DisplayName("Clicking on link in top nav - Admin General Settings Call Codes")
         public void topNavAdminGeneralSettingsCallCodesLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingCallCodesLink(driver), "https://qa-carbuy.pullapart.com/#/admin/callcodes", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_CallCodes(driver), "https://qa-carbuy.pullapart.com/#/admin/callcodes", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Top nav link - Admin General Settings Users")
+        @DisplayName("Clicking on link in top nav - Admin General Settings Users")
         public void topNavAdminGeneralSettingsUsersLink() throws InterruptedException {
-            Assertions.assertEquals(topNav.clickTopNavAdminGeneralSettingUsersLink(driver), "https://qa-carbuy.pullapart.com/#/admin/users", "URL did not match expected");
+            Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Users(driver), "https://qa-carbuy.pullapart.com/#/admin/users", "URL did not match expected");
         }
     }
 
