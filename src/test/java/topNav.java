@@ -12,6 +12,7 @@ public class topNav {
         driver = driver1;
         good_MainLoginScreenInformation(driver);
         clicking_MainLoginScreen_LoginButton();
+        clickingButton_Skip();
         clickSomething(By.cssSelector("#app > div > div:nth-child(1) > div > div > div.page-header-menu > div > div > ul > li:nth-child(1) > a"));
                 Thread.sleep(3000);
         String topNavDashboardLinkURL = driver.getCurrentUrl();
