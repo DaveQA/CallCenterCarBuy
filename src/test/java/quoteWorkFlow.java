@@ -3,7 +3,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static ClickLinkUtilities.clickLinks.*;
+import static Utilities.clickLinks.*;
 
 public class quoteWorkFlow {
 
@@ -11,8 +11,8 @@ public class quoteWorkFlow {
 
     public static void fillingOutFirstScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
+        good_MainLoginScreenInformation(driver);
+        clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
         enterStaticFirstName();
         enterStaticLastName();

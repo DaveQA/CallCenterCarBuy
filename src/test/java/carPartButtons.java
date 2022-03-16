@@ -3,7 +3,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static ClickLinkUtilities.clickLinks.*;
+import static Utilities.clickLinks.*;
 
 public class carPartButtons {
 
@@ -15,7 +15,7 @@ public class carPartButtons {
         pickingCarPartBattery();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -25,7 +25,7 @@ public class carPartButtons {
         pickingCarPartCatalyticConverter();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -35,7 +35,7 @@ public class carPartButtons {
         pickingCarPartEngine();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -45,7 +45,7 @@ public class carPartButtons {
         pickingCarPartRadiator();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -55,7 +55,7 @@ public class carPartButtons {
         pickingCarPartTires();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -65,7 +65,7 @@ public class carPartButtons {
         pickingCarPartTransmission();
         boolean carPartRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div:nth-child(2) > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return carPartRequiredText;
     }
 
@@ -75,7 +75,7 @@ public class carPartButtons {
         clickNextButton();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return nextButtonEnableStatus;
     }
 
@@ -90,7 +90,7 @@ public class carPartButtons {
         pickingCarPartTransmission();
         boolean currentURL = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return currentURL;
     }
 
@@ -109,7 +109,7 @@ public class carPartButtons {
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToTopOfWizard);
                 Thread.sleep(1000);
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return quoteOfferContainer;
     }
 }

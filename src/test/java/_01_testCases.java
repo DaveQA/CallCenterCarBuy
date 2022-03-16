@@ -17,30 +17,64 @@ public class _01_testCases {
     }
 
     @Nested
-    @DisplayName("Checking the login page process")
-    class mainLoginPageTest {
+    @DisplayName("Testing the main login page")
+    class MainLoginScreenTest {
         @Test
-        @DisplayName("Try entering nothing and login")
-        public void enteringBadUserInformationOnLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(mainLoginPage.enteringBadUserInformationOnTheLoginPage(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        @DisplayName("Empty - Try entering nothing and login")
+        public void empty_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+            Assertions.assertEquals(mainLoginScreen.empty_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
-        @DisplayName("Try entering bad user information and login")
-        public void enteringNoLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(mainLoginPage.enteringNoUserInformationOnTheLoginPage(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        @DisplayName("Bad - Try entering bad user information and login")
+        public void bad_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+            Assertions.assertEquals(mainLoginScreen.bad_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
-        @DisplayName("Try entering good user information and login")
-        public void enteringGoodLoginInformationOnTheLoginScreenTest() throws InterruptedException {
-            Assertions.assertEquals(mainLoginPage.enteringGoodUserInformationOnTheLoginPage(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was able to login");
+        @DisplayName("Fake - Try entering bad user information and login")
+        public void fake_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+            Assertions.assertEquals(mainLoginScreen.fake_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        }
+
+        @Test
+        @DisplayName("Good - Try entering good user information and login")
+        public void good_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+            Assertions.assertEquals(mainLoginScreen.good_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was able to login");
+        }
+    }
+
+    @Nested
+    @DisplayName("Mitel Login Screen")
+    class MitelLoginScreenTest {
+        @Test
+        @DisplayName("Empty - Try entering nothing and login")
+        public void empty_InformationOnTheMainLoginScreenTest() {
+            Assertions.assertEquals(mitelLoginScreen.empty_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Bad - Try entering bad user information and login")
+        public void bad_InformationOnTheMainLoginScreenTest() {
+            Assertions.assertEquals(mitelLoginScreen.bad_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on the Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Fake - Try entering bad user information and login")
+        public void fake_InformationOnTheMainLoginScreenTest() {
+            Assertions.assertEquals(mitelLoginScreen.fake_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/mitellogin","Not on the Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Good - Try entering good user information and login")// might be better to check the mitel status on the dashboard
+        public void good_InformationOnTheMainLoginScreenTest() {
+            Assertions.assertEquals(mitelLoginScreen.good_InformationOnTheMitelLoginScreen(driver),"https://qa-carbuy.pullapart.com/#/dashboard","Not on the Mitel Login screen");
         }
     }
 
     @Nested
     @DisplayName("Checking top navigation links")
-    class topNavLinksTests {
+    class TopNavLinksTests {
         @Test
         @DisplayName("Top nav link - Dashboard")
         public void topNavDashboardLink() throws InterruptedException {

@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static ClickLinkUtilities.clickLinks.*;
+import static Utilities.clickLinks.*;
 
 public class yearMakeModelDropdowns {
 
@@ -18,7 +18,7 @@ public class yearMakeModelDropdowns {
         boolean yearRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0;
         Thread.sleep(1000);
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return yearRequiredText;
     }
 
@@ -34,7 +34,7 @@ public class yearMakeModelDropdowns {
         boolean makeRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0;
                 Thread.sleep(1000);
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return makeRequiredText;
     }
 
@@ -51,7 +51,7 @@ public class yearMakeModelDropdowns {
         boolean modelRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
                 Thread.sleep(1000);
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return modelRequiredText;
     }
 
@@ -68,7 +68,7 @@ public class yearMakeModelDropdowns {
             && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
                 Thread.sleep(1000);
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return nextButtonEnableStatus;
     }
 }

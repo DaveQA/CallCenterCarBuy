@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static ClickLinkUtilities.clickLinks.*;
+import static Utilities.clickLinks.*;
 
 public class phoneNumberAlternateNumberFields {
 
@@ -9,8 +9,8 @@ public class phoneNumberAlternateNumberFields {
 
     public static boolean enteringNothingInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
+        good_MainLoginScreenInformation(driver);
+        clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
         enterStaticFirstName();
         enterStaticLastName();
@@ -19,14 +19,14 @@ public class phoneNumberAlternateNumberFields {
         clickNextButton();
         boolean requiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return requiredText;
     }
 
     public static boolean enteringAlphaCharactersInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
+        good_MainLoginScreenInformation(driver);
+        clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
         enterStaticFirstName();
         enterStaticLastName();
@@ -35,14 +35,14 @@ public class phoneNumberAlternateNumberFields {
         enterAlphaCharactersInPhoneNumberField();
         boolean alphaCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return alphaCharactersEnterErrorText;
     }
 
     public static boolean enteringSpecialCharactersInPhoneNumberFieldCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
+        good_MainLoginScreenInformation(driver);
+        clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
         enterStaticFirstName();
         enterStaticLastName();
@@ -51,14 +51,14 @@ public class phoneNumberAlternateNumberFields {
         enterSpecialCharactersInPhoneNumberField();
         boolean specialCharactersEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return specialCharactersEnterErrorText;
     }
 
     public static boolean toManyNumbersEnteredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enterGoodLoginInfo(driver);
-        clickTheLoginButton();
+        good_MainLoginScreenInformation(driver);
+        clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
         enterStaticFirstName();
         enterStaticLastName();
@@ -67,7 +67,7 @@ public class phoneNumberAlternateNumberFields {
         enteringToManyNumbers();
         boolean toManyNumberEnterErrorText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > p")).size() > 0;
         clickTheRefreshButton();
-        logOutOfApplication();
+        clicking_LogoutButton();
         return toManyNumberEnterErrorText;
     }
 }

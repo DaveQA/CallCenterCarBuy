@@ -1,6 +1,5 @@
-import ClickLinkUtilities.clickLinks;
+import Utilities.clickLinks;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class approvedZipCodes {
@@ -15,7 +14,7 @@ public class approvedZipCodes {
         boolean outOfAreaPeddleMessage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-horizontal > div > div:nth-child(5)")).size() > 0;
         clickLinks.clickTheRefreshButton();
         Thread.sleep(3000);
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return outOfAreaPeddleMessage;
     }
 
@@ -30,7 +29,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -45,7 +44,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -60,7 +59,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -75,7 +74,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -90,7 +89,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -105,7 +104,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -120,7 +119,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -135,7 +134,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -150,7 +149,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -165,7 +164,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -180,7 +179,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -195,7 +194,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -210,7 +209,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -225,7 +224,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -240,7 +239,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -255,7 +254,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -270,7 +269,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -285,7 +284,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -300,7 +299,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -315,7 +314,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -330,7 +329,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -345,7 +344,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -360,7 +359,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -375,7 +374,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -390,7 +389,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 
@@ -405,7 +404,7 @@ public class approvedZipCodes {
         Thread.sleep(2000);
         String stateDropdownValue = driver.findElement(By.cssSelector("#sStates > option:nth-child(2)")).getText();
         clickLinks.clickTheRefreshButton();
-        clickLinks.logOutOfApplication();
+        clickLinks.clicking_LogoutButton();
         return stateDropdownValue;
     }
 }
