@@ -44,10 +44,9 @@ public class clickLinks {
         driver.findElement(By.xpath("//button[@type='button']")).click();
     }
 
-    public static void clickLogoButton() throws InterruptedException {
+    public static void clickLogoButton() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.cssSelector("#app > div > div:nth-child(1) > div > div > div.page-header-top > div > div.page-logo > a"));
-        Thread.sleep(2000);
+        clickSomething(By.xpath("//img[@class='logo-default']"));
     }
 
     public static void clickTheRefreshButton() throws InterruptedException {
@@ -469,7 +468,7 @@ public class clickLinks {
     }
 
     public static void waitOnLoadingGif() {
-        WebDriverWait loadingGifWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait loadingGifWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         loadingGifWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#app > div.loading-container > div.loading")));
     }
 
