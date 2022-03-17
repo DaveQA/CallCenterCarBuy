@@ -1,6 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 import static Utilities.clickLinks.*;
 
@@ -8,126 +6,138 @@ public class speedDailContainer {
 
     private static WebDriver driver;
 
-    public static String clickCallCode_OnlineQuoteCallbackNumberOLD_Button(WebDriver driver1) throws InterruptedException {
+    public static String clickCallCode_OnlineQuoteCallbackNumberOLD_Button(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
         waitOnBothErrorMessageAndLoadingGif();
-                Thread.sleep(1000);
-        String callCodeCallBackNumberOldURL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCodeCallBackNumberOldURL;
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode500Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_500PartnerPeddleAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode500URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode500URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode501Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_501PartnerCarbrainAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(3) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode501URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode501URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode502Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_502PartnerJunkCarBoysAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode502URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode502URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode503Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_503PartnerArsAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode503URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode503URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'503-Partner-Ars-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'503-Partner-Ars-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode504Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_504PartnerCarsAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode504URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode504URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'504-Partner-Cars-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'504-Partner-Cars-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String clickCallCode510Button(WebDriver driver1) throws InterruptedException {
+    public static String ClickingCallCode_510PartnerJunkCarSolutionsAll(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickSomething(By.cssSelector("div.col-auto:nth-child(7) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)"));
-                Thread.sleep(1000);
-        String callCode510URL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return callCode510URL;
+        loggingInToApp(driver);
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'510-Partner-Junk Car Solutions-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'510-Partner-Junk Car Solutions-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        String currentUrl = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
+        return currentUrl;
     }
 
-    public static String typingInGoodCallCodeCheck(WebDriver driver1) throws InterruptedException {
+    public static String filteringCallCodes_NumericCharacters(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeInputFieldInSpeedDail();
-        typeInGoodCallCodeStatic();
-                Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button")).sendKeys(Keys.ENTER);
+        loggingInToApp(driver);
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.linkText("Notifications"));
+        clickSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
+        typeSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"),"501");
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentURL = driver.getCurrentUrl();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
+        loggingOutOfApp(driver);
         return currentURL;
     }
 
-    public static String typingInBadCallCodeCheck(WebDriver driver1) throws InterruptedException {
+    public static String filteringCallCodes_AlphaCharacters(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeInputFieldInSpeedDail();
-        typingInBadCallCodeStatic();
-        clickingCallCodeDashboardSearchButton();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
+        loggingInToApp(driver);
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.linkText("Notifications"));
+        clickSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
+        typeSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"),"Carbrain");
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentURL = driver.getCurrentUrl();
-        return currentURL;
-    }
-
-    public static String typingNothingInTheCallCodeContainerCheck(WebDriver driver1) throws InterruptedException {
-        driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeInputFieldInSpeedDail();
-        clickingCallCodeDashboardSearchButton();
-        String currentURL = driver.getCurrentUrl();
-        clicking_LogoutButton();
+        loggingOutOfApp(driver);
         return currentURL;
     }
 }

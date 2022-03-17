@@ -13,13 +13,40 @@ public class clickLinks {
 
     private static WebDriver driver;
 
-    public static void goToLoginPage(WebDriver driver1) throws InterruptedException {
+    public static void goToLoginPage(WebDriver driver1) {
         driver = driver1;
         driver.get("https://qa-carbuy.pullapart.com/#/login");
-        Thread.sleep(2000);
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[@type='submit']"));
+    }
+
+    public static void loggingInToApp(WebDriver driver1) {
+        driver = driver1;
+        typing_Input_MainLogin_Good(driver);
+        clicking_MainLoginScreen_LoginButton();
+        waitOnBothErrorMessageAndLoadingGif();
+        clicking_Button_Skip();
+    }
+
+    public static void loggingOutOfApp(WebDriver driver1) {
+        driver = driver1;
+        waitOnBothErrorMessageAndLoadingGif();
+        clicking_LogoutButton();
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+            clicking_LogoutButton();
+        } catch (Exception ignored) {
+        }
     }
 
 ////////////////////////////////////////// Clicking Stuff///////////////////////////////////////////////////////////////
+
+    public static void clickSomething(By by) {
+        driver.findElement(by).click();
+    }
 
     public static void clicking_MainLoginScreen_LoginButton() {
         waitOnBothErrorMessageAndLoadingGif();
@@ -27,59 +54,73 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void clicking_MitelLoginScreen_LoginButton(){
+    public static void clicking_MitelLoginScreen_LoginButton() {
         waitOnBothErrorMessageAndLoadingGif();
         clickSomething(By.xpath("//button[@type='submit']"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void clicking_LogoutButton() throws InterruptedException {
+    public static void clicking_LogoutButton() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//i[@class='icon-logout']"));
         clickSomething(By.xpath("//i[@class='icon-logout']"));
     }
-    public static void clickingButton_Skip() {
+
+    public static void clicking_Button_Skip() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[@type='button']"));
-        driver.findElement(By.xpath("//button[@type='button']")).click();
+        clickSomething(By.xpath("//button[@type='button']"));
     }
 
-    public static void clickLogoButton() {
+    public static void clicking_Button_NewQuote() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//img[@class='logo-default']"));
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'New Quote')]"));
+        clickSomething(By.xpath("//button[contains(text(),'New Quote')]"));
     }
 
-    public static void clickTheRefreshButton() throws InterruptedException {
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-        Thread.sleep(2000);
-    }
-
-    public static void clickSomething(By by) {
-        driver.findElement(by).click();
-    }
-
-    public static void clickCallCodeButton() throws InterruptedException {
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
-        Thread.sleep(2000);
-    }
-
-    public static void clickNextButton() throws InterruptedException {
+    public static void clicking_Button_Next() {
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
-        WebElement scrollToButton = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//button[contains(text(),'Next')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        Thread.sleep(1000);
-        clickSomething(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)"));
-        Thread.sleep(1500);
+        clickSomething(By.xpath("//button[contains(text(),'Next')]"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void clickNewQuoteButton() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(3) > button"));
-        Thread.sleep(1000);
+    public static void clicking_Input_PrimaryPhoneNumber() {
+        clickSomething(By.name("phone"));
+    }
+
+    public static void clicking_Input_AlternateNumber() {
+        clickSomething(By.name("alternatephone"));
+    }
+
+    public static void clicking_Input_EmailAddress(){
+        clickSomething(By.name("email"));
+    }
+
+    public static void clicking_Link_CallCode_Peddle(WebDriver driver1) {
+        driver = driver1;
+        waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
+    }
+
+    public static void clickTheRefreshButton() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
+    }
+
+    public static void clickCallCodeButton() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
     }
 
     public static void clickingYesRadioButtonIsThereDamageToCar() {
@@ -93,6 +134,7 @@ public class clickLinks {
     public static void clickingYesFireFloodOrRolloverAccidentRadioButton() {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(2)"));
     }
+
     public static void clickingNoFireFloodOrRolloverAccidentRadioButton() {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(3)"));
     }
@@ -137,11 +179,6 @@ public class clickLinks {
 
     public static void pickingCarPartTransmission() throws InterruptedException {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(7)"));
-        Thread.sleep(1000);
-    }
-
-    public static void clickCallCodeInputFieldInSpeedDail() throws InterruptedException {
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"));
         Thread.sleep(1000);
     }
 
@@ -236,65 +273,93 @@ public class clickLinks {
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////////// Typing Stuff///////////////////////////////////////////////////////////////
+    //////////////////////////////////////////// Typing Stuff///////////////////////////////////////////////////////////////
     public static void typeSomething(By by, String value) {
         driver.findElement(by).sendKeys(value);
     }
 
-    public static void empty_MainLoginScreenInformation(WebDriver driver1) {
+    public static void typing_Input_MainLogin_Empty(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "");
-        typeSomething(By.xpath("//input[@type='password']"), "");
+        typeSomething(By.name("username"), "");
+        typeSomething(By.name("password"), "");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void bad_MainLoginScreenInformation(WebDriver driver1) {
+    public static void typing_Input_MainLogin_Bad(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "mff");
-        typeSomething(By.xpath("//input[@type='password']"), "mff");
+        typeSomething(By.name("username"), "mff");
+        typeSomething(By.xpath("password"), "mff");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void fake_MainLoginScreenInformation(WebDriver driver1) {
+    public static void typing_Input_MainLogin_Fake(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "THISISNOTTHEUSERNAME");
-        typeSomething(By.xpath("//input[@type='password']"), "THISISNOTTHEPASSWORD");
+        typeSomething(By.name("username"), "THISISNOTTHEUSERNAME");
+        typeSomething(By.name("password"), "THISISNOTTHEPASSWORD");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void good_MainLoginScreenInformation(WebDriver driver1) {
+    public static void typing_Input_MainLogin_Good(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "mf");
-        typeSomething(By.xpath("//input[@type='password']"), "mf");
+        typeSomething(By.name("username"), "mf");
+        typeSomething(By.name("password"), "mf");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void empty_MitelLoginScreenInformation(WebDriver driver1) {
+    public static void typing_Input_MitelLogin_Empty(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "");
-        typeSomething(By.xpath("//input[@type='password']"), "");
+        typeSomething(By.name("username"), "");
+        typeSomething(By.name("password"), "");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void bad_MitelLoginScreenInformation(WebDriver driver1){
+    public static void typing_Input_MitelLogin_Bad(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "devuset");
-        typeSomething(By.xpath("//input[@type='password']"), "DevUser_2");
+        typeSomething(By.name("username"), "devuset");
+        typeSomething(By.name("password"), "DevUser_2");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void fake_MitelLoginScreenInformation(WebDriver driver1){
+    public static void typing_Input_MitelLogin_Fake(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "THISISNOTTHEUSERNAME");
-        typeSomething(By.xpath("//input[@type='password']"), "THISISNOTTHEPASSWORD");
+        typeSomething(By.name("username"), "THISISNOTTHEUSERNAME");
+        typeSomething(By.name("password"), "THISISNOTTHEPASSWORD");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void good_MitelLoginScreenInformation(WebDriver driver1){
+    public static void typing_Input_MitelLogin_Good(WebDriver driver1) {
         driver = driver1;
-        typeSomething(By.xpath("//input[@type='text']"), "devuser");
-        typeSomething(By.xpath("//input[@type='password']"), "DevUser_1");
+        typeSomething(By.name("username"), "devuser");
+        typeSomething(By.name("password"), "DevUser_1");
         waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void typing_FirstName() {
+        typeSomething(By.id("firstname"), "John");
+    }
+
+    public static void typing_LastName() {
+        typeSomething(By.id("lastname"), "Doe");
+    }
+
+    public static void typing_Input_PrimaryPhoneNumber_Valid() {
+        typeSomething(By.name("phone"), "5555555");
+    }
+
+    public static void typing_Input_PrimaryPhoneNumber_AlphaCharacters() {
+        typeSomething(By.name("phone"), "Not a Phone Number");
+    }
+
+    public static void typing_Input_PrimaryPhoneNumber_SpecialCharacters() {
+        typeSomething(By.name("phone"), "@#$%^&*(");
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_Valid() {
+        typeSomething(By.name("alternatephone"), "4444444");
+    }
+
+    public static void typing_Input_Email_Valid() {
+        typeSomething(By.name("email"), "vip1000682431@gmail.com");
     }
 
     public static void enteringDetailDamageNotes() {
@@ -310,17 +375,6 @@ public class clickLinks {
 
     public static void enteringZipCodeStatic() throws InterruptedException {
         driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188", Keys.TAB);
-        Thread.sleep(1000);
-    }
-
-    public static void typeInGoodCallCodeStatic() throws InterruptedException {
-        typeSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"), "501");
-        Thread.sleep(1000);
-    }
-
-    public static void typingInBadCallCodeStatic() throws InterruptedException {
-        typeSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > input"), "000");
-        driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button")).sendKeys(Keys.ENTER);
         Thread.sleep(1000);
     }
 
@@ -352,12 +406,6 @@ public class clickLinks {
         typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"), "Hauler Notes Field");
     }
 
-    public static void enterGoodEmailAddress() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "vip1000682431@gmail.com");
-        Thread.sleep(2000);
-    }
-
     public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
         typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail");
@@ -368,34 +416,6 @@ public class clickLinks {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
         typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail@nope.com");
         Thread.sleep(2000);
-    }
-
-    public static void enterStaticFirstName() throws InterruptedException {
-        typeSomething(By.cssSelector("#firstname"), "John");
-        Thread.sleep(1000);
-    }
-
-    public static void enterStaticLastName() throws InterruptedException {
-        typeSomething(By.cssSelector("#lastname"), "Doe");
-        Thread.sleep(1000);
-    }
-
-    public static void enterGoodPhoneNumber() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "5555555555");
-        Thread.sleep(1000);
-    }
-
-    public static void enterAlphaCharactersInPhoneNumberField() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "Not a Phone Number");
-        Thread.sleep(1000);
-    }
-
-    public static void enterSpecialCharactersInPhoneNumberField() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "@#$%^&*(");
-        Thread.sleep(1000);
     }
 
     public static void enterAlternatePhoneNumber() throws InterruptedException {
@@ -463,7 +483,7 @@ public class clickLinks {
     }
 
     public static void waitOnButtonToBeClickable(By by) {
-        WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver, Duration.ofSeconds(20));
         waitOnButtonToBeClickable.until(ExpectedConditions.elementToBeClickable(by));
     }
 
@@ -473,7 +493,7 @@ public class clickLinks {
     }
 
     public static void waitOnErrorMessagePopup() {
-        WebDriverWait errorPopupWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait errorPopupWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         errorPopupWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#mini-toastr")));
     }
 

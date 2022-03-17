@@ -11,31 +11,31 @@ public class quoteWorkFlow {
 
     public static void fillingOutFirstScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
+        typing_Input_MainLogin_Good(driver);
         clicking_MainLoginScreen_LoginButton();
         clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        clickNextButton();
-        clickNewQuoteButton();
-        enterGoodPhoneNumber();
-        enterGoodEmailAddress();
-        clickNextButton();
+        typing_FirstName();
+        typing_LastName();
+        clicking_Button_Next();
+        clicking_Button_NewQuote();
+        typing_Input_PrimaryPhoneNumber_Valid();
+        typing_Input_Email_Valid();
+        clicking_Button_Next();
     }
 
     public static void fillingOutSecondScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingNoRadioButtonIsThereDamageToCar();
-        clickNextButton();
+        clicking_Button_Next();
         pickingCarPartEngine();
         pickingCarPartTransmission();
-        clickNextButton();
+        clicking_Button_Next();
     }
 
     public static void fillingOutQuoteOfferScreen(WebDriver driver1) throws InterruptedException {
@@ -45,20 +45,20 @@ public class quoteWorkFlow {
                 + "var elementTop = arguments[0].getBoundingClientRect().top;"
                 + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToTopOfWizard);
-        clickNextButton();
+        clicking_Button_Next();
     }
 
     public static void gettingToCarPartListContainer(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingNoRadioButtonIsThereDamageToCar();
-        clickNextButton();
+        clicking_Button_Next();
     }
 
     public static void gettingToDoesTheVehicleRunQuestion(WebDriver driver1) throws InterruptedException {
@@ -66,12 +66,12 @@ public class quoteWorkFlow {
         fillingOutFirstScreen(driver);
         fillingOutSecondScreen(driver);
         fillingOutQuoteOfferScreen(driver);
-        clickNextButton();
+        clicking_Button_Next();
         doesVehicleRunRadioButton_Yes();
         whereIsVehicleParkedButton_Business();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         datePicker();
     }
 }

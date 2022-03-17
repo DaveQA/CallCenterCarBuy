@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
 
-public class damageOnCarRadioButtons {
+public class DamageOnCarRadioButtons {
 
     private static WebDriver driver;
 
@@ -11,13 +11,13 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         clickTheRefreshButton();
         clicking_LogoutButton();
@@ -28,11 +28,11 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
         boolean typeOfDamageOptionsContainer = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div")).size() > 0;
             Thread.sleep(1000);
@@ -45,14 +45,14 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingNoRadioButtonIsThereDamageToCar();
         boolean typeOfDamageOptionContainer = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div")).size() > 0;
-        clickNextButton();
+        clicking_Button_Next();
             Thread.sleep(1000);
         clickTheRefreshButton();
         clicking_LogoutButton();
@@ -63,13 +63,13 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
-        clickNextButton();
+        clicking_Button_Next();
         String currentURL = driver.getCurrentUrl();
                 Thread.sleep(1000);
         clickTheRefreshButton();
@@ -81,11 +81,11 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
         clickingYesFireFloodOrRolloverAccidentRadioButton();
         boolean sendToPeddleMessageDueToDamage = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > p")).size() > 0;
@@ -99,11 +99,11 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
         clickingNoFireFloodOrRolloverAccidentRadioButton();
         boolean detailDamageEditableTextField = driver.findElements(By.cssSelector("#detailDamage")).size() > 0;
@@ -116,15 +116,15 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
         clickingNoFireFloodOrRolloverAccidentRadioButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean detailDamageNotesRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(4) > p.text-danger")).size() > 0;
         clickTheRefreshButton();
         clicking_LogoutButton();
@@ -135,16 +135,16 @@ public class damageOnCarRadioButtons {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
         pickingModelOfCarStatic();
-        clickNextButton();
+        clicking_Button_Next();
         clickingYesRadioButtonIsThereDamageToCar();
         clickingNoFireFloodOrRolloverAccidentRadioButton();
         enteringDetailDamageNotes();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean detailDamageNotesRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(4) > p.text-danger")).size() > 0;
         clickTheRefreshButton();
         clicking_LogoutButton();

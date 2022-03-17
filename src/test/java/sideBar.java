@@ -7,64 +7,56 @@ public class sideBar {
 
     private static WebDriver driver;
 
-    public static String customerInfoSideBarMatchesFirstLastNameEnteredCheck(WebDriver driver1) throws InterruptedException {
+    public static String checkingSidebarInformation_FirstAndLastName(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        String sideBarCustomerInfoFirstNameLastName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(2)")).getText();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
+        loggingInToApp(driver);
+        clicking_Link_CallCode_Peddle(driver);
+        typing_FirstName();
+        typing_LastName();
+        String sideBarCustomerInfoFirstNameLastName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[1]")).getText();
+        loggingOutOfApp(driver);
         return sideBarCustomerInfoFirstNameLastName;
     }
 
-    public static String customerInfoSideBarMatchesPhoneNumberEnteredCheck(WebDriver driver1) throws InterruptedException {
+    public static String checkingSidebarInformation_PrimaryPhoneNumber(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        clickNextButton();
-        clickNewQuoteButton();
-        enterGoodPhoneNumber();
-        String sideBarCustomerInfoPhoneName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(3)")).getText();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
+        loggingInToApp(driver);
+        clicking_Link_CallCode_Peddle(driver);
+        typing_FirstName();
+        typing_LastName();
+        clicking_Button_Next();
+        clicking_Button_NewQuote();
+        typing_Input_PrimaryPhoneNumber_Valid();
+        String sideBarCustomerInfoPhoneName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[2]")).getText();
+        loggingOutOfApp(driver);
         return sideBarCustomerInfoPhoneName;
     }
 
-    public static String customerInfoSideBarMatchesAlternateNumberEnteredCheck(WebDriver driver1) throws InterruptedException {
+    public static String checkingSidebarInformation_AlternatePhoneNumber(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        clickNextButton();
-        clickNewQuoteButton();
-        enterAlternatePhoneNumber();
-        String sideBarCustomerInfoPhoneName = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(4)")).getText();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
+        loggingInToApp(driver);
+        clicking_Link_CallCode_Peddle(driver);
+        typing_FirstName();
+        typing_LastName();
+        clicking_Button_Next();
+        clicking_Button_NewQuote();
+        typing_Input_AlternatePhoneNumber_Valid();
+        String sideBarCustomerInfoPhoneName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[3]")).getText();
+        loggingOutOfApp(driver);
         return sideBarCustomerInfoPhoneName;
     }
 
-    public static String customerInfoSideBarMatchesEmailEnteredCheck(WebDriver driver1) throws InterruptedException {
+    public static String checkingSidebarInformation_EmailAddress(WebDriver driver1) {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
-        clicking_MainLoginScreen_LoginButton();
-        clickCallCodeButton();
-        enterStaticFirstName();
-        enterStaticLastName();
-        clickNextButton();
-        clickNewQuoteButton();
-        enterGoodEmailAddress();
-        String sideBarCustomerInfoEmail = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-sidebar > div > div > div.mt-list-container.list-default > ul > li:nth-child(2) > div.list-item-content > p:nth-child(5)")).getText();
-        clickTheRefreshButton();
-        clicking_LogoutButton();
-        return sideBarCustomerInfoEmail;
+        loggingInToApp(driver);
+        clicking_Link_CallCode_Peddle(driver);
+        typing_FirstName();
+        typing_LastName();
+        clicking_Button_Next();
+        clicking_Button_NewQuote();
+        typing_Input_Email_Valid();
+        String sideBarCustomerInfoPhoneName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[4]")).getText();
+        loggingOutOfApp(driver);
+        return sideBarCustomerInfoPhoneName;
     }
 }
