@@ -21,25 +21,25 @@ public class _01_testCases {
     class MainLoginScreenTest {
         @Test
         @DisplayName("Empty - Try entering nothing and login")
-        public void empty_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+        public void empty_InformationOnTheMainLoginScreen_Test() throws InterruptedException {
             Assertions.assertEquals(mainLoginScreen.empty_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Bad - Try entering bad user information and login")
-        public void bad_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+        public void bad_InformationOnTheMainLoginScreen_Test() throws InterruptedException {
             Assertions.assertEquals(mainLoginScreen.bad_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Fake - Try entering bad user information and login")
-        public void fake_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+        public void fake_InformationOnTheMainLoginScreen_Test() throws InterruptedException {
             Assertions.assertEquals(mainLoginScreen.fake_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Good - Try entering good user information and login")
-        public void good_InformationOnTheMainLoginScreenTest() throws InterruptedException {
+        public void good_InformationOnTheMainLoginScreen_Test() throws InterruptedException {
             Assertions.assertEquals(mainLoginScreen.good_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was able to login");
         }
     }
@@ -49,26 +49,26 @@ public class _01_testCases {
     class MitelLoginScreenTest {
         @Test
         @DisplayName("Empty - Try entering nothing and login")
-        public void empty_InformationOnTheMainLoginScreenTest() {
+        public void empty_InformationOnTheMitelLoginScreen_Test() {
             Assertions.assertEquals(mitelLoginScreen.empty_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
         }
 
         @Test
         @DisplayName("Bad - Try entering bad user information and login")
-        public void bad_InformationOnTheMainLoginScreenTest() {
+        public void bad_InformationOnTheMitelLoginScreen_Test() {
             Assertions.assertEquals(mitelLoginScreen.bad_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
         @DisplayName("Fake - Try entering bad user information and login")
-        public void fake_InformationOnTheMainLoginScreenTest() {
+        public void fake_InformationOnTheMitelLoginScreen_Test() {
             Assertions.assertEquals(mitelLoginScreen.fake_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
         @DisplayName("Good - Try entering good user information and login")
 // might be better to check the mitel status on the dashboard
-        public void good_InformationOnTheMainLoginScreenTest() {
+        public void good_InformationOnTheMitelLoginScreen_Test() {
             Assertions.assertEquals(mitelLoginScreen.good_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
         }
     }
@@ -78,169 +78,208 @@ public class _01_testCases {
     class TopNavLinksTests {
         @Test
         @DisplayName("Clicking on link in top nav - Dashboard")
-        public void topNavDashboardLink() throws InterruptedException {
+        public void clicking_TopNavLink_Dashboard_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
         }
 
         @Test
         @DisplayName("Clicking on link in top nav - Notification")
-        public void topNavNotificationsLink() throws InterruptedException {
+        public void clicking_TopNavLink_Notifications_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Notifications(driver), "https://qa-carbuy.pullapart.com/#/notifications", "URL did not match expected");
         }
 
         @Test
         @DisplayName("Clicking on link in top nav - Admin Advance Features Quote")
-        public void topNavAdminAdvanceFeaturesQuoteLink() throws InterruptedException {
+        public void clicking_TopNavLink_Admin_Quote_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Quote(driver), "https://qa-carbuy.pullapart.com/#/admin/quotes", "URL did not match expected");
         }
 
         @Test
         @DisplayName("Clicking on link in top nav - Admin General Settings Dispositions")
-        public void topNavAdminGeneralSettingsDispositionsLink() throws InterruptedException {
+        public void clicking_TopNavLink_Admin_Dispositions_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Dispositions(driver), "https://qa-carbuy.pullapart.com/#/admin/dispositions", "URL did not match expected");
         }
 
         @Test
         @DisplayName("Clicking on link in top nav - Admin General Settings Call Codes")
-        public void topNavAdminGeneralSettingsCallCodesLink() throws InterruptedException {
+        public void clicking_TopNavLink_Admin_CallCodes_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_CallCodes(driver), "https://qa-carbuy.pullapart.com/#/admin/callcodes", "URL did not match expected");
         }
 
         @Test
         @DisplayName("Clicking on link in top nav - Admin General Settings Users")
-        public void topNavAdminGeneralSettingsUsersLink() throws InterruptedException {
+        public void clicking_TopNavLink_Admin_Users_Test() {
             Assertions.assertEquals(topNav.clicking_TopNavLink_Admin_Users(driver), "https://qa-carbuy.pullapart.com/#/admin/users", "URL did not match expected");
         }
     }
 
     @Nested
-    @DisplayName("Call code buttons - speed dail")
-    class callCodeButtonsTests {
-
+    @DisplayName("Clicking on call code links")
+    class CallCodeButtonsTests {
         @Test
-        @DisplayName("Checking call code Online Quote Callback Number (OLD) button ID")
-        public void clickingTheCallCode833ButtonTest() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode_OnlineQuoteCallbackNumberOLD_Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - Callback Number (OLD) button ID")
+        public void clickCallCode_OnlineQuoteCallbackNumberOLD_Button_Test() {
+            Assertions.assertEquals(speedDailContainer.clickCallCode_OnlineQuoteCallbackNumberOLD_Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=Online%20Quote%20Callback%20Number%20%28OLD%29", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 500 codeID")
-        public void clickingCallCode500Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode500Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 500-Partner-Peddle-All")
+        public void ClickingCallCode_500PartnerPeddleAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_500PartnerPeddleAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=500-Partner-Peddle-All", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 501 codeID")
-        public void clickingCallCode501Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode501Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 501-Partner-Carbrain-All")
+        public void ClickingCallCode_501PartnerCarbrainAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_501PartnerCarbrainAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 502 codeID")
-        public void clickingCallCode502Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode502Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 502-Partner-Junk Car Boys-All")
+        public void ClickingCallCode_502PartnerJunkCarBoysAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_502PartnerJunkCarBoysAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=502-Partner-Junk%20Car%20Boys-All", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 503 codeID")
-        public void clickingCallCode503Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode503Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 503-Partner-Ars-All")
+        public void ClickingCallCode_503PartnerArsAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_503PartnerArsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=503-Partner-Ars-All", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 504 codeID")
-        public void clickingCallCode504Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode504Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 504-Partner-Cars-All")
+        public void ClickingCallCode_504PartnerCarsAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_504PartnerCarsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=504-Partner-Cars-All", "Call code ID did not match expected");
         }
 
         @Test
-        @DisplayName("Checking call code 510 codeID")
-        public void clickingCallCode510Button() throws InterruptedException {
-            Assertions.assertEquals(speedDailContainer.clickCallCode510Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193", "Call code ID did not match expected");
+        @DisplayName("Clicking Call Code Link - 510-Partner-Junk Car Solutions-All")
+        public void ClickingCallCode_510PartnerJunkCarSolutionsAll_Test() {
+            Assertions.assertEquals(speedDailContainer.ClickingCallCode_510PartnerJunkCarSolutionsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=510-Partner-Junk%20Car%20Solutions-All", "Call code ID did not match expected");
+        }
+
+        @Test
+        @DisplayName("Filtering call codes by entering numbers")
+        public void filteringCallCodes_NumericCharacters_Test() {
+            Assertions.assertEquals(speedDailContainer.filteringCallCodes_NumericCharacters(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All","Filtering function is not working as expected");
+        }
+
+        @Test
+        @DisplayName("Filtering call codes by entering letters")
+        public void filteringCallCodes_AlphaCharacters_Test(){
+            Assertions.assertEquals(speedDailContainer.filteringCallCodes_AlphaCharacters(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All","Filtering function is not working as expected");
         }
     }
 
     @Nested
-    @DisplayName("Sidebar Checks")
-    class sideBarTests {
+    @DisplayName("Sidebar Tests")
+    class SideBarTests {
         @Test
         @DisplayName("Sidebar matches information entered - Firstname and Lastname")
-        public void customerSideBarInfoMatchesFirstLastNameEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesFirstLastNameEnteredCheck(driver), "Name: John Doe");
+        public void checkingSidebarInformation_FirstAndLastName_Test() {
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe","Sidebar information does not match");
         }
 
         @Test
-        @DisplayName("Sidebar matches information entered - Phone number")
-        public void customerSideBarInfoMatchesPhoneNumberEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesPhoneNumberEnteredCheck(driver), "Phone: 5555555555");
+        @DisplayName("Sidebar matches information entered - Primary Phone number")
+        public void checkingSidebarInformation_PrimaryPhoneNumber_Test() {
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555","Sidebar information does not match");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Alternate number")
-        public void customerSideBarInfoMatchesAlternateNumberEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesAlternateNumberEnteredCheck(driver), "Alt. Phone: 4444444444");
+        public void checkingSidebarInformation_AlternatePhoneNumber_Test() {
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444","Sidebar information does not match");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Email address")
-        public void customerSideBarInfoMatchesEmailEnteredTest() throws InterruptedException {
-            Assertions.assertEquals(sideBar.customerInfoSideBarMatchesEmailEnteredCheck(driver), "Email: vip1000682431@gmail.com");
+        public void customerSideBarInfoMatchesEmailEnteredTest() {
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com","Sidebar information does not match");
         }
     }
 
     @Nested
-    @DisplayName("Firstname and Lastname field checks")
-    class firstNameFieldTests {
+    @DisplayName("Customer Information Requirement Checks")
+    class CustomerInformationFieldRequirementsTests {
         @Test
-        @DisplayName("Checking firstname field is required")
-        public void firstNameLastNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(firstNameLastNameFields.enteringOnlyLastNameCheck(driver), "Was able to continue without a Firstname");
+        @DisplayName("Checking Field Required - First Name")
+        public void enteringOnlyLastName_Test() {
+            Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyLastName(driver), "Field is required, check application");
         }
 
         @Test
-        @DisplayName("Checking lastname field is required")
-        public void lastNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(firstNameLastNameFields.enteringOnlyFirstNameCheck(driver), "Was able to continue without entering a Lastname");
+        @DisplayName("Checking Field Required - Last Name")
+        public void enteringOnlyFirstName_Test() {
+            Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyFirstName(driver), "Field is required, check application");
         }
 
         @Test
-        @DisplayName("Checking both Firstname and Lastname fields are required")
-        public void noNameRequirementTest() throws InterruptedException {
-            Assertions.assertTrue(firstNameLastNameFields.enteringNeitherFirstNameNorLastNameCheck(driver), "Was able to continue without entering an Firstname and Lastname");
+        @DisplayName("Checking Field Required - First and Last Name")
+        public void leavingFirstAndLastNameFieldsBlank_Test()  {
+            Assertions.assertTrue(CustomerInformationField_Requirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
+        }
+
+        @Test
+        @DisplayName("Checking Field Required - Primary Phone Number")
+        public void leavingPrimaryPhoneNumberFieldBlank_Test()  {
+            Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
+        }
+
+        @Test
+        @DisplayName("Checking Field Required - Email Address")
+        public void leavingEmailAddressFieldBlank_Test() {
+            Assertions.assertTrue(CustomerInformationField_Requirements.leavingEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+        }
+
+        @Test
+        @DisplayName("Checking Field Required - Primary and Email Fields")
+        public void leavingPrimaryAndEmailAddressFieldBlank_Test() {
+            Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryAndEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
         }
     }
 
     @Nested
-    @DisplayName("Phone Number Field")
-    class phoneNumberFieldTests {
-        @Test
-        @DisplayName("Checking phone number field is required")
-        public void phoneNumberFieldRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringNothingInPhoneNumberFieldCheck(driver), "Was able to continue without a phone number");
+    @DisplayName("Customer Information Field Validation Checks")
+    class CustomerInformationFieldValidationsTest {
+        @Nested
+        @DisplayName("Primary Phone Number Field Validation Checks")
+        class PrimaryPhoneValidationTest{
+            @Test
+            @DisplayName("Checking Field Validation - Primary Phone Number - Alpha Characters")
+            public void phoneNumberFieldAlphaCharacter_Test()  {
+                Assertions.assertTrue(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_AlphaCharacters(driver), "Validation check failed, please check application");
+            }
+
+            @Test
+            @DisplayName("Checking Field Validation - Primary Phone Number - Special Characters")
+            public void phoneNumberFieldSpecialCharacterTest() {
+                Assertions.assertTrue(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_SpecialCharacters(driver), "Validation check failed, please check application");
+            }
         }
 
-        @Test
-        @DisplayName("Checking that alpha characters are not accepted in the phone number field")
-        public void phoneNumberFieldAlphaCharacterTest() throws InterruptedException {
-            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringAlphaCharactersInPhoneNumberFieldCheck(driver), "Was able continue with alpha characters in the phone number field");
-        }
-
-        @Test
-        @DisplayName("Checking that special characters are not accepted in the phone number field")
-        public void phoneNumberFieldSpecialCharacterTest() throws InterruptedException {
-            Assertions.assertTrue(phoneNumberAlternateNumberFields.enteringSpecialCharactersInPhoneNumberFieldCheck(driver), "Was able to continue with special characters in the phone number field");
-        }
-
-        @Test
-        @DisplayName("Not enough numbers entered")
-        public void notEnoughNumbersEnteredTest() {
-        }
-
-        @Test
-        @DisplayName("To many numbers entered")
-        public void toManyNumbersEnteredTest() throws InterruptedException {
-            Assertions.assertTrue(phoneNumberAlternateNumberFields.toManyNumbersEnteredCheck(driver));
-        }
+//        @Test
+//        @DisplayName("Not enough numbers entered")
+//        public void notEnoughNumbersEnteredTest() {
+//        }
+//
+//        @Test
+//        @DisplayName("To many numbers entered")
+//        public void toManyNumbersEnteredTest() throws InterruptedException {
+//            Assertions.assertTrue();
+//        }
+//
+//        @Test
+//        @DisplayName("Checking that a valid email address is needed to continue")
+//        public void enteringInvalidEmailAddressInformationTest() throws InterruptedException {
+//            Assertions.assertEquals(, "The email field must be a valid email.", "Was able to continue with an invalid email address");
+//        }
+//
+//        @Test
+//        @DisplayName("Checking a real email address is needed to continue")
+//        public void enteringFakeEmailAddressInformationCheck() throws InterruptedException {
+//            Assertions.assertEquals(, "ZeroBounce status not valid, status:invalid", "Was able to continue with a fake email address");
+//        }
     }
 
 //    @Nested
@@ -263,27 +302,10 @@ public class _01_testCases {
 //        public void toManyNumbersTest(){}
 //    }
 
-    @Nested
-    @DisplayName("Email Address Field")
-    class emailAddressTests {
-        @Test
-        @DisplayName("Checking an email address is needed to continue")
-        public void emailRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(emailAddressField.emailRequirementCheck(driver), "Was able to continue without entering an email address");
-        }
-
-        @Test
-        @DisplayName("Checking that a valid email address is needed to continue")
-        public void enteringInvalidEmailAddressInformationTest() throws InterruptedException {
-            Assertions.assertEquals(emailAddressField.enteringInvalidEmailAddressInformationCheck(driver), "The email field must be a valid email.", "Was able to continue with an invalid email address");
-        }
-
-        @Test
-        @DisplayName("Checking a real email address is needed to continue")
-        public void enteringFakeEmailAddressInformationCheck() throws InterruptedException {
-            Assertions.assertEquals(emailAddressField.enteringFakeEmailAddressInformationCheck(driver), "ZeroBounce status not valid, status:invalid", "Was able to continue with a fake email address");
-        }
-    }
+//    @Nested
+//    @DisplayName("Email Address Field")
+//    class emailAddressTests {
+//    }
 
     @Nested
     @DisplayName("Zip Code Field")
@@ -485,19 +507,19 @@ public class _01_testCases {
         @Test
         @DisplayName("Radio button picking damage - Neither")
         public void notPickingEitherOptionForDamageTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButtons.pickingNeitherRadioButtonIfThereIsDamage(driver), "Was able to continue without answering damage check");
+            Assertions.assertFalse(DamageOnCarRadioButtons.pickingNeitherRadioButtonIfThereIsDamage(driver), "Was able to continue without answering damage check");
         }
 
         @Test
         @DisplayName("Radio button picking damage - Yes")
         public void pickingYesToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButtons.RadioButtonYesThereIsDamageOnCarCheck(driver), "The type of damage options did not show on screen");
+            Assertions.assertTrue(DamageOnCarRadioButtons.RadioButtonYesThereIsDamageOnCarCheck(driver), "The type of damage options did not show on screen");
         }
 
         @Test
         @DisplayName("Radio button picking damage - No")
         public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver), "The type of damage options show on screen");
+            Assertions.assertFalse(DamageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver), "The type of damage options show on screen");
         }
     }
 
@@ -507,31 +529,31 @@ public class _01_testCases {
         @Test //Will need to redo if depending on DEV response
         @DisplayName("Not picking Yes or No to type of damage option and clicking next button")
         public void pickingNeitherTypeOfDamageOptionTest() throws InterruptedException {
-            Assertions.assertEquals(damageOnCarRadioButtons.pickingNeitherTypeOfDamageOptionCheck(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
+            Assertions.assertEquals(DamageOnCarRadioButtons.pickingNeitherTypeOfDamageOptionCheck(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
         }
 
         @Test
         @DisplayName("Picking Yes there is Fire, Flood, Rollover damage")
         public void radioButtonYesToFireRolloverDamageOnCarWithNotesTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButtons.radioButtonYesToFireRolloverDamageOnCarCheck(driver), "The peddle response script was not displayed on screen");
+            Assertions.assertTrue(DamageOnCarRadioButtons.radioButtonYesToFireRolloverDamageOnCarCheck(driver), "The peddle response script was not displayed on screen");
         }
 
         @Test
         @DisplayName("Checking for detail damage notes contain shows")
         public void radioButtonYesToTypeOfDamageOptionWithNoNotesTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButtons.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver), "Detail Damage Notes container did not show on screen");
+            Assertions.assertTrue(DamageOnCarRadioButtons.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver), "Detail Damage Notes container did not show on screen");
         }
 
         @Test
         @DisplayName("Picking No to type of damage without entering notes and clicking next button")
         public void detailDamageNotesIsRequiredTest() throws InterruptedException {
-            Assertions.assertTrue(damageOnCarRadioButtons.detailDamageNotesIsRequiredCheck(driver), "Was able to continue without entering detail damage notes");
+            Assertions.assertTrue(DamageOnCarRadioButtons.detailDamageNotesIsRequiredCheck(driver), "Was able to continue without entering detail damage notes");
         }
 
         @Test
         @DisplayName("Checking Detail Damage container notes")
         public void checkingDetailDamageNotesContainerIsEditableTest() throws InterruptedException {
-            Assertions.assertFalse(damageOnCarRadioButtons.checkingDetailDamageNotesContainerIsEditableCheck(driver), "Detail Damage Notes container may not have been editable");
+            Assertions.assertFalse(DamageOnCarRadioButtons.checkingDetailDamageNotesContainerIsEditableCheck(driver), "Detail Damage Notes container may not have been editable");
         }
     }
 
@@ -541,49 +563,49 @@ public class _01_testCases {
         @Test
         @DisplayName("Clicking just the battery part button")
         public void pickingCarPartBatteryTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartBatteryCheck(driver), "Battery button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartBatteryCheck(driver), "Battery button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the catalytic converter part button")
         public void pickingCarPartCatalyticConverterTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartCatalyticConverterCheck(driver), "Catalytic Converter button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartCatalyticConverterCheck(driver), "Catalytic Converter button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the Engine part button")
         public void pickingCarPartEngineTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartEngineCheck(driver), "Engine button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartEngineCheck(driver), "Engine button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the radiator part button")
         public void pickingCarPartRadiatorTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartRadiatorCheck(driver), "Radiator button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartRadiatorCheck(driver), "Radiator button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the tires part button")
         public void pickingCarPartTiresTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartTiresCheck(driver), "Tire button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartTiresCheck(driver), "Tire button was not clicked");
         }
 
         @Test
         @DisplayName("Clicking just the transmission part button")
         public void pickingCarPartTransmissionTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingCarPartTransmissionCheck(driver), "Transmission button was not clicked");
+            Assertions.assertTrue(CarPartButtons.pickingCarPartTransmissionCheck(driver), "Transmission button was not clicked");
         }
 
         @Test
         @DisplayName("Not picking any car parts")
         public void pickingNoCarPartsTest() throws InterruptedException {
-            Assertions.assertFalse(carPartButtons.pickingNoCarPartsCheck(driver));
+            Assertions.assertFalse(CarPartButtons.pickingNoCarPartsCheck(driver));
         }
 
         @Test
         @DisplayName("Clicking all car parts")
         public void pickingAllCarPartsTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingAllCarPartsCheck(driver), "Required text was displayed on screen");
+            Assertions.assertTrue(CarPartButtons.pickingAllCarPartsCheck(driver), "Required text was displayed on screen");
         }
     }
 
@@ -593,7 +615,7 @@ public class _01_testCases {
         @Test
         @DisplayName("Getting a quote amount")
         public void pickingOnlyEngineTransmissionPartTest() throws InterruptedException {
-            Assertions.assertTrue(carPartButtons.pickingOnlyEngineTransmissionPartCheck(driver));
+            Assertions.assertTrue(CarPartButtons.pickingOnlyEngineTransmissionPartCheck(driver));
         }
     }
 

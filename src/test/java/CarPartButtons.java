@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import static Utilities.clickLinks.*;
 
-public class carPartButtons {
+public class CarPartButtons {
 
     private static WebDriver driver;
 
@@ -72,7 +72,7 @@ public class carPartButtons {
     public static boolean pickingNoCarPartsCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.gettingToCarPartListContainer(driver);
-        clickNextButton();
+        clicking_Button_Next();
         boolean nextButtonEnableStatus = driver.findElement(By.cssSelector("#pro-wizard > div.step-wrapper.active > button:nth-child(3)")).isEnabled();
         clickTheRefreshButton();
         clicking_LogoutButton();
@@ -99,7 +99,7 @@ public class carPartButtons {
         quoteWorkFlow.gettingToCarPartListContainer(driver);
         pickingCarPartEngine();
         pickingCarPartTransmission();
-        clickNextButton();
+        clicking_Button_Next();
                 Thread.sleep(1000);
         boolean quoteOfferContainer = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > p")).getText().endsWith("buy your vehicle?");
         WebElement scrollToTopOfWizard = driver.findElement(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.caption"));

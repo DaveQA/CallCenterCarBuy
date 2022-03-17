@@ -8,7 +8,7 @@ public class mainLoginScreen {
 
     public static String empty_InformationOnTheMainLoginScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        empty_MainLoginScreenInformation(driver);
+        typing_Input_MainLogin_Empty(driver);
         clicking_MainLoginScreen_LoginButton();
         waitOnBothErrorMessageAndLoadingGif();
         goToLoginPage(driver);
@@ -17,7 +17,7 @@ public class mainLoginScreen {
 
     public static String bad_InformationOnTheMainLoginScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        bad_MainLoginScreenInformation(driver);
+        typing_Input_MainLogin_Bad(driver);
         clicking_MainLoginScreen_LoginButton();
         waitOnBothErrorMessageAndLoadingGif();
         goToLoginPage(driver);
@@ -26,7 +26,7 @@ public class mainLoginScreen {
 
     public static String fake_InformationOnTheMainLoginScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        fake_MainLoginScreenInformation(driver);
+        typing_Input_MainLogin_Fake(driver);
         clicking_MainLoginScreen_LoginButton();
         waitOnBothErrorMessageAndLoadingGif();
         goToLoginPage(driver);
@@ -35,12 +35,12 @@ public class mainLoginScreen {
 
     public static String good_InformationOnTheMainLoginScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        good_MainLoginScreenInformation(driver);
+        typing_Input_MainLogin_Good(driver);
         clicking_MainLoginScreen_LoginButton();
         waitOnBothErrorMessageAndLoadingGif();
         String currentURLAfterGoodInfoEntered = driver.getCurrentUrl();
         // The following is used until the driver quit is re-enabled
-                clickingButton_Skip();
+                clicking_Button_Skip();
                 waitOnBothErrorMessageAndLoadingGif();
                 clicking_LogoutButton();
                 driver.switchTo().alert().accept();

@@ -11,10 +11,10 @@ public class yearMakeModelDropdowns {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean yearRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0;
         Thread.sleep(1000);
         clickTheRefreshButton();
@@ -26,11 +26,11 @@ public class yearMakeModelDropdowns {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarRandom();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean makeRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0;
                 Thread.sleep(1000);
         clickTheRefreshButton();
@@ -42,12 +42,12 @@ public class yearMakeModelDropdowns {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
+        clicking_Button_Next();
         pickingYearOfCarRandom();
         pickingMakeOfCarRandom();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean modelRequiredText = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
                 Thread.sleep(1000);
         clickTheRefreshButton();
@@ -59,10 +59,10 @@ public class yearMakeModelDropdowns {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
         enteringZipCodeStatic();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
-        clickNextButton();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
+        clicking_Button_Next();
         boolean nextButtonEnableStatus = driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > p")).size() > 0
             && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > p")).size() > 0
             && driver.findElements(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > p")).size() > 0;
