@@ -15,11 +15,15 @@ public class TopNavLinks_Verification {
         waitOnButtonToBeClickable(By.linkText("Notifications"));
         clickSomething(By.linkText("Notifications"));
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.linkText("Dashboard"));
-        clickSomething(By.linkText("Dashboard"));
+        waitOnButtonToBeClickable(By.xpath("//a[contains(text(),'Dashboard')]"));
+        clickSomething(By.xpath("//a[contains(text(),'Dashboard')]"));
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.linkText("Dashboard"));
+        waitOnButtonToBeClickable(By.xpath("//a[contains(text(),'Dashboard')]"));
         String currentURL = driver.getCurrentUrl();
+        waitOnBothErrorMessageAndLoadingGif();
+//        clicking_LogoutButton();
+//        driver.switchTo().alert().accept();
+//        clicking_LogoutButton();
         loggingOutOfApp(driver);
         return currentURL;
     }

@@ -74,168 +74,401 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Checking top navigation links")
+    @DisplayName("Verifying top navigation links")
     class TopNavLinksTests {
         @Test
-        @DisplayName("Clicking on link in top nav - Dashboard")
+        @DisplayName("Verifying Top Nav Link - Dashboard")
         public void clicking_TopNavLink_Dashboard_Test() {
             Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
         }
 
         @Test
-        @DisplayName("Clicking on link in top nav - Notification")
+        @DisplayName("Verifying Top Nav Link - Notification")
         public void clicking_TopNavLink_Notifications_Test() {
             Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Notifications(driver), "https://qa-carbuy.pullapart.com/#/notifications", "URL did not match expected");
         }
 
-        @Test
-        @DisplayName("Clicking on link in top nav - Admin Advance Features Quote")
-        public void clicking_TopNavLink_Admin_Quote_Test() {
-            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Quote(driver), "https://qa-carbuy.pullapart.com/#/admin/quotes", "URL did not match expected");
-        }
+        @Nested
+        @DisplayName("Verifying Top Nav Admin Links")
+        class AdminLinksTest {
+            @Test
+            @DisplayName("Verifying Top Nav Admin Link - Quote")
+            public void clicking_TopNavLink_Admin_Quote_Test() {
+                Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Quote(driver), "https://qa-carbuy.pullapart.com/#/admin/quotes", "URL did not match expected");
+            }
 
-        @Test
-        @DisplayName("Clicking on link in top nav - Admin General Settings Dispositions")
-        public void clicking_TopNavLink_Admin_Dispositions_Test() {
-            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Dispositions(driver), "https://qa-carbuy.pullapart.com/#/admin/dispositions", "URL did not match expected");
-        }
+            @Test
+            @DisplayName("Verifying Top Nav Admin Link - Dispositions")
+            public void clicking_TopNavLink_Admin_Dispositions_Test() {
+                Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Dispositions(driver), "https://qa-carbuy.pullapart.com/#/admin/dispositions", "URL did not match expected");
+            }
 
-        @Test
-        @DisplayName("Clicking on link in top nav - Admin General Settings Call Codes")
-        public void clicking_TopNavLink_Admin_CallCodes_Test() {
-            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_CallCodes(driver), "https://qa-carbuy.pullapart.com/#/admin/callcodes", "URL did not match expected");
-        }
+            @Test
+            @DisplayName("Verifying Top Nav Admin Link - Call Codes")
+            public void clicking_TopNavLink_Admin_CallCodes_Test() {
+                Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_CallCodes(driver), "https://qa-carbuy.pullapart.com/#/admin/callcodes", "URL did not match expected");
+            }
 
-        @Test
-        @DisplayName("Clicking on link in top nav - Admin General Settings Users")
-        public void clicking_TopNavLink_Admin_Users_Test() {
-            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Users(driver), "https://qa-carbuy.pullapart.com/#/admin/users", "URL did not match expected");
+            @Test
+            @DisplayName("Verifying Top Nav Admin Link - Users")
+            public void clicking_TopNavLink_Admin_Users_Test() {
+                Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Admin_Users(driver), "https://qa-carbuy.pullapart.com/#/admin/users", "URL did not match expected");
+            }
         }
     }
 
     @Nested
-    @DisplayName("Clicking on call code links")
+    @DisplayName("Verifying Call Code Links")
     class CallCodeButtonsTests {
-        @Test
-        @DisplayName("Clicking Call Code Link - Callback Number (OLD) button ID")
-        public void clickCallCode_OnlineQuoteCallbackNumberOLD_Button_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.clickCallCode_OnlineQuoteCallbackNumberOLD_Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=Online%20Quote%20Callback%20Number%20%28OLD%29", "Call code ID did not match expected");
+        @Nested
+        @DisplayName("Speed Dial Links")
+        class SpeedDialLinksTest {
+            @Test
+            @DisplayName("Verifying link - Callback Number (OLD) button ID")
+            public void clickCallCode_OnlineQuoteCallbackNumberOLD_Button_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.clickCallCode_OnlineQuoteCallbackNumberOLD_Button(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=Online%20Quote%20Callback%20Number%20%28OLD%29", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 500-Partner-Peddle-All")
+            public void ClickingCallCode_500PartnerPeddleAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_500PartnerPeddleAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=500-Partner-Peddle-All", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 501-Partner-Carbrain-All")
+            public void ClickingCallCode_501PartnerCarbrainAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_501PartnerCarbrainAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 502-Partner-Junk Car Boys-All")
+            public void ClickingCallCode_502PartnerJunkCarBoysAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_502PartnerJunkCarBoysAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=502-Partner-Junk%20Car%20Boys-All", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 503-Partner-Ars-All")
+            public void ClickingCallCode_503PartnerArsAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_503PartnerArsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=503-Partner-Ars-All", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 504-Partner-Cars-All")
+            public void ClickingCallCode_504PartnerCarsAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_504PartnerCarsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=504-Partner-Cars-All", "Call code ID did not match expected");
+            }
+
+            @Test
+            @DisplayName("Verifying link - 510-Partner-Junk Car Solutions-All")
+            public void ClickingCallCode_510PartnerJunkCarSolutionsAll_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_510PartnerJunkCarSolutionsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=510-Partner-Junk%20Car%20Solutions-All", "Call code ID did not match expected");
+            }
         }
 
-        @Test
-        @DisplayName("Clicking Call Code Link - 500-Partner-Peddle-All")
-        public void ClickingCallCode_500PartnerPeddleAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_500PartnerPeddleAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=162&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=500-Partner-Peddle-All", "Call code ID did not match expected");
-        }
+        @Nested
+        @DisplayName("Call Code Filter")
+        class CallCodeFilterTest {
+            @Test
+            @DisplayName("Filtering call codes by entering numbers")
+            public void filteringCallCodes_NumericCharacters_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.filteringCallCodes_NumericCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
+            }
 
-        @Test
-        @DisplayName("Clicking Call Code Link - 501-Partner-Carbrain-All")
-        public void ClickingCallCode_501PartnerCarbrainAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_501PartnerCarbrainAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Call code ID did not match expected");
-        }
-
-        @Test
-        @DisplayName("Clicking Call Code Link - 502-Partner-Junk Car Boys-All")
-        public void ClickingCallCode_502PartnerJunkCarBoysAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_502PartnerJunkCarBoysAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=164&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=502-Partner-Junk%20Car%20Boys-All", "Call code ID did not match expected");
-        }
-
-        @Test
-        @DisplayName("Clicking Call Code Link - 503-Partner-Ars-All")
-        public void ClickingCallCode_503PartnerArsAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_503PartnerArsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=165&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=503-Partner-Ars-All", "Call code ID did not match expected");
-        }
-
-        @Test
-        @DisplayName("Clicking Call Code Link - 504-Partner-Cars-All")
-        public void ClickingCallCode_504PartnerCarsAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_504PartnerCarsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=166&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=504-Partner-Cars-All", "Call code ID did not match expected");
-        }
-
-        @Test
-        @DisplayName("Clicking Call Code Link - 510-Partner-Junk Car Solutions-All")
-        public void ClickingCallCode_510PartnerJunkCarSolutionsAll_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.ClickingCallCode_510PartnerJunkCarSolutionsAll(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=193&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=510-Partner-Junk%20Car%20Solutions-All", "Call code ID did not match expected");
-        }
-
-        @Test
-        @DisplayName("Filtering call codes by entering numbers")
-        public void filteringCallCodes_NumericCharacters_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.filteringCallCodes_NumericCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
-        }
-
-        @Test
-        @DisplayName("Filtering call codes by entering letters")
-        public void filteringCallCodes_AlphaCharacters_Test() {
-            Assertions.assertEquals(SpeedDailLinks_Verification.filteringCallCodes_AlphaCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
+            @Test
+            @DisplayName("Filtering call codes by entering letters")
+            public void filteringCallCodes_AlphaCharacters_Test() {
+                Assertions.assertEquals(SpeedDailLinks_Verification.filteringCallCodes_AlphaCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
+            }
         }
     }
 
     @Nested
     @DisplayName("Sidebar Tests")
     class SideBarTests {
-        @Test
-        @DisplayName("Sidebar matches information entered - Firstname and Lastname")
-        public void checkingSidebarInformation_FirstAndLastName_Test() {
-            Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe", "Sidebar information does not match");
+        @Nested
+        @DisplayName("Sidebar Fields - Customer Information")
+        class CustomerInformationTest {
+
+            @Test
+            @DisplayName("Sidebar matches information entered - Firstname and Lastname")
+            public void checkingSidebarInformation_FirstAndLastName_Test() {
+                Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe", "Sidebar information does not match");
+            }
+
+            @Test
+            @DisplayName("Sidebar matches information entered - Primary Phone number")
+            public void checkingSidebarInformation_PrimaryPhoneNumber_Test() {
+                Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555", "Sidebar information does not match");
+            }
+
+            @Test
+            @DisplayName("Sidebar matches information entered - Alternate number")
+            public void checkingSidebarInformation_AlternatePhoneNumber_Test() {
+                Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444", "Sidebar information does not match");
+            }
+
+            @Test
+            @DisplayName("Sidebar matches information entered - Email address")
+            public void customerSideBarInfoMatchesEmailEnteredTest() {
+                Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com", "Sidebar information does not match");
+            }
         }
 
-        @Test
-        @DisplayName("Sidebar matches information entered - Primary Phone number")
-        public void checkingSidebarInformation_PrimaryPhoneNumber_Test() {
-            Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555", "Sidebar information does not match");
-        }
+        @Nested
+        @DisplayName("Sidebar Fields - Market")
+        class SidebarFieldsMarketTest {
+            @Nested
+            @DisplayName("Alabama Markets")
+            class AlabamaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Birmingham")
+                public void checkingSidebarInformation_Market_Birmingham_Alabama_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Birmingham_Alabama(driver), "Market: Birmingham", "Sidebar information does not match");
+                }
 
-        @Test
-        @DisplayName("Sidebar matches information entered - Alternate number")
-        public void checkingSidebarInformation_AlternatePhoneNumber_Test() {
-            Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444", "Sidebar information does not match");
-        }
+                @Test
+                @DisplayName("Sidebar matches Market - Mobile")
+                public void checkingSidebarInformation_Market_Mobile_Alabama_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Mobile_Alabama(driver), "Market: Mobile", "Sidebar information does not match");
+                }
 
-        @Test
-        @DisplayName("Sidebar matches information entered - Email address")
-        public void customerSideBarInfoMatchesEmailEnteredTest() {
-            Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com", "Sidebar information does not match");
+                @Test
+                @DisplayName("Sidebar matches Market - Montgomery")
+                public void checkingSidebarInformation_Market_Montgomery_Alabama_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Montgomery_Alabama(driver), "Market: Montgomery", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Arizona Markets")
+            class ArizonaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Tucson")
+                public void checkingSidebarInformation_Market_Tucson_Arizona_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Tucson_Arizona(driver), "Market: Tucson", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Georgia Markets")
+            class GeorgiaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Atlanta East")
+                public void checkingSidebarInformation_Market_AtlantaEast_Georgia_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_AtlantaEast_Georgia(driver), "Market: Atlanta", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Atlanta North")
+                public void checkingSidebarInformation_Market_AtlantaNorth_Georgia_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_AtlantaNorth_Georgia(driver), "Market: Atlanta", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Atlanta South")
+                public void checkingSidebarInformation_Market_AtlantaSouth_Georgia_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_AtlantaSouth_Georgia(driver), "Market: Atlanta", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Carolina Markets")
+            class CarolinaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Charlotte")
+                public void checkingSidebarInformation_Market_Charlotte_NorthCarolina_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Charlotte_NorthCarolina(driver), "Market: Charlotte", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Winston Salem")
+                public void checkingSidebarInformation_Market_WinstonSalem_NorthCarolina_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_WinstonSalem_NorthCarolina(driver), "Market: Winston-Salem", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Augusta")
+                public void checkingSidebarInformation_Market_Augusta_SouthCarolina_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Augusta_SouthCarolina(driver), "Market: Augusta", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Columbia")
+                public void checkingSidebarInformation_Market_Columbia_SouthCarolina_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Columbia_SouthCarolina(driver), "Market: Columbia", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Indiana Markets")
+            class IndianaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Indianapolis")
+                public void checkingSidebarInformation_Market_Indianapolis_Indiana_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Indianapolis_Indiana(driver), "Market: Indianapolis", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Kentucky Markets")
+            class KentuckyMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Louisville")
+                public void checkingSidebarInformation_Market_Louisville_Kentucky_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Louisville_Kentucky(driver), "Market: Louisville", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Louisiana Markets")
+            class LouisianaMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Baton Rouge")
+                public void checkingSidebarInformation_Market_BatonRouge_Louisiana_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_BatonRouge_Louisiana(driver), "Market: Baton Rouge", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Lafayette")
+                public void checkingSidebarInformation_Market_Lafayette_Louisiana_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Lafayette_Louisiana(driver), "Market: Lafayette", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - New Orleans West")
+                public void checkingSidebarInformation_Market_NewOrleansWest_Louisiana_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_NewOrleansWest_Louisiana(driver), "Market: New Orleans West", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Mississippi Markets")
+            class MississippiMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Jackson")
+                public void checkingSidebarInformation_Market_Jackson_Mississippi_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Jackson_Mississippi(driver), "Market: Jackson", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Ohio Markets")
+            class OhioMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Akron")
+                public void checkingSidebarInformation_Market_Akron_Ohio_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Akron_Ohio(driver), "Market: Akron", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Canton")
+                public void checkingSidebarInformation_Market_Canton_Ohio_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Canton_Ohio(driver), "Market: Canton", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Cleveland Kirby Avenue")
+                public void checkingSidebarInformation_Market_ClevelandKirbyAvenue_Ohio_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_ClevelandKirbyAvenue_Ohio(driver), "Market: Cleveland", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Cleveland West")
+                public void checkingSidebarInformation_Market_ClevelandWest_Ohio_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_ClevelandWest_Ohio(driver), "Market: Cleveland", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Tennessee Markets")
+            class TennesseeMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Knoxville")
+                public void checkingSidebarInformation_Market_Knoxville_Tennessee_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Knoxville_Tennessee(driver), "Market: Knoxville", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Memphis")
+                public void checkingSidebarInformation_Market_Memphis_Tennessee_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Memphis_Tennessee(driver), "Market: Memphis", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - Nashville")
+                public void checkingSidebarInformation_Market_Nashville_Tennessee_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_Nashville_Tennessee(driver), "Market: Nashville", "Sidebar information does not match");
+                }
+            }
+
+            @Nested
+            @DisplayName("Texas Markets")
+            class TexasMarketsTest {
+                @Test
+                @DisplayName("Sidebar matches Market - Corpus Christi")
+                public void checkingSidebarInformation_Market_CorpusChristi_Texas_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_CorpusChristi_Texas(driver), "Market: Corpus Christi", "Sidebar information does not match");
+                }
+
+                @Test
+                @DisplayName("Sidebar matches Market - El Paso")
+                public void checkingSidebarInformation_Market_ElPaso_Texas_Test() {
+                    Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_Market_ElPaso_Texas(driver), "Market: El Paso", "Sidebar information does not match");
+                }
+            }
         }
     }
 
     @Nested
-    @DisplayName("Customer Information Requirement Checks")
+    @DisplayName("Wizard Field Requirement Checks")
     class CustomerInformationFieldRequirementsTests {
-        @Test
-        @DisplayName("Checking Field Required - First Name")
-        public void enteringOnlyLastName_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyLastName(driver), "Field is required, check application");
-        }
+        @Nested
+        @DisplayName("Customer Information Fields")
+        class CustomerInformationFieldsTest {
+            @Nested
+            @DisplayName("Customer Name")
+            class CustomerNameTest {
+                @Test
+                @DisplayName("Verifying Field Required - First Name")
+                public void enteringOnlyLastName_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyLastName(driver), "Field is required, check application");
+                }
 
-        @Test
-        @DisplayName("Checking Field Required - Last Name")
-        public void enteringOnlyFirstName_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyFirstName(driver), "Field is required, check application");
-        }
+                @Test
+                @DisplayName("Verifying Field Required - Last Name")
+                public void enteringOnlyFirstName_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyFirstName(driver), "Field is required, check application");
+                }
 
-        @Test
-        @DisplayName("Checking Field Required - First and Last Name")
-        public void leavingFirstAndLastNameFieldsBlank_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
-        }
+                @Test
+                @DisplayName("Verifying Field Required - First and Last Name")
+                public void leavingFirstAndLastNameFieldsBlank_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
+                }
+            }
 
-        @Test
-        @DisplayName("Checking Field Required - Primary Phone Number")
-        public void leavingPrimaryPhoneNumberFieldBlank_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
-        }
+            @Nested
+            @DisplayName("Customer Contact Information - Primary Phone Number and Email Address")
+            class CustomerContactInformationTest {
+                @Test
+                @DisplayName("Verifying Field Required - Primary Phone Number")
+                public void leavingPrimaryPhoneNumberFieldBlank_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
+                }
 
-        @Test
-        @DisplayName("Checking Field Required - Email Address")
-        public void leavingEmailAddressFieldBlank_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.leavingEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
-        }
+                @Test
+                @DisplayName("Verifying Field Required - Email Address")
+                public void leavingEmailAddressFieldBlank_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+                }
 
-        @Test
-        @DisplayName("Checking Field Required - Primary and Email Fields")
-        public void leavingPrimaryAndEmailAddressFieldBlank_Test() {
-            Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryAndEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+                @Test
+                @DisplayName("Verifying Field Required - Primary and Email Fields")
+                public void leavingPrimaryAndEmailAddressFieldBlank_Test() {
+                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryAndEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+                }
+            }
         }
     }
 
@@ -507,57 +740,57 @@ public class ZMainTests {
             }
         }
     }
-//
-//    @Nested
-//    @DisplayName("Year Make Model Fields")
-//    class makeModelYearDropdownsTests {
-//        @Test
-//        @DisplayName("Checking Year of car is required")
-//        public void yearIsRequiredTest() throws InterruptedException {
-//            Assertions.assertTrue(yearMakeModelDropdowns.yearIsRequiredCheck(driver), "Required on screen text was not displayed");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking Make of car is required")
-//        public void makeIsRequiredTest() throws InterruptedException {
-//            Assertions.assertTrue(yearMakeModelDropdowns.makeIsRequiredCheck(driver), "Required on screen text was not displayed");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking Model of car is required")
-//        public void modelIsRequiredTest() throws InterruptedException {
-//            Assertions.assertTrue(yearMakeModelDropdowns.modelIsRequiredCheck(driver), "Required on screen text was not displayed");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking Year, Make, Model of car are all required")
-//        public void allYearMakeModelDropdownsAreRequiredTest() throws InterruptedException {
-//            Assertions.assertTrue(yearMakeModelDropdowns.allYearMakeModelDropdownsAreRequired(driver), "Required on screen text was not displayed");
-//        }
-//    }
-//
-//    @Nested
-//    @DisplayName("Damage Radio Buttons")
-//    class carDamageRadioButtonsTests {
-//        @Test
-//        @DisplayName("Radio button picking damage - Neither")
-//        public void notPickingEitherOptionForDamageTest() throws InterruptedException {
-//            Assertions.assertFalse(DamageOnCarRadioButtons.pickingNeitherRadioButtonIfThereIsDamage(driver), "Was able to continue without answering damage check");
-//        }
-//
-//        @Test
-//        @DisplayName("Radio button picking damage - Yes")
-//        public void pickingYesToTheIsThereDamageQuestionTest() throws InterruptedException {
-//            Assertions.assertTrue(DamageOnCarRadioButtons.RadioButtonYesThereIsDamageOnCarCheck(driver), "The type of damage options did not show on screen");
-//        }
-//
-//        @Test
-//        @DisplayName("Radio button picking damage - No")
-//        public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
-//            Assertions.assertFalse(DamageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver), "The type of damage options show on screen");
-//        }
-//    }
-//
+
+    @Nested
+    @DisplayName("Year / Make / Model Field Requirement Checks")
+    class YearMakeModelFieldRequirementChecksTest {
+        @Test
+        @DisplayName("Verifying Field Required - Year")
+        public void vehicleInformationOptionRequirement_Year_Test() {
+            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Year(driver), "Field should be required, check application");
+        }
+
+        @Test
+        @DisplayName("Verifying Field Required - Make")
+        public void vehicleInformationOptionRequirement_Make_Test() {
+            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Make(driver), "Field should be required, check application");
+        }
+
+        @Test
+        @DisplayName("Verifying Field Required - Model")
+        public void vehicleInformationOptionRequirement_Model_Test() {
+            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Model(driver), "Field should be required, check application");
+        }
+
+        @Test
+        @DisplayName("Verifying Field Required - Year Make Model")
+        public void vehicleInformationOptionRequirement_YearMakeModel_Test() {
+            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_YearMakeModel(driver), "Field should be required, check application");
+        }
+    }
+
+    @Nested
+    @DisplayName("Damage Radio Buttons")
+    class CarDamageRadioButtonsTests {
+        @Test
+        @DisplayName("Radio button picking damage - Neither")
+        public void doesTheCarHaveAnyDamage_Option_Neither_Test() {
+            Assertions.assertFalse(DamageOnCarRadioButtons.doesTheCarHaveAnyDamage_Option_Neither(driver), "Next button enabled, check application");
+        }
+
+        @Test
+        @DisplayName("Radio button picking damage - Yes")
+        public void pickingYesToTheIsThereDamageQuestionTest() {
+            Assertions.assertTrue(DamageOnCarRadioButtons.doesTheCarHaveAnyDamage_Option_Yes(driver), "Next not button enabled, check application");
+        }
+
+        @Test
+        @DisplayName("Radio button picking damage - No")
+        public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
+            Assertions.assertFalse(DamageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver), "Next not button enabled, check application");
+        }
+    }
+
 //    @Nested
 //    @DisplayName("Fire Rollover Flood Damage Buttons")
 //    class fillingOutTypeOfDamageSectionTests {
