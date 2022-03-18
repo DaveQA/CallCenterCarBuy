@@ -10,7 +10,7 @@ public class yearMakeModelDropdowns {
     public static boolean yearIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         clicking_Button_Next();
         clicking_Button_Next();
@@ -25,7 +25,7 @@ public class yearMakeModelDropdowns {
     public static boolean makeIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarRandom();
         clicking_Button_Next();
@@ -41,7 +41,7 @@ public class yearMakeModelDropdowns {
     public static boolean modelIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarRandom();
         pickingMakeOfCarRandom();
@@ -58,7 +58,7 @@ public class yearMakeModelDropdowns {
     public static boolean allYearMakeModelDropdownsAreRequired(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         clicking_Button_Next();
         clicking_Button_Next();

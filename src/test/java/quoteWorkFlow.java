@@ -25,7 +25,7 @@ public class quoteWorkFlow {
 
     public static void fillingOutSecondScreen(WebDriver driver1) throws InterruptedException {
         driver = driver1;
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -51,7 +51,7 @@ public class quoteWorkFlow {
     public static void gettingToCarPartListContainer(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();

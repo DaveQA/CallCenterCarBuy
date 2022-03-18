@@ -10,7 +10,7 @@ public class DamageOnCarRadioButtons {
     public static boolean pickingNeitherRadioButtonIfThereIsDamage(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -27,7 +27,7 @@ public class DamageOnCarRadioButtons {
     public static boolean RadioButtonYesThereIsDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -44,7 +44,7 @@ public class DamageOnCarRadioButtons {
     public static boolean radioButtonNoThereIsNotDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -62,7 +62,7 @@ public class DamageOnCarRadioButtons {
     public static String pickingNeitherTypeOfDamageOptionCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -80,7 +80,7 @@ public class DamageOnCarRadioButtons {
     public static boolean radioButtonYesToFireRolloverDamageOnCarCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -98,7 +98,7 @@ public class DamageOnCarRadioButtons {
     public static boolean thereIsNoFireFloodRolloverDamageRadioButtonCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -115,7 +115,7 @@ public class DamageOnCarRadioButtons {
     public static boolean detailDamageNotesIsRequiredCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
@@ -134,7 +134,7 @@ public class DamageOnCarRadioButtons {
     public static boolean checkingDetailDamageNotesContainerIsEditableCheck(WebDriver driver1) throws InterruptedException {
         driver = driver1;
         quoteWorkFlow.fillingOutFirstScreen(driver);
-        enteringZipCodeStatic();
+        typing_Input_Zipcode_Good();
         clicking_Button_Next();
         pickingYearOfCarStatic();
         pickingMakeOfCarStatic();
