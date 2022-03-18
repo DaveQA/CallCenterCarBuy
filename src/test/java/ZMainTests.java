@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class _01_testCases {
+public class ZMainTests {
 
     private static WebDriver driver;
 
@@ -161,13 +161,13 @@ public class _01_testCases {
         @Test
         @DisplayName("Filtering call codes by entering numbers")
         public void filteringCallCodes_NumericCharacters_Test() {
-            Assertions.assertEquals(speedDailContainer.filteringCallCodes_NumericCharacters(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All","Filtering function is not working as expected");
+            Assertions.assertEquals(speedDailContainer.filteringCallCodes_NumericCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
         }
 
         @Test
         @DisplayName("Filtering call codes by entering letters")
-        public void filteringCallCodes_AlphaCharacters_Test(){
-            Assertions.assertEquals(speedDailContainer.filteringCallCodes_AlphaCharacters(driver),"https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All","Filtering function is not working as expected");
+        public void filteringCallCodes_AlphaCharacters_Test() {
+            Assertions.assertEquals(speedDailContainer.filteringCallCodes_AlphaCharacters(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=163&mitelCallerName=N%2FA&mitelCallerNumber=&callCodeName=501-Partner-Carbrain-All", "Filtering function is not working as expected");
         }
     }
 
@@ -177,25 +177,25 @@ public class _01_testCases {
         @Test
         @DisplayName("Sidebar matches information entered - Firstname and Lastname")
         public void checkingSidebarInformation_FirstAndLastName_Test() {
-            Assertions.assertEquals(sideBar.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe","Sidebar information does not match");
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe", "Sidebar information does not match");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Primary Phone number")
         public void checkingSidebarInformation_PrimaryPhoneNumber_Test() {
-            Assertions.assertEquals(sideBar.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555","Sidebar information does not match");
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555", "Sidebar information does not match");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Alternate number")
         public void checkingSidebarInformation_AlternatePhoneNumber_Test() {
-            Assertions.assertEquals(sideBar.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444","Sidebar information does not match");
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444", "Sidebar information does not match");
         }
 
         @Test
         @DisplayName("Sidebar matches information entered - Email address")
         public void customerSideBarInfoMatchesEmailEnteredTest() {
-            Assertions.assertEquals(sideBar.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com","Sidebar information does not match");
+            Assertions.assertEquals(sideBar.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com", "Sidebar information does not match");
         }
     }
 
@@ -216,13 +216,13 @@ public class _01_testCases {
 
         @Test
         @DisplayName("Checking Field Required - First and Last Name")
-        public void leavingFirstAndLastNameFieldsBlank_Test()  {
+        public void leavingFirstAndLastNameFieldsBlank_Test() {
             Assertions.assertTrue(CustomerInformationField_Requirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
         }
 
         @Test
         @DisplayName("Checking Field Required - Primary Phone Number")
-        public void leavingPrimaryPhoneNumberFieldBlank_Test()  {
+        public void leavingPrimaryPhoneNumberFieldBlank_Test() {
             Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
         }
 
@@ -243,11 +243,11 @@ public class _01_testCases {
     @DisplayName("Customer Information Field Validation Checks")
     class CustomerInformationFieldValidationsTest {
         @Nested
-        @DisplayName("Primary Phone Number Field Validation Checks")
-        class PrimaryPhoneValidationTest{
+        @DisplayName("Field Validation Checks - Primary Phone Number")
+        class PrimaryPhoneValidationTest {
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Alpha Characters")
-            public void phoneNumberFieldAlphaCharacter_Test()  {
+            public void phoneNumberFieldAlphaCharacter_Test() {
                 Assertions.assertTrue(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_AlphaCharacters(driver), "Validation check failed, please check application");
             }
 
@@ -256,30 +256,30 @@ public class _01_testCases {
             public void phoneNumberFieldSpecialCharacterTest() {
                 Assertions.assertTrue(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_SpecialCharacters(driver), "Validation check failed, please check application");
             }
-        }
 
-//        @Test
-//        @DisplayName("Not enough numbers entered")
-//        public void notEnoughNumbersEnteredTest() {
-//        }
-//
-//        @Test
-//        @DisplayName("To many numbers entered")
-//        public void toManyNumbersEnteredTest() throws InterruptedException {
-//            Assertions.assertTrue();
-//        }
-//
-//        @Test
-//        @DisplayName("Checking that a valid email address is needed to continue")
-//        public void enteringInvalidEmailAddressInformationTest() throws InterruptedException {
-//            Assertions.assertEquals(, "The email field must be a valid email.", "Was able to continue with an invalid email address");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking a real email address is needed to continue")
-//        public void enteringFakeEmailAddressInformationCheck() throws InterruptedException {
-//            Assertions.assertEquals(, "ZeroBounce status not valid, status:invalid", "Was able to continue with a fake email address");
-//        }
+            @Test
+            @DisplayName("Not enough numbers entered")
+            public void notEnoughNumbersEnteredTest() {
+            }
+
+            @Test
+            @DisplayName("To many numbers entered")
+            public void toManyNumbersEnteredTest() {
+            }
+        }
+        @Nested
+        @DisplayName("Field Validation Checks - Email Address")
+        class EmailAddressValidationTest {
+            @Test
+            @DisplayName("Checking Field Validation - Primary Phone Number - Invalided")
+            public void enteringInvalidEmailAddressInformationTest() {
+            }
+
+            @Test
+            @DisplayName("Checking Field Validation - Primary Phone Number - Fake")
+            public void enteringFakeEmailAddressInformationCheck() {
+            }
+        }
     }
 
 //    @Nested
