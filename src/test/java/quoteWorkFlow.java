@@ -27,11 +27,11 @@ public class quoteWorkFlow {
         driver = driver1;
         typing_Input_Zipcode_Good();
         clicking_Button_Next();
-        pickingYearOfCarStatic();
-        pickingMakeOfCarStatic();
-        pickingModelOfCarStatic();
+        clicking_Input_VehicleInformationOption_Year();
+        clicking_Input_VehicleInformationOption_Make();
+        clicking_Input_VehicleInformationOption_Model();
         clicking_Button_Next();
-        clickingNoRadioButtonIsThereDamageToCar();
+        clicking_Input_DoesTheCarHaveAnyDamage_No();
         clicking_Button_Next();
         pickingCarPartEngine();
         pickingCarPartTransmission();
@@ -53,11 +53,11 @@ public class quoteWorkFlow {
         quoteWorkFlow.fillingOutFirstScreen(driver);
         typing_Input_Zipcode_Good();
         clicking_Button_Next();
-        pickingYearOfCarStatic();
-        pickingMakeOfCarStatic();
-        pickingModelOfCarStatic();
+        clicking_Input_VehicleInformationOption_Year();
+        clicking_Input_VehicleInformationOption_Make();
+        clicking_Input_VehicleInformationOption_Model();
         clicking_Button_Next();
-        clickingNoRadioButtonIsThereDamageToCar();
+        clicking_Input_DoesTheCarHaveAnyDamage_No();
         clicking_Button_Next();
     }
 

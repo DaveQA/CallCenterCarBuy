@@ -1,4 +1,3 @@
-import Utilities.clickLinks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +32,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeBirminghamZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeBirminghamZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -46,7 +45,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMobileZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeMobileZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -59,7 +58,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMontgomeryZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeMontgomeryZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -72,7 +71,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeTucsonZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeTucsonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -85,7 +84,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaEastZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeAtlantaEastZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -98,7 +97,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaNorthZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeAtlantaNorthZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -111,7 +110,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAtlantaSouthZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeAtlantaSouthZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -124,7 +123,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAugustaZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeAugustaZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -137,7 +136,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeIndianapolisZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeIndianapolisZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -150,7 +149,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeLouisvilleZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeLouisvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -163,7 +162,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeBatonRougeZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeBatonRougeZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -176,7 +175,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeLafayetteZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeLafayetteZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -189,7 +188,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeNewOrleansWestZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeNewOrleansWestZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -202,7 +201,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeJacksonZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeJacksonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -215,7 +214,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCharlotteZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeCharlotteZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -228,7 +227,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeWinstonSalemZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeWinstonSalemZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -241,7 +240,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeAkronZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeAkronZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -254,7 +253,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCantonZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeCantonZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -267,7 +266,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeClevelandKirbyAvenueZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeClevelandKirbyAvenueZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -280,7 +279,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeClevelandWestZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeClevelandWestZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -293,7 +292,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeColumbiaZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeColumbiaZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -306,7 +305,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeKnoxvilleZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeKnoxvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -319,7 +318,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeMemphisZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeMemphisZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -332,7 +331,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeNashvilleZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeNashvilleZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -345,7 +344,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeCorpusChristiZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeCorpusChristiZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();
@@ -358,7 +357,7 @@ public class Zipcode_Verification {
         driver = driver1;
         gettingToTheZipcodeStep(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        String randomZipCodeUsed = listOfZipCodeNumbers.randomizeElPasoZipCode();
+        String randomZipCodeUsed = ListOfZipCodeNumbers.randomizeElPasoZipCode();
         System.out.println("Zipcode used " + randomZipCodeUsed);
         driver.findElement(By.name("zipCode")).sendKeys(randomZipCodeUsed,Keys.TAB);
         waitOnBothErrorMessageAndLoadingGif();

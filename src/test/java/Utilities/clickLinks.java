@@ -32,10 +32,9 @@ public class clickLinks {
         driver = driver1;
         clicking_LogoutButton();
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.alertIsPresent());
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
+            driver.switchTo().alert().accept();
             clicking_LogoutButton();
         } catch (Exception ignored) {
         }
@@ -101,12 +100,30 @@ public class clickLinks {
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
     }
 
-    public static void clickingYesRadioButtonIsThereDamageToCar() {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-group > div > div > label:nth-child(2)"));
+    public static void clicking_Input_VehicleInformationOption_Year() {
+        waitOnBothErrorMessageAndLoadingGif();
+        Select yearDropdownOption = new Select(driver.findElement(By.name("year")));
+        yearDropdownOption.selectByValue("2007");//2020
     }
 
-    public static void clickingNoRadioButtonIsThereDamageToCar() {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-group > div > div > label:nth-child(3)"));
+    public static void clicking_Input_VehicleInformationOption_Make() {
+        waitOnBothErrorMessageAndLoadingGif();
+        Select makeDropdownOption = new Select(driver.findElement(By.name("make")));
+        makeDropdownOption.selectByValue("27");//Honda
+    }
+
+    public static void clicking_Input_VehicleInformationOption_Model() {
+        waitOnBothErrorMessageAndLoadingGif();
+        Select modelDropdownOption = new Select(driver.findElement(By.name("model")));
+        modelDropdownOption.selectByValue("277");//Civic
+    }
+
+    public static void clicking_Input_DoesTheCarHaveAnyDamage_Yes() {
+        clickSomething(By.name("damageYes"));
+    }
+
+    public static void clicking_Input_DoesTheCarHaveAnyDamage_No() {
+        clickSomething(By.name("damageNo"));
     }
 
     public static void clickingYesFireFloodOrRolloverAccidentRadioButton() {
@@ -115,19 +132,6 @@ public class clickLinks {
 
     public static void clickingNoFireFloodOrRolloverAccidentRadioButton() {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(3)"));
-    }
-
-    public static void pickingYearOfCarStatic() {
-        driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > select > option:nth-child(16)")).click();
-    }
-
-    public static void pickingMakeOfCarStatic() throws InterruptedException {
-        driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > select > option:nth-child(35)")).click();
-        Thread.sleep(1000);
-    }
-
-    public static void pickingModelOfCarStatic() {
-        driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-5 > select > option:nth-child(6)")).click();
     }
 
     public static void pickingCarPartBattery() throws InterruptedException {
@@ -180,11 +184,6 @@ public class clickLinks {
 
     public static void clickingCallCodeDashboardSearchButton() throws InterruptedException {
         clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button"));
-        Thread.sleep(1000);
-    }
-
-    public static void clickPhoneNumberField() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"));
         Thread.sleep(1000);
     }
 
@@ -383,32 +382,6 @@ public class clickLinks {
     public static void enteringDetailDamageNotes() {
         clickSomething(By.cssSelector("#detailDamage"));
         typeSomething(By.cssSelector("#detailDamage"), "Test Detail Damage Notes");
-    }
-
-    public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail");
-        Thread.sleep(2000);
-    }
-
-    public static void enteringFakeEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail@nope.com");
-        Thread.sleep(2000);
-    }
-
-    public static void enterAlternatePhoneNumber() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"), "4444444444");
-        Thread.sleep(1000);
-    }
-
-    public static void enteringToManyNumbers() {
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "11122233440");
-    }
-
-    public static void tabOnKeyBoard(By by) {
-        driver.findElement(by).sendKeys(Keys.TAB);
     }
 
     public static void haulerScreenAddress1Field() {

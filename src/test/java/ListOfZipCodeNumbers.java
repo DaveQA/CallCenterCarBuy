@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
-public class listOfZipCodeNumbers {
+public class ListOfZipCodeNumbers {
 
     private static WebDriver driver;
 
