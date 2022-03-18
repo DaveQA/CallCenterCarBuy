@@ -30,10 +30,9 @@ public class clickLinks {
 
     public static void loggingOutOfApp(WebDriver driver1) {
         driver = driver1;
-        waitOnBothErrorMessageAndLoadingGif();
         clicking_LogoutButton();
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             alert.accept();
@@ -42,7 +41,8 @@ public class clickLinks {
         }
     }
 
-////////////////////////////////////////// Clicking Stuff///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////Clicking Stuff////////////////////////////////////////////////////////////////
 
     public static void clickSomething(By by) {
         driver.findElement(by).click();
@@ -61,8 +61,8 @@ public class clickLinks {
     }
 
     public static void clicking_LogoutButton() {
-        waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//i[@class='icon-logout']"));
+        waitOnBothErrorMessageAndLoadingGif();
         clickSomething(By.xpath("//i[@class='icon-logout']"));
     }
 
@@ -70,12 +70,14 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[@type='button']"));
         clickSomething(By.xpath("//button[@type='button']"));
+        waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clicking_Button_NewQuote() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'New Quote')]"));
         clickSomething(By.xpath("//button[contains(text(),'New Quote')]"));
+        waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clicking_Button_Next() {
@@ -88,18 +90,6 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void clicking_Input_PrimaryPhoneNumber() {
-        clickSomething(By.name("phone"));
-    }
-
-    public static void clicking_Input_AlternateNumber() {
-        clickSomething(By.name("alternatephone"));
-    }
-
-    public static void clicking_Input_EmailAddress(){
-        clickSomething(By.name("email"));
-    }
-
     public static void clicking_Link_CallCode_Peddle(WebDriver driver1) {
         driver = driver1;
         waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
@@ -109,18 +99,6 @@ public class clickLinks {
         clickSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
-    }
-
-    public static void clickTheRefreshButton() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-    }
-
-    public static void clickCallCodeButton() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
     }
 
     public static void clickingYesRadioButtonIsThereDamageToCar() {
@@ -182,6 +160,24 @@ public class clickLinks {
         Thread.sleep(1000);
     }
 
+    public static void doesVehicleRunRadioButton_Yes() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+    }
+
+    public static void whereIsVehicleParkedButton_Business() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
+    }
+
+    public static void doesVehicleRunRadioButton_No() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+    }
+
     public static void clickingCallCodeDashboardSearchButton() throws InterruptedException {
         clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button"));
         Thread.sleep(1000);
@@ -192,28 +188,10 @@ public class clickLinks {
         Thread.sleep(1000);
     }
 
-    public static void doesVehicleRunRadioButton_Yes() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
-    }
-
-    public static void doesVehicleRunRadioButton_No() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
-    }
-
     public static void whereIsVehicleParkedButton_Residence() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
-    }
-
-    public static void whereIsVehicleParkedButton_Business() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
     }
 
     public static void proofOfOwnership_Title() {
@@ -271,9 +249,21 @@ public class clickLinks {
         clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input"));
         waitOnBothErrorMessageAndLoadingGif();
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //////////////////////////////////////////// Typing Stuff///////////////////////////////////////////////////////////////
+    public static void clickTheRefreshButton() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
+    }
+
+    public static void clickCallCodeButton() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
+        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////Typing Stuff///////////////////////////////////////////////////////////////
+
     public static void typeSomething(By by, String value) {
         driver.findElement(by).sendKeys(value);
     }
@@ -288,7 +278,7 @@ public class clickLinks {
     public static void typing_Input_MainLogin_Bad(WebDriver driver1) {
         driver = driver1;
         typeSomething(By.name("username"), "mff");
-        typeSomething(By.xpath("password"), "mff");
+        typeSomething(By.name("password"), "mff");
         waitOnBothErrorMessageAndLoadingGif();
     }
 
@@ -354,6 +344,14 @@ public class clickLinks {
         typeSomething(By.name("phone"), "@#$%^&*(");
     }
 
+    public static void typing_Input_PrimaryPhoneNumber_InComplete() {
+        typeSomething(By.name("phone"), "5");
+    }
+
+    public static void typing_Input_PrimaryPhoneNumber_TooMany() {
+        typeSomething(By.name("phone"), "11111111111111111111");
+    }
+
     public static void typing_Input_AlternatePhoneNumber_Valid() {
         typeSomething(By.name("alternatephone"), "4444444");
     }
@@ -362,20 +360,55 @@ public class clickLinks {
         typeSomething(By.name("email"), "vip1000682431@gmail.com");
     }
 
+    public static void typing_Input_Email_Invalided() {
+        typeSomething(By.name("email"), "PAPInvalidEmailAddressPAP@gmail.com");
+    }
+
+    public static void typing_Input_Email_Fake() {
+        typeSomething(By.name("email"), "EmailOfFakeness");
+    }
+
+    public static void typing_Input_Zipcode_OutOfArea() {
+        driver.findElement(By.name("zipCode")).sendKeys("90210", Keys.TAB);
+    }
+
+    public static void typing_Input_Zipcode_Invalid() {
+        driver.findElement(By.name("zipCode")).sendKeys("0", Keys.TAB);
+    }
+
+    public static void typing_Input_Zipcode_Good() {
+        driver.findElement(By.name("zipCode")).sendKeys("30188", Keys.TAB);
+    }
+
     public static void enteringDetailDamageNotes() {
         clickSomething(By.cssSelector("#detailDamage"));
         typeSomething(By.cssSelector("#detailDamage"), "Test Detail Damage Notes");
     }
 
-    public static void enteringOutOfAreaZipCode() throws InterruptedException {
-        clickSomething(By.cssSelector("#zipCode"));
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("0", Keys.TAB);
+    public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail");
         Thread.sleep(2000);
     }
 
-    public static void enteringZipCodeStatic() throws InterruptedException {
-        driver.findElement(By.cssSelector("#zipCode")).sendKeys("30188", Keys.TAB);
+    public static void enteringFakeEmailAddressInformation() throws InterruptedException {
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail@nope.com");
+        Thread.sleep(2000);
+    }
+
+    public static void enterAlternatePhoneNumber() throws InterruptedException {
+        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"), "4444444444");
         Thread.sleep(1000);
+    }
+
+    public static void enteringToManyNumbers() {
+        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "11122233440");
+    }
+
+    public static void tabOnKeyBoard(By by) {
+        driver.findElement(by).sendKeys(Keys.TAB);
     }
 
     public static void haulerScreenAddress1Field() {
@@ -406,31 +439,7 @@ public class clickLinks {
         typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"), "Hauler Notes Field");
     }
 
-    public static void enteringInvalidEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail");
-        Thread.sleep(2000);
-    }
-
-    public static void enteringFakeEmailAddressInformation() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div > input"), "NotaRealEmail@nope.com");
-        Thread.sleep(2000);
-    }
-
-    public static void enterAlternatePhoneNumber() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input"), "4444444444");
-        Thread.sleep(1000);
-    }
-
-    public static void enteringToManyNumbers() {
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > input"), "11122233440");
-    }
-
-    public static void tabOnKeyBoard(By by) {
-        driver.findElement(by).sendKeys(Keys.TAB);
-    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// Dropdowns//////////////////////////////////////////////////////////////////
 
     public static void pickingYearOfCarRandom() {
@@ -465,7 +474,6 @@ public class clickLinks {
         objSel.selectByIndex(iSelect);
 //        System.out.println(drpDwnList.getText());
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static void datePicker() {
         driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input")).click();
@@ -481,6 +489,9 @@ public class clickLinks {
             }
         }
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////Waits//////////////////////////////////////////////////////////////////
 
     public static void waitOnButtonToBeClickable(By by) {
         WebDriverWait waitOnButtonToBeClickable = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -501,4 +512,6 @@ public class clickLinks {
         waitOnLoadingGif();
         waitOnErrorMessagePopup();
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
