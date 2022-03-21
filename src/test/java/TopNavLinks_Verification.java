@@ -21,10 +21,9 @@ public class TopNavLinks_Verification {
         waitOnButtonToBeClickable(By.xpath("//a[contains(text(),'Dashboard')]"));
         String currentURL = driver.getCurrentUrl();
         waitOnBothErrorMessageAndLoadingGif();
-//        clicking_LogoutButton();
-//        driver.switchTo().alert().accept();
-//        clicking_LogoutButton();
-        loggingOutOfApp(driver);
+        clicking_LogoutButton();
+        driver.switchTo().alert().accept();
+        clicking_LogoutButton();
         return currentURL;
     }
 

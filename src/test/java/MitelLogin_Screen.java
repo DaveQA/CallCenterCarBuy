@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
 
-public class MitelLoginScreen {
+public class MitelLogin_Screen {
 
     private static WebDriver driver;
 

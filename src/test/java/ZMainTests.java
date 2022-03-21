@@ -22,25 +22,25 @@ public class ZMainTests {
         @Test
         @DisplayName("Attempting to login - Empty")
         public void empty_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLoginScreen.empty_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+            Assertions.assertEquals(MainLogin_Screen.empty_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Attempting to login - Bad")
         public void bad_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLoginScreen.bad_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+            Assertions.assertEquals(MainLogin_Screen.bad_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Attempting to login - Fake")
         public void fake_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLoginScreen.fake_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+            Assertions.assertEquals(MainLogin_Screen.fake_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
         }
 
         @Test
         @DisplayName("Attempting to login - Good")
         public void good_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLoginScreen.good_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was not able to login");
+            Assertions.assertEquals(MainLogin_Screen.good_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was not able to login");
         }
     }
 
@@ -50,26 +50,26 @@ public class ZMainTests {
         @Test
         @DisplayName("Empty - Try entering nothing and login")
         public void empty_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLoginScreen.empty_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.empty_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
         }
 
         @Test
         @DisplayName("Bad - Try entering bad user information and login")
         public void bad_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLoginScreen.bad_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.bad_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
         @DisplayName("Fake - Try entering bad user information and login")
         public void fake_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLoginScreen.fake_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.fake_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
         @DisplayName("Good - Try entering good user information and login")
 // might be better to check the mitel status on the dashboard
         public void good_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLoginScreen.good_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.good_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
         }
     }
 
@@ -421,7 +421,7 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Wizard Field Requirement Checks")
+    @DisplayName("Wizard - Screen - Customer Information")
     class CustomerInformationFieldRequirementsTests {
         @Nested
         @DisplayName("Customer Information Fields")
@@ -432,19 +432,19 @@ public class ZMainTests {
                 @Test
                 @DisplayName("Verifying Field Required - First Name")
                 public void enteringOnlyLastName_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyLastName(driver), "Field is required, check application");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.enteringOnlyLastName(driver), "Field is required, check application");
                 }
 
                 @Test
                 @DisplayName("Verifying Field Required - Last Name")
                 public void enteringOnlyFirstName_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.enteringOnlyFirstName(driver), "Field is required, check application");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.enteringOnlyFirstName(driver), "Field is required, check application");
                 }
 
                 @Test
                 @DisplayName("Verifying Field Required - First and Last Name")
                 public void leavingFirstAndLastNameFieldsBlank_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.leavingFirstAndLastNameFieldsBlank(driver), "Field is required, check application");
                 }
             }
 
@@ -454,19 +454,19 @@ public class ZMainTests {
                 @Test
                 @DisplayName("Verifying Field Required - Primary Phone Number")
                 public void leavingPrimaryPhoneNumberFieldBlank_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.leavingPrimaryPhoneNumberFieldBlank(driver), "Field is required, check application");
                 }
 
                 @Test
                 @DisplayName("Verifying Field Required - Email Address")
                 public void leavingEmailAddressFieldBlank_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.leavingEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
                 }
 
                 @Test
                 @DisplayName("Verifying Field Required - Primary and Email Fields")
                 public void leavingPrimaryAndEmailAddressFieldBlank_Test() {
-                    Assertions.assertTrue(CustomerInformationField_Requirements.leavingPrimaryAndEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
+                    Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldRequirements.leavingPrimaryAndEmailAddressFieldBlank(driver), "Was able to continue without entering an email address");
                 }
             }
         }
@@ -481,26 +481,26 @@ public class ZMainTests {
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Alpha Characters")
             public void phoneNumberFieldAlphaCharacter_Test() {
-                Assertions.assertEquals(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_AlphaCharacters(driver), "The phone field may only contain numeric characters.", "Validation check failed, please check application");
+                Assertions.assertEquals(Wizard_Screen_CustomerInformation_FieldValidations.primaryPhoneNumberFieldValidation_AlphaCharacters(driver), "The phone field may only contain numeric characters.", "Validation check failed, please check application");
             }
 
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Special Characters")
             public void primaryPhoneNumberFieldValidation_SpecialCharacters_Test() {
-                Assertions.assertEquals(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_SpecialCharacters(driver), "The phone field may only contain numeric characters.", "Validation check failed, please check application");
+                Assertions.assertEquals(Wizard_Screen_CustomerInformation_FieldValidations.primaryPhoneNumberFieldValidation_SpecialCharacters(driver), "The phone field may only contain numeric characters.", "Validation check failed, please check application");
             }
 
             //Will need to redo after new validation is added to application
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Not enough numbers entered")
             public void primaryPhoneNumberFieldValidation_InCompletePhoneNumber_Test() {
-                Assertions.assertTrue(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_InComplete(driver), "Validation check failed, please check application");
+                Assertions.assertTrue(Wizard_Screen_CustomerInformation_FieldValidations.primaryPhoneNumberFieldValidation_InComplete(driver), "Validation check failed, please check application");
             }
 
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - To many numbers entered")
             public void primaryPhoneNumberFieldValidation_TooManyNumericCharacters_Test() {
-                Assertions.assertEquals(CustomerInformationField_Validations.primaryPhoneNumberFieldValidation_TooMany(driver), "The phone field may not be greater than 10 characters.", "Validation check failed, please check application");
+                Assertions.assertEquals(Wizard_Screen_CustomerInformation_FieldValidations.primaryPhoneNumberFieldValidation_TooMany(driver), "The phone field may not be greater than 10 characters.", "Validation check failed, please check application");
             }
         }
 
@@ -510,13 +510,13 @@ public class ZMainTests {
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Invalided")
             public void emailAddressFieldValidation_Invalided_Test() {
-                Assertions.assertEquals(CustomerInformationField_Validations.emailAddressFieldValidation_Invalided(driver), "ZeroBounce status not valid, status:invalid", "Validation check failed, please check application");
+                Assertions.assertEquals(Wizard_Screen_CustomerInformation_FieldValidations.emailAddressFieldValidation_Invalided(driver), "ZeroBounce status not valid, status:invalid", "Validation check failed, please check application");
             }
 
             @Test
             @DisplayName("Checking Field Validation - Primary Phone Number - Fake")
             public void emailAddressFieldValidation_Fake_Test() {
-                Assertions.assertEquals(CustomerInformationField_Validations.emailAddressFieldValidation_Fake(driver), "The email field must be a valid email.", "Validation check failed, please check application");
+                Assertions.assertEquals(Wizard_Screen_CustomerInformation_FieldValidations.emailAddressFieldValidation_Fake(driver), "The email field must be a valid email.", "Validation check failed, please check application");
             }
         }
     }
@@ -530,13 +530,13 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Out of area")
             public void typingInZipcode_OutOfArea_Test() {
-                Assertions.assertTrue(Zipcode_Verification.typingInZipcode_OutOfArea(driver), "Unapproved zipcode accepted");
+                Assertions.assertTrue(Wizard_Screen_Zipcode_Verification.typingInZipcode_OutOfArea(driver), "Unapproved zipcode accepted");
             }
 
             @Test
             @DisplayName("Zipcode validation - Invalid")
             public void typingInZipcode_Invalid_Test() {
-                Assertions.assertTrue(Zipcode_Verification.typingInZipcode_Invalid(driver), "Unapproved zipcode accepted");
+                Assertions.assertTrue(Wizard_Screen_Zipcode_Verification.typingInZipcode_Invalid(driver), "Unapproved zipcode accepted");
             }
         }
 
@@ -546,19 +546,19 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Birmingham, Alabama")
             public void typingInZipcode_Birmingham_Alabama_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Birmingham_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Birmingham_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Mobile, Alabama")
             public void typingInZipcode_Mobile_Alabama_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Mobile_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Mobile_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Montgomery, Alabama")
             public void typingInZipcode_Montgomery_Alabama_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Montgomery_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Montgomery_Alabama(driver), "Select State\n" + "  Alabama", "Zipcode did not match state");
             }
         }
 
@@ -568,7 +568,7 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Tucson, Arizona")
             public void typingInZipcode_Tucson_Arizona_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Tucson_Arizona(driver), "Select State\n" + "  Arizona", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Tucson_Arizona(driver), "Select State\n" + "  Arizona", "Zipcode did not match state");
             }
         }
 
@@ -578,25 +578,25 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Charlotte, North Carolina")
             public void typingInZipcode_Charlotte_NorthCarolina_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Charlotte_NorthCarolina(driver), "Select State\n" + "  North Carolina", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Charlotte_NorthCarolina(driver), "Select State\n" + "  North Carolina", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Winston Salem, North Carolina")
             public void typingInZipcode_WinstonSalem_NorthCarolina_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_WinstonSalem_NorthCarolina(driver), "Select State\n" + "  North Carolina", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_WinstonSalem_NorthCarolina(driver), "Select State\n" + "  North Carolina", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Columbia, South Carolina")
             public void typingInZipcode_Columbia_SouthCarolina_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Columbia_SouthCarolina(driver), "Select State\n" + "  South Carolina", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Columbia_SouthCarolina(driver), "Select State\n" + "  South Carolina", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - South Carolina")
             public void typingInZipcode_Augusta_SouthCarolina_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Augusta_SouthCarolina(driver), "Select State\n" + "  South Carolina", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Augusta_SouthCarolina(driver), "Select State\n" + "  South Carolina", "Zipcode did not match state");
             }
         }
 
@@ -606,19 +606,19 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Georgia")
             public void typingInZipcode_AtlantaEast_Georgia_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_AtlantaEast_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_AtlantaEast_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Georgia")
             public void typingInZipcode_AtlantaNorth_Georgia_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_AtlantaNorth_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_AtlantaNorth_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Georgia")
             public void typingInZipcode_AtlantaSouth_Georgia_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_AtlantaSouth_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_AtlantaSouth_Georgia(driver), "Select State\n" + "  Georgia", "Zipcode did not match state");
             }
         }
 
@@ -628,7 +628,7 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Indianapolis, Indiana")
             public void typingInZipcode_Indianapolis_Indiana_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Indianapolis_Indiana(driver), "Select State\n" + "  Indiana", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Indianapolis_Indiana(driver), "Select State\n" + "  Indiana", "Zipcode did not match state");
             }
         }
 
@@ -638,7 +638,7 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Louisville, Kentucky")
             public void typingInZipcode_Louisville_Kentucky_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Louisville_Kentucky(driver), "Select State\n" + "  Kentucky", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Louisville_Kentucky(driver), "Select State\n" + "  Kentucky", "Zipcode did not match state");
             }
         }
 
@@ -648,19 +648,19 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Baton Rouge, Louisiana")
             public void typingInZipcode_BatonRouge_Louisiana_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_BatonRouge_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_BatonRouge_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Lafayette, Louisiana")
             public void typingInZipcode_Lafayette_Louisiana_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Lafayette_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Lafayette_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Louisiana")
             public void typingInZipcode_NewOrleansWest_Louisiana_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_NewOrleansWest_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_NewOrleansWest_Louisiana(driver), "Select State\n" + "  Louisiana", "Zipcode did not match state");
             }
         }
 
@@ -670,7 +670,7 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Jackson, Mississippi")
             public void typingInZipcode_Jackson_Mississippi_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Jackson_Mississippi(driver), "Select State\n" + "  Mississippi", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Jackson_Mississippi(driver), "Select State\n" + "  Mississippi", "Zipcode did not match state");
             }
         }
 
@@ -680,25 +680,25 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Akron, Ohio")
             public void typingInZipcode_Akron_Ohio_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Akron_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Akron_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Canton, Ohio")
             public void typingInZipcode_Canton_Ohio_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Canton_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Canton_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Cleveland Kirby Avenue, Ohio")
             public void typingInZipcode_ClevelandKirbyAvenue_Ohio_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_ClevelandKirbyAvenue_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_ClevelandKirbyAvenue_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Cleveland West, Ohio")
             public void typingInZipcode_ClevelandWest_Ohio_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_ClevelandWest_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_ClevelandWest_Ohio(driver), "Select State\n" + "  Ohio", "Zipcode did not match state");
             }
         }
 
@@ -708,19 +708,19 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Knoxville, Tennessee")
             public void typingInZipcode_Knoxville_Tennessee_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Knoxville_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Knoxville_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Memphis, Tennessee")
             public void typingInZipcode_Memphis_Tennessee_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Memphis_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Memphis_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - Nashville, Tennessee")
             public void typingInZipcode_Nashville_Tennessee_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_Nashville_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_Nashville_Tennessee(driver), "Select State\n" + "  Tennessee", "Zipcode did not match state");
             }
         }
 
@@ -730,13 +730,13 @@ public class ZMainTests {
             @Test
             @DisplayName("Zipcode validation - Corpus Christi, Texas")
             public void typingInZipcode_CorpusChristi_Texas_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_CorpusChristi_Texas(driver), "Select State\n" + "  Texas", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_CorpusChristi_Texas(driver), "Select State\n" + "  Texas", "Zipcode did not match state");
             }
 
             @Test
             @DisplayName("Zipcode validation - El Paso, Texas")
             public void typingInZipcode_ElPaso_Texas_Test() {
-                Assertions.assertEquals(Zipcode_Verification.typingInZipcode_ElPaso_Texas(driver), "Select State\n" + "  Texas", "Zipcode did not match state");
+                Assertions.assertEquals(Wizard_Screen_Zipcode_Verification.typingInZipcode_ElPaso_Texas(driver), "Select State\n" + "  Texas", "Zipcode did not match state");
             }
         }
     }
@@ -747,153 +747,124 @@ public class ZMainTests {
         @Test
         @DisplayName("Verifying Field Required - Year")
         public void vehicleInformationOptionRequirement_Year_Test() {
-            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Year(driver), "Field should be required, check application");
+            Assertions.assertTrue(Wizard_Screen_VehicleYearMakeModel_Requirements.vehicleInformationOptionRequirement_Year(driver), "Field should be required, check application");
         }
 
         @Test
         @DisplayName("Verifying Field Required - Make")
         public void vehicleInformationOptionRequirement_Make_Test() {
-            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Make(driver), "Field should be required, check application");
+            Assertions.assertTrue(Wizard_Screen_VehicleYearMakeModel_Requirements.vehicleInformationOptionRequirement_Make(driver), "Field should be required, check application");
         }
 
         @Test
         @DisplayName("Verifying Field Required - Model")
         public void vehicleInformationOptionRequirement_Model_Test() {
-            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_Model(driver), "Field should be required, check application");
+            Assertions.assertTrue(Wizard_Screen_VehicleYearMakeModel_Requirements.vehicleInformationOptionRequirement_Model(driver), "Field should be required, check application");
         }
 
         @Test
         @DisplayName("Verifying Field Required - Year Make Model")
         public void vehicleInformationOptionRequirement_YearMakeModel_Test() {
-            Assertions.assertTrue(VehicleInformationOptions_Requirements.vehicleInformationOptionRequirement_YearMakeModel(driver), "Field should be required, check application");
+            Assertions.assertTrue(Wizard_Screen_VehicleYearMakeModel_Requirements.vehicleInformationOptionRequirement_YearMakeModel(driver), "Field should be required, check application");
         }
     }
 
     @Nested
-    @DisplayName("Damage Radio Buttons")
+    @DisplayName("Vehicle damage details")
     class CarDamageRadioButtonsTests {
-        @Test
-        @DisplayName("Radio button picking damage - Neither")
-        public void doesTheCarHaveAnyDamage_Option_Neither_Test() {
-            Assertions.assertFalse(DamageOnCarRadioButtons.doesTheCarHaveAnyDamage_Option_Neither(driver), "Next button enabled, check application");
+        @Nested
+        @DisplayName("Is there damage question")
+        class IsThereDamageQuestionTest {
+            @Test
+            @DisplayName("Radio button picking damage - Neither")
+            public void doesTheCarHaveAnyDamage_Option_Neither_Test() {
+                Assertions.assertFalse(Wizard_Screen_CarPartsAndDamageQuestion.doesTheCarHaveAnyDamage_Option_Neither(driver), "Next button enabled, check application");
+            }
+
+            @Test
+            @DisplayName("Radio button picking damage - No")
+            public void pickingNoToTheIsThereDamageQuestion_Test() {
+                Assertions.assertTrue(Wizard_Screen_CarPartsAndDamageQuestion.doesTheCarHaveAnyDamage_Option_No(driver), "Next not button enabled, check application");
+            }
+
+            @Test
+            @DisplayName("Radio button picking damage - Yes")
+            public void pickingYesToTheIsThereDamageQuestion_Test() {
+                Assertions.assertTrue(Wizard_Screen_CarPartsAndDamageQuestion.doesTheCarHaveAnyDamage_Option_Yes(driver), "Next not button enabled, check application");
+            }
         }
 
-        @Test
-        @DisplayName("Radio button picking damage - Yes")
-        public void pickingYesToTheIsThereDamageQuestionTest() {
-            Assertions.assertTrue(DamageOnCarRadioButtons.doesTheCarHaveAnyDamage_Option_Yes(driver), "Next not button enabled, check application");
-        }
+        @Nested
+        @DisplayName("Describing Vehicle Damage")
+        class DescribingVehicleDamageTest {
+            @Test
+            @DisplayName("Radio button picking Disqualifying Damage - No")
+            public void disqualifyingDamage_Option_No_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehicleHasDamageDetails.disqualifyingDamage_Option_No(driver), "Damage details container was not displayed, check application");
+            }
 
-        @Test
-        @DisplayName("Radio button picking damage - No")
-        public void pickingNoToTheIsThereDamageQuestionTest() throws InterruptedException {
-            Assertions.assertFalse(DamageOnCarRadioButtons.radioButtonNoThereIsNotDamageOnCarCheck(driver), "Next not button enabled, check application");
+            @Test
+            @DisplayName("Radio button picking Disqualifying Damage - Yes")
+            public void disqualifyingDamage_Option_Yes_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehicleHasDamageDetails.disqualifyingDamage_Option_Yes(driver), "Refer to Peddle message not displayed, check application");
+            }
+
+            //Checking for on screen redText - would be better to check for Next button status.  Will pass onto DEV team, application will need update
+            @Test
+            @DisplayName("Verifying Field Required - detailDamage")
+            public void disqualifyingDamage_Detail_RequirementCheck_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehicleHasDamageDetails.disqualifyingDamage_Detail_RequirementCheck(driver), "Damage details container should be required, check application");
+            }
         }
     }
 
-//    @Nested
-//    @DisplayName("Fire Rollover Flood Damage Buttons")
-//    class fillingOutTypeOfDamageSectionTests {
-//        @Test //Will need to redo if depending on DEV response
-//        @DisplayName("Not picking Yes or No to type of damage option and clicking next button")
-//        public void pickingNeitherTypeOfDamageOptionTest() throws InterruptedException {
-//            Assertions.assertEquals(DamageOnCarRadioButtons.pickingNeitherTypeOfDamageOptionCheck(driver), "https://qa-carbuy.pullapart.com/#/quotes/create?thirdparty=true&callCodeId=3");
-//        }
-//
-//        @Test
-//        @DisplayName("Picking Yes there is Fire, Flood, Rollover damage")
-//        public void radioButtonYesToFireRolloverDamageOnCarWithNotesTest() throws InterruptedException {
-//            Assertions.assertTrue(DamageOnCarRadioButtons.radioButtonYesToFireRolloverDamageOnCarCheck(driver), "The peddle response script was not displayed on screen");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking for detail damage notes contain shows")
-//        public void radioButtonYesToTypeOfDamageOptionWithNoNotesTest() throws InterruptedException {
-//            Assertions.assertTrue(DamageOnCarRadioButtons.thereIsNoFireFloodRolloverDamageRadioButtonCheck(driver), "Detail Damage Notes container did not show on screen");
-//        }
-//
-//        @Test
-//        @DisplayName("Picking No to type of damage without entering notes and clicking next button")
-//        public void detailDamageNotesIsRequiredTest() throws InterruptedException {
-//            Assertions.assertTrue(DamageOnCarRadioButtons.detailDamageNotesIsRequiredCheck(driver), "Was able to continue without entering detail damage notes");
-//        }
-//
-//        @Test
-//        @DisplayName("Checking Detail Damage container notes")
-//        public void checkingDetailDamageNotesContainerIsEditableTest() throws InterruptedException {
-//            Assertions.assertFalse(DamageOnCarRadioButtons.checkingDetailDamageNotesContainerIsEditableCheck(driver), "Detail Damage Notes container may not have been editable");
-//        }
-//    }
-//
-//    @Nested
-//    @DisplayName("Car Part Buttons")
-//    class carPartListTests {
-//        @Test
-//        @DisplayName("Clicking just the battery part button")
-//        public void pickingCarPartBatteryTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartBatteryCheck(driver), "Battery button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking just the catalytic converter part button")
-//        public void pickingCarPartCatalyticConverterTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartCatalyticConverterCheck(driver), "Catalytic Converter button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking just the Engine part button")
-//        public void pickingCarPartEngineTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartEngineCheck(driver), "Engine button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking just the radiator part button")
-//        public void pickingCarPartRadiatorTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartRadiatorCheck(driver), "Radiator button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking just the tires part button")
-//        public void pickingCarPartTiresTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartTiresCheck(driver), "Tire button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking just the transmission part button")
-//        public void pickingCarPartTransmissionTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingCarPartTransmissionCheck(driver), "Transmission button was not clicked");
-//        }
-//
-//        @Test
-//        @DisplayName("Not picking any car parts")
-//        public void pickingNoCarPartsTest() throws InterruptedException {
-//            Assertions.assertFalse(CarPartButtons.pickingNoCarPartsCheck(driver));
-//        }
-//
-//        @Test
-//        @DisplayName("Clicking all car parts")
-//        public void pickingAllCarPartsTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingAllCarPartsCheck(driver), "Required text was displayed on screen");
-//        }
-//    }
-//
-//    @Nested
-//    @DisplayName("Quote Amount Screen")
-//    class quoteAmountScreen {
-//        @Test
-//        @DisplayName("Getting a quote amount")
-//        public void pickingOnlyEngineTransmissionPartTest() throws InterruptedException {
-//            Assertions.assertTrue(CarPartButtons.pickingOnlyEngineTransmissionPartCheck(driver));
-//        }
-//    }
-//
-//    @Nested
-//    @DisplayName("Vehicle Run Buttons")
-//    class passQuoteScreen {
-//        @Test
-//        @DisplayName("Clicking yes the vehicle runs")
-//        public void vehicleRunYesTest() throws InterruptedException {
-//            quoteWorkFlow.gettingToDoesTheVehicleRunQuestion(driver);
-//        }
-//    }
+    @Nested
+    @DisplayName("Does Vehicle Run Questions")
+    class DoesVehicleRunAndPickupLocationQuestionsTest {
+        //Question has a default answer and cannot test for requirements - confirming that either choice takes user to the location pickup question
+        @Test
+        @DisplayName("Does Vehicle Run - No")
+        public void doesVehicleRun_No_Test() {
+            Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_No(driver), "Vehicle Pickup location question not displayed, check application");
+        }
+
+        //Question has a default answer and cannot test for requirements - confirming that either choice takes user to the location pickup question
+        @Test
+        @DisplayName("Does Vehicle Run - Yes")
+        public void doesVehicleRun_Yes_Test() {
+            Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_Yes(driver), "Vehicle Pickup location question not displayed, check application");
+        }
+    }
+
+    @Nested
+    @DisplayName("Vehicle Pickup Location Question")
+    class VehiclePickupLocationQuestionTest {
+        //Next button starts out enabled, checking for red text
+        @Test
+        @DisplayName("Vehicle Pickup Location - Neither")
+        public void vehiclePickUpLocation_Neither_Test() {
+            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Neither(driver), "Next button enabled, check application");
+        }
+
+        //Checking for the Title Proof of Ownership option is displayed
+        @Test
+        @DisplayName("Vehicle Pickup Location - Residence")
+        public void vehiclePickUpLocation_Residence_Test() {
+            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Residence(driver), "Proof of Ownership options where not displayed, check application");
+        }
+
+        //Checking for the Title Proof of Ownership option is displayed
+        @Test
+        @DisplayName("Vehicle Pickup Location - Business")
+        public void vehiclePickUpLocation_Business_Test() {
+            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Business(driver), "Proof of Ownership options where not displayed, check application");
+        }
+    }
+
+    @Nested
+    @DisplayName("Proof Of Ownership Option")
+    class asd {}
+    @Test
+    @DisplayName("asd")
+    public void asd(){}
 }

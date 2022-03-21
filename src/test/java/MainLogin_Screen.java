@@ -1,9 +1,8 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
 
-public class MainLoginScreen {
+public class MainLogin_Screen {
 
     private static WebDriver driver;
 
@@ -42,10 +41,7 @@ public class MainLoginScreen {
         String currentURLAfterGoodInfoEntered = driver.getCurrentUrl();
         // The following is used until the driver quit is re-enabled
                 clicking_Button_Skip();
-                clicking_LogoutButton();
-                driver.switchTo().alert().accept();
-                clicking_LogoutButton();
-        waitOnBothErrorMessageAndLoadingGif();
+        loggingOutOfApp(driver);
         return currentURLAfterGoodInfoEntered;
     }
 }

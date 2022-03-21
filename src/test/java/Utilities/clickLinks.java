@@ -1,6 +1,7 @@
 package Utilities;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -32,7 +33,7 @@ public class clickLinks {
         driver = driver1;
         clicking_LogoutButton();
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
             wait.until(ExpectedConditions.alertIsPresent());
             driver.switchTo().alert().accept();
             clicking_LogoutButton();
@@ -115,150 +116,56 @@ public class clickLinks {
     public static void clicking_Input_VehicleInformationOption_Model() {
         waitOnBothErrorMessageAndLoadingGif();
         Select modelDropdownOption = new Select(driver.findElement(By.name("model")));
+        waitOnBothErrorMessageAndLoadingGif();
         modelDropdownOption.selectByValue("277");//Civic
     }
 
     public static void clicking_Input_DoesTheCarHaveAnyDamage_Yes() {
-        clickSomething(By.name("damageYes"));
+        waitOnBothErrorMessageAndLoadingGif();
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("damaged"))).build().perform();
+        action.moveToElement(driver.findElement(By.name("damageYes"))).click().build().perform();
     }
 
     public static void clicking_Input_DoesTheCarHaveAnyDamage_No() {
-        clickSomething(By.name("damageNo"));
-    }
-
-    public static void clickingYesFireFloodOrRolloverAccidentRadioButton() {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(2)"));
-    }
-
-    public static void clickingNoFireFloodOrRolloverAccidentRadioButton() {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > div.form-horizontal > div > div > div > label:nth-child(3)"));
-    }
-
-    public static void pickingCarPartBattery() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(2)"));
-        Thread.sleep(1000);
-    }
-
-    public static void pickingCarPartCatalyticConverter() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(3)"));
-        Thread.sleep(1000);
-    }
-
-    public static void pickingCarPartEngine() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(4)"));
-        Thread.sleep(1000);
-    }
-
-    public static void pickingCarPartRadiator() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(5)"));
-        Thread.sleep(1000);
-    }
-
-    public static void pickingCarPartTires() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(6)"));
-        Thread.sleep(1000);
-    }
-
-    public static void pickingCarPartTransmission() throws InterruptedException {
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > label:nth-child(7)"));
-        Thread.sleep(1000);
-    }
-
-    public static void doesVehicleRunRadioButton_Yes() {
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(2)"));
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("damaged"))).build().perform();
+        action.moveToElement(driver.findElement(By.name("damageNo"))).click().build().perform();
     }
 
-    public static void whereIsVehicleParkedButton_Business() {
+    public static void clicking_Input_FireFloodOrRolloverAccident_No() {
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(2)"));
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("disqualifyingDamage"))).build().perform();
+        action.moveToElement(driver.findElement(By.name("disqualifyingDamageNo"))).click().build().perform();
     }
 
-    public static void doesVehicleRunRadioButton_No() {
+    public static void clicking_Input_FireFloodOrRolloverAccident_Yes() {
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div > label:nth-child(1)"));
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("disqualifyingDamage"))).build().perform();
+        action.moveToElement(driver.findElement(By.name("disqualifyingDamageYes"))).click().build().perform();
     }
 
-    public static void clickingCallCodeDashboardSearchButton() throws InterruptedException {
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div:nth-child(3) > div > span > button"));
-        Thread.sleep(1000);
+    public static void clicking_Input_DoesVehicleRun_No(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickSomething(By.xpath("//label[contains(text(),'No')]"));
     }
 
-    public static void whereIsVehicleParkedButton_Residence() {
+    public static void clicking_Input_DoesVehicleRun_Yes(){
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > label:nth-child(1) > span"));
+        clickSomething(By.xpath("//label[contains(text(),'Yes')]"));
     }
 
-    public static void proofOfOwnership_Title() {
+    public static void clicking_Input_LocationPickUp_Residence(){
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(2) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(2) > label"));
+        clickSomething(By.xpath("//label[contains(text(),'Residence')]"));
     }
 
-    public static void proofOfOwnership_VehicleRegistration() {
+    public static void clicking_Input_LocationPickUp_Business(){
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(3) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(3) > label"));
-    }
-
-    public static void proofOfOwnership_BillOfSaleWithKeys() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(4) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(4) > label"));
-    }
-
-    public static void proofOfOwnership_InsuranceCardWithKeys() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(5) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div > div:nth-child(5) > label"));
-    }
-
-    public static void proofOfIdentification_DriversLicense() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > label"));
-    }
-
-    public static void proofOfIdentification_StateID() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > label"));
-        waitOnBothErrorMessageAndLoadingGif();
-    }
-
-    public static void proofOfIdentification_Passport() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(4) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(4) > label"));
-    }
-
-    public static void proofOfIdentification_MilitaryID() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(5) > label"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(5) > label"));
-    }
-
-    public static void clickOnDataPicker() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input"));
-        waitOnBothErrorMessageAndLoadingGif();
-    }
-
-    public static void clickTheRefreshButton() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div > div > div.todo-content > div > div.portlet-title > div.actions > a"));
-    }
-
-    public static void clickCallCodeButton() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(2) > div > div.details > div.number"));
-        clickSomething(By.cssSelector("#app > div > div.page-wrapper-row.full-height > div > div > div > div.page-content > div > div > div > div > div.col-md-5 > div > div > div.row.scrollingDiv > div > div:nth-child(1) > div > div.details > div.number"));
+        clickSomething(By.xpath("//label[contains(text(),'Business')]"));
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////Typing Stuff///////////////////////////////////////////////////////////////
@@ -378,40 +285,6 @@ public class clickLinks {
     public static void typing_Input_Zipcode_Good() {
         driver.findElement(By.name("zipCode")).sendKeys("30188", Keys.TAB);
     }
-
-    public static void enteringDetailDamageNotes() {
-        clickSomething(By.cssSelector("#detailDamage"));
-        typeSomething(By.cssSelector("#detailDamage"), "Test Detail Damage Notes");
-    }
-
-    public static void haulerScreenAddress1Field() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(1) > div > input"), "Address 1 Field");
-    }
-
-    public static void haulerScreenAddress2Field() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(4) > form:nth-child(2) > div > input"), "Address 2 Field");
-    }
-
-    public static void haulerScreenCityField() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(5) > form > div.form-group.col-md-6 > input"), "City Field");
-    }
-
-    public static void haulerScreenNotesField() {
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"));
-        clickSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"));
-        typeSomething(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(6) > div > div > textarea"), "Hauler Notes Field");
-    }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// Dropdowns//////////////////////////////////////////////////////////////////
 
