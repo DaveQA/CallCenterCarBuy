@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
 
-public class CustomerInformationField_Requirements {
+public class Wizard_Screen_CustomerInformation_FieldRequirements {
 
     private static WebDriver driver;
 
@@ -37,13 +37,12 @@ public class CustomerInformationField_Requirements {
         clicking_Link_CallCode_Peddle(driver);
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        boolean bothFirstNameAndLastNameRequiredText = driver.findElements(By.xpath("//p[contains(text(),'The firstname field is required.')]")).size() > 0
-                && driver.findElements(By.xpath("//p[contains(text(),'The lastname field is required.')]")).size() > 0;
+        boolean bothFirstNameAndLastNameRequiredText = driver.findElements(By.xpath("//p[contains(text(),'The firstname field is required.')]")).size() > 0 && driver.findElements(By.xpath("//p[contains(text(),'The lastname field is required.')]")).size() > 0;
         loggingOutOfApp(driver);
         return bothFirstNameAndLastNameRequiredText;
     }
 
-    public static boolean leavingPrimaryPhoneNumberFieldBlank(WebDriver driver1){
+    public static boolean leavingPrimaryPhoneNumberFieldBlank(WebDriver driver1) {
         driver = driver1;
         loggingInToApp(driver);
         clicking_Link_CallCode_Peddle(driver);
@@ -57,7 +56,7 @@ public class CustomerInformationField_Requirements {
         return primaryPhoneNumberRequiredRedText;
     }
 
-    public static boolean leavingEmailAddressFieldBlank(WebDriver driver1){
+    public static boolean leavingEmailAddressFieldBlank(WebDriver driver1) {
         driver = driver1;
         loggingInToApp(driver);
         clicking_Link_CallCode_Peddle(driver);
@@ -72,7 +71,7 @@ public class CustomerInformationField_Requirements {
         return primaryPhoneNumberRequiredRedText;
     }
 
-    public static boolean leavingPrimaryAndEmailAddressFieldBlank(WebDriver driver1){
+    public static boolean leavingPrimaryAndEmailAddressFieldBlank(WebDriver driver1) {
         driver = driver1;
         loggingInToApp(driver);
         clicking_Link_CallCode_Peddle(driver);
@@ -81,8 +80,7 @@ public class CustomerInformationField_Requirements {
         clicking_Button_Next();
         clicking_Button_NewQuote();
         clicking_Button_Next();
-        boolean primaryPhoneNumberRequiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The phone field is required.')]")).size() > 0
-                && driver.findElements(By.xpath("//p[contains(text(),'The email field is required.')]")).size() > 0;
+        boolean primaryPhoneNumberRequiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The phone field is required.')]")).size() > 0 && driver.findElements(By.xpath("//p[contains(text(),'The email field is required.')]")).size() > 0;
         loggingOutOfApp(driver);
         return primaryPhoneNumberRequiredRedText;
     }

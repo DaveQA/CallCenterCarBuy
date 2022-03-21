@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
 
-public class CustomerInformationField_Validations {
+public class Wizard_Screen_CustomerInformation_FieldValidations {
 
     private static WebDriver driver;
 
