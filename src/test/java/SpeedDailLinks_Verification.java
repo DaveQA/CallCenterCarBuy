@@ -13,7 +13,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'Online Quote Callback Number (OLD)')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -28,7 +28,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -43,7 +43,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -58,7 +58,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -73,7 +73,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'503-Partner-Ars-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'503-Partner-Ars-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -88,7 +88,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'504-Partner-Cars-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'504-Partner-Cars-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -103,7 +103,7 @@ public class SpeedDailLinks_Verification {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'502-Partner-Junk Car Boys-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'510-Partner-Junk Car Solutions-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'510-Partner-Junk Car Solutions-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentUrl = driver.getCurrentUrl();
@@ -116,9 +116,9 @@ public class SpeedDailLinks_Verification {
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.linkText("Notifications"));
-        clickSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
+        clickingSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
         typeSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"),"501");
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentURL = driver.getCurrentUrl();
@@ -131,9 +131,9 @@ public class SpeedDailLinks_Verification {
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.linkText("Notifications"));
-        clickSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
+        clickingSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"));
         typeSomething(By.xpath("//div[@class='portlet-body']/div/input[1]"),"Carbrain");
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'501-Partner-Carbrain-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
         String currentURL = driver.getCurrentUrl();

@@ -1,29 +1,33 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static Utilities.clickLinks.*;
 
 public class TopNavLinks_Verification {
 
+    static String currentURL = null;
     private static WebDriver driver;
 
     public static String clicking_TopNavLink_Dashboard(WebDriver driver1) {
         driver = driver1;
+        Actions actions = new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.linkText("Notifications"));
-        clickSomething(By.linkText("Notifications"));
+        waitOnButtonToBeClickable(By.xpath("//div//button[@type='button'][contains(text(),'Start Quote')]"));
+        clickingSomething(By.linkText("Notifications"));
+        wait.until(ExpectedConditions.urlContains("/notifications"));
         waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.xpath("//a[contains(text(),'Dashboard')]"));
-        clickSomething(By.xpath("//a[contains(text(),'Dashboard')]"));
-        waitOnBothErrorMessageAndLoadingGif();
-        waitOnButtonToBeClickable(By.xpath("//a[contains(text(),'Dashboard')]"));
-        String currentURL = driver.getCurrentUrl();
-        waitOnBothErrorMessageAndLoadingGif();
-        clicking_LogoutButton();
-        driver.switchTo().alert().accept();
-        clicking_LogoutButton();
+        waitOnButtonToBeClickable(By.linkText("Dashboard"));
+        actions.moveToElement(driver.findElement(By.linkText("Dashboard"))).click().build().perform();
+        waitOnButtonToBeClickable(By.xpath("//div//button[@type='button'][contains(text(),'Start Quote')]"));
+        currentURL = driver.getCurrentUrl();
+        loggingOutOfApp(driver);
         return currentURL;
     }
 
@@ -32,7 +36,7 @@ public class TopNavLinks_Verification {
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.linkText("Notifications"));
-        clickSomething(By.linkText("Notifications"));
+        clickingSomething(By.linkText("Notifications"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//span[@class='todo-red']"));
         String currentURL = driver.getCurrentUrl();
