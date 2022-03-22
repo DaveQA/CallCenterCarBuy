@@ -31,6 +31,7 @@ public class clickLinks {
 
     public static void loggingOutOfApp(WebDriver driver1) {
         driver = driver1;
+        waitOnButtonToBeClickable(By.xpath("//i[@class='icon-logout']"));
         clicking_LogoutButton();
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -357,6 +358,13 @@ public class clickLinks {
     public static void waitOnBothErrorMessageAndLoadingGif() {
         waitOnLoadingGif();
         waitOnErrorMessagePopup();
+    }
+
+    public static void waitOnPageToCompletelyLoad() {
+        JavascriptExecutor k = (JavascriptExecutor)driver;
+        if (k.executeScript("return document.readyState").toString().equals("complete")){
+            System.out.println("Page has loaded");
+        }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

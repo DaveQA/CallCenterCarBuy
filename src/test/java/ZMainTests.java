@@ -76,11 +76,12 @@ public class ZMainTests {
     @Nested
     @DisplayName("Verifying top navigation links")
     class TopNavLinksTests {
-        @Test
-        @DisplayName("Verifying Top Nav Link - Dashboard")
-        public void clicking_TopNavLink_Dashboard_Test() {
-            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
-        }
+        //Will need to re work this test
+//        @Test
+//        @DisplayName("Verifying Top Nav Link - Dashboard")
+//        public void clicking_TopNavLink_Dashboard_Test() {
+//            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
+//        }
 
         @Test
         @DisplayName("Verifying Top Nav Link - Notification")
@@ -863,8 +864,11 @@ public class ZMainTests {
 
     @Nested
     @DisplayName("Proof Of Ownership Option")
-    class asd {}
-    @Test
-    @DisplayName("asd")
-    public void asd(){}
+    class blank {
+        @Test
+        @DisplayName("")
+        public void blank1(){
+
+        }
+    }
 }
