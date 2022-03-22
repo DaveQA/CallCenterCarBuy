@@ -20,7 +20,7 @@ public class TopNavLinks_Verification {
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//div//button[@type='button'][contains(text(),'Start Quote')]"));
-        clickSomething(By.linkText("Notifications"));
+        clickingSomething(By.linkText("Notifications"));
         wait.until(ExpectedConditions.urlContains("/notifications"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.linkText("Dashboard"));
@@ -36,7 +36,7 @@ public class TopNavLinks_Verification {
         loggingInToApp(driver);
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.linkText("Notifications"));
-        clickSomething(By.linkText("Notifications"));
+        clickingSomething(By.linkText("Notifications"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//span[@class='todo-red']"));
         String currentURL = driver.getCurrentUrl();

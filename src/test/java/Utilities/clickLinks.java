@@ -45,39 +45,39 @@ public class clickLinks {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////Clicking Stuff////////////////////////////////////////////////////////////////
 
-    public static void clickSomething(By by) {
+    public static void clickingSomething(By by) {
         driver.findElement(by).click();
     }
 
     public static void clicking_MainLoginScreen_LoginButton() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//button[@type='submit']"));
+        clickingSomething(By.xpath("//button[@type='submit']"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clicking_MitelLoginScreen_LoginButton() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//button[@type='submit']"));
+        clickingSomething(By.xpath("//button[@type='submit']"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clicking_LogoutButton() {
         waitOnButtonToBeClickable(By.xpath("//i[@class='icon-logout']"));
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//i[@class='icon-logout']"));
+        clickingSomething(By.xpath("//i[@class='icon-logout']"));
     }
 
     public static void clicking_Button_Skip() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[@type='button']"));
-        clickSomething(By.xpath("//button[@type='button']"));
+        clickingSomething(By.xpath("//button[@type='button']"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
     public static void clicking_Button_NewQuote() {
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'New Quote')]"));
-        clickSomething(By.xpath("//button[contains(text(),'New Quote')]"));
+        clickingSomething(By.xpath("//button[contains(text(),'New Quote')]"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
@@ -87,7 +87,7 @@ public class clickLinks {
         WebElement scrollToButton = driver.findElement(By.xpath("//button[contains(text(),'Next')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//button[contains(text(),'Next')]"));
+        clickingSomething(By.xpath("//button[contains(text(),'Next')]"));
         waitOnBothErrorMessageAndLoadingGif();
     }
 
@@ -97,7 +97,7 @@ public class clickLinks {
         WebElement scrollToButton = driver.findElement(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
         ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
-        clickSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
+        clickingSomething(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
         waitOnBothErrorMessageAndLoadingGif();
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Next')]"));
     }
@@ -111,13 +111,16 @@ public class clickLinks {
     public static void clicking_Input_VehicleInformationOption_Make() {
         waitOnBothErrorMessageAndLoadingGif();
         Select makeDropdownOption = new Select(driver.findElement(By.name("make")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//option[contains(text(),'HONDA')]")));
         makeDropdownOption.selectByValue("27");//Honda
     }
 
     public static void clicking_Input_VehicleInformationOption_Model() {
         waitOnBothErrorMessageAndLoadingGif();
         Select modelDropdownOption = new Select(driver.findElement(By.name("model")));
-        waitOnBothErrorMessageAndLoadingGif();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//option[contains(@value,'277')]")));
         modelDropdownOption.selectByValue("277");//Civic
     }
 
@@ -149,24 +152,74 @@ public class clickLinks {
         action.moveToElement(driver.findElement(By.name("disqualifyingDamageYes"))).click().build().perform();
     }
 
-    public static void clicking_Input_DoesVehicleRun_No(){
+    public static void clicking_Input_DoesVehicleRun_No() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//label[contains(text(),'No')]"));
+        clickingSomething(By.xpath("//label[contains(text(),'No')]"));
     }
 
-    public static void clicking_Input_DoesVehicleRun_Yes(){
+    public static void clicking_Input_DoesVehicleRun_Yes() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//label[contains(text(),'Yes')]"));
+        clickingSomething(By.xpath("//label[contains(text(),'Yes')]"));
     }
 
-    public static void clicking_Input_LocationPickUp_Residence(){
+    public static void clicking_Input_LocationPickUp_Residence() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//label[contains(text(),'Residence')]"));
+        clickingSomething(By.xpath("//label[contains(text(),'Residence')]"));
     }
 
-    public static void clicking_Input_LocationPickUp_Business(){
+    public static void clicking_Input_LocationPickUp_Business() {
         waitOnBothErrorMessageAndLoadingGif();
-        clickSomething(By.xpath("//label[contains(text(),'Business')]"));
+        clickingSomething(By.xpath("//label[contains(text(),'Business')]"));
+    }
+
+    public static void clicking_Input_ProofOwn_Title() {
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//label[contains(text(),'Title')]"));
+    }
+
+    public static void clicking_Input_ProofOwn_VehicleRegistration(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//label[contains(text(),'Vehicle Registration')]"));
+    }
+
+    public static void clicking_Input_ProofOwn_BillOfSaleWithKeys(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//label[contains(text(),'Bill of Sale with Keys')]"));
+    }
+
+    public static void clicking_Input_ProofOwn_InsuranceCardWithKeys(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//label[contains(text(),'Insurance Card with Keys')]"));
+    }
+
+    public static void clicking_Input_ProofOwn_AlabamaIssuedApplicationForTitle(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//label[contains(text(),'Alabama Issued Application for Title')]"));
+    }
+
+    public static void clicking_Input_ProofIds_DL(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[1]"));
+    }
+
+    public static void clicking_Input_ProofIds_StateID(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[2]/label[1]"));
+    }
+
+    public static void clicking_Input_ProofIds_Passport(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[3]/label[1]"));
+    }
+
+    public static void clicking_Input_ProofIds_MilitaryID(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[4]/label[1]"));
+    }
+
+    public static void clicking_Input_ProofIds_MexicanConsulateCard(){
+        waitOnBothErrorMessageAndLoadingGif();
+        clickingSomething(By.xpath(""));
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////Typing Stuff///////////////////////////////////////////////////////////////
@@ -361,8 +414,8 @@ public class clickLinks {
     }
 
     public static void waitOnPageToCompletelyLoad() {
-        JavascriptExecutor k = (JavascriptExecutor)driver;
-        if (k.executeScript("return document.readyState").toString().equals("complete")){
+        JavascriptExecutor k = (JavascriptExecutor) driver;
+        if (k.executeScript("return document.readyState").toString().equals("complete")) {
             System.out.println("Page has loaded");
         }
     }

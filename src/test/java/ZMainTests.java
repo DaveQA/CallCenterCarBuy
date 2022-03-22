@@ -771,8 +771,8 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Vehicle damage details")
-    class CarDamageRadioButtonsTests {
+    @DisplayName("Vehicle Damage Details")
+    class VehicleDamageDetailsTest {
         @Nested
         @DisplayName("Is there damage question")
         class IsThereDamageQuestionTest {
@@ -821,7 +821,7 @@ public class ZMainTests {
 
     @Nested
     @DisplayName("Does Vehicle Run Questions")
-    class DoesVehicleRunAndPickupLocationQuestionsTest {
+    class DoesVehicleRunQuestionsTest {
         //Question has a default answer and cannot test for requirements - confirming that either choice takes user to the location pickup question
         @Test
         @DisplayName("Does Vehicle Run - No")
@@ -863,12 +863,45 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Proof Of Ownership Option")
-    class blank {
+    @DisplayName("Proof Of Ownership And Identification Section")
+    class ProofOfOwnershipAndIdentificationSectionTest {
+        @Nested
+        @DisplayName("Proof Of Ownership And Identification Requirements")
+        class ProofOfOwnershipAndIdentificationRequirementsTest{
+            @Test
+            @DisplayName("Verifying Field Required - Proof of Ownership")
+            public void proofOfOwnership_RequirementCheck_Test(){
+                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_RequirementCheck(driver),"Fields should be required, check application");
+            }
+            @Test
+            @DisplayName("Verifying Field Required - Proof of ID")
+            public void proofOfIdentification_RequirementCheck_Test(){
+                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_RequirementCheck(driver),"Fields should be required, check application");
+            }
+        }
         @Test
-        @DisplayName("")
-        public void blank1(){
+        @DisplayName("Proof of Ownership Question Displayed")
+        public void proofOfOwnership_Question_Test(){
+            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_Question(driver),"Proof of Ownership question was not displayed, check application");
+        }
+        @Test
+        @DisplayName("Proof of Identification Question Displayed")
+        public void proofOfIdentification_Question_Test(){
+            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_Question(driver),"Proof of Identification question was not displayed, check application");
+        }
+    }
 
+    @Nested
+    @DisplayName("Hauler Information Section")
+    class HaulerInformationSectionTest {
+        @Nested
+        @DisplayName("Hauler Information Field Requirements")
+        class HaulerInformationFieldRequirementsTest {
+            @Test
+            @DisplayName("Verifying Field Required - Hauler Information - Pickup Date")
+            public void haulerInformation_Requirement_PickUpDate_Test() {
+                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_PickUpDate(driver),"Fields should be required, check application");
+            }
         }
     }
 }
