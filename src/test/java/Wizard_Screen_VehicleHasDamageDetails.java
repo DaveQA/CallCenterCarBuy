@@ -48,7 +48,7 @@ public class Wizard_Screen_VehicleHasDamageDetails {
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
-        typing_Input_Zipcode_Good();
+        typing_Input_ZipCode_Good();
         clicking_Button_Next();
         clicking_Input_VehicleInformationOption_Year();
         clicking_Input_VehicleInformationOption_Make();

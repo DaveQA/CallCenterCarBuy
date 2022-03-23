@@ -1,45 +1,26 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static Utilities.clickLinks.*;
+import static Utilities.clickLinks.waitOnBothErrorMessageAndLoadingGif;
 
-public class Wizard_Screen_VehiclePickUpLocation {
+public class Wizard_Screen_TermsOfAgreement {
 
     private static WebDriver driver;
 
-    public static boolean vehiclePickUpLocation_Neither(WebDriver driver1) {
+    public static void termsOfAgreement(WebDriver driver1){
         driver = driver1;
-        gettingToThe_VehiclePickUpLocation_Question(driver);
-        clicking_Button_Next();
-        clicking_Button_Next();
-        boolean nextButtonStatus = driver.findElement(By.xpath("//p[@class='text-danger']")).isDisplayed();
-        loggingOutOfApp(driver);
-        return nextButtonStatus;
+        gettingToThe_TermsOfAgreement_Screen(driver);
     }
 
-    public static boolean vehiclePickUpLocation_Residence(WebDriver driver1) {
+    public static void completeQuote(WebDriver driver1){
         driver = driver1;
-        gettingToThe_VehiclePickUpLocation_Question(driver);
+        gettingToThe_TermsOfAgreement_Screen(driver);
         clicking_Button_Next();
-        clicking_Input_LocationPickUp_Residence();
         clicking_Button_Next();
-        boolean proofOfOwnershipOptions = driver.findElement(By.xpath("//div[@class='mt-radio']")).isDisplayed();
-        loggingOutOfApp(driver);
-        return proofOfOwnershipOptions;
+        clicking_Button_CompleteQuote();
     }
 
-    public static boolean vehiclePickUpLocation_Business(WebDriver driver1) {
-        driver = driver1;
-        gettingToThe_VehiclePickUpLocation_Question(driver);
-        clicking_Button_Next();
-        clicking_Input_LocationPickUp_Business();
-        clicking_Button_Next();
-        boolean proofOfOwnershipOptions = driver.findElement(By.xpath("//div[@class='mt-radio']")).isDisplayed();
-        loggingOutOfApp(driver);
-        return proofOfOwnershipOptions;
-    }
-
-    public static void gettingToThe_VehiclePickUpLocation_Question(WebDriver driver1) {
+    public static void gettingToThe_TermsOfAgreement_Screen(WebDriver driver1) {
         driver = driver1;
         loggingInToApp(driver);
         clicking_Link_CallCode_Peddle(driver);
@@ -67,5 +48,18 @@ public class Wizard_Screen_VehiclePickUpLocation {
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
         clicking_Input_DoesVehicleRun_Yes();
+        clicking_Button_Next();
+        clicking_Input_LocationPickUp_Business();
+        clicking_Button_Next();
+        waitOnBothErrorMessageAndLoadingGif();
+        clicking_Input_ProofOwn_Title();
+        clicking_Button_Next();
+        clicking_Input_ProofIds_DL();
+        clicking_Button_Next();
+        waitOnBothErrorMessageAndLoadingGif();
+        datePicker_HaulerInformation();
+        typing_Input_Address1_Good();
+        typing_Input_City_Good();
+        clicking_Button_Next();
     }
 }

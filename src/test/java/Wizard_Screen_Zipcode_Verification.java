@@ -11,7 +11,7 @@ public class Wizard_Screen_Zipcode_Verification {
     public static boolean typingInZipcode_OutOfArea(WebDriver driver1) {
         driver = driver1;
         gettingToThe_Zipcode_Question(driver);
-        typing_Input_Zipcode_OutOfArea();
+        typing_Input_ZipCode_OutOfArea();
         waitOnBothErrorMessageAndLoadingGif();
         boolean outOfAreaPeddleMessage = driver.findElements(By.xpath("//p[contains(text(),'Would you like to take your vehicle to Pull-A-Part')]")).size() > 0;
         loggingOutOfApp(driver);
@@ -21,7 +21,7 @@ public class Wizard_Screen_Zipcode_Verification {
     public static boolean typingInZipcode_Invalid(WebDriver driver1) {
         driver = driver1;
         gettingToThe_Zipcode_Question(driver);
-        typing_Input_Zipcode_Invalid();
+        typing_Input_ZipCode_Invalid();
         waitOnBothErrorMessageAndLoadingGif();
         boolean outOfAreaPeddleMessage = driver.findElements(By.xpath("//p[contains(text(),'Would you like to take your vehicle to Pull-A-Part')]")).size() > 0;
         loggingOutOfApp(driver);

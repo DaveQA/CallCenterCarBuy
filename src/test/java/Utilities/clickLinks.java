@@ -91,6 +91,14 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
+    public static void clicking_Button_CompleteQuote(){
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Complete Quote')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//button[contains(text(),'Complete Quote')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickingSomething(By.xpath("//button[contains(text(),'Complete Quote')]"));
+    }
+
     public static void clicking_Link_CallCode_Peddle(WebDriver driver1) {
         driver = driver1;
         waitOnButtonToBeClickable(By.xpath("//div[@class='number'][contains(text(),'500-Partner-Peddle-All')]"));
@@ -177,47 +185,47 @@ public class clickLinks {
         clickingSomething(By.xpath("//label[contains(text(),'Title')]"));
     }
 
-    public static void clicking_Input_ProofOwn_VehicleRegistration(){
+    public static void clicking_Input_ProofOwn_VehicleRegistration() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//label[contains(text(),'Vehicle Registration')]"));
     }
 
-    public static void clicking_Input_ProofOwn_BillOfSaleWithKeys(){
+    public static void clicking_Input_ProofOwn_BillOfSaleWithKeys() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//label[contains(text(),'Bill of Sale with Keys')]"));
     }
 
-    public static void clicking_Input_ProofOwn_InsuranceCardWithKeys(){
+    public static void clicking_Input_ProofOwn_InsuranceCardWithKeys() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//label[contains(text(),'Insurance Card with Keys')]"));
     }
 
-    public static void clicking_Input_ProofOwn_AlabamaIssuedApplicationForTitle(){
+    public static void clicking_Input_ProofOwn_AlabamaIssuedApplicationForTitle() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//label[contains(text(),'Alabama Issued Application for Title')]"));
     }
 
-    public static void clicking_Input_ProofIds_DL(){
+    public static void clicking_Input_ProofIds_DL() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[1]"));
     }
 
-    public static void clicking_Input_ProofIds_StateID(){
+    public static void clicking_Input_ProofIds_StateID() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[2]/label[1]"));
     }
 
-    public static void clicking_Input_ProofIds_Passport(){
+    public static void clicking_Input_ProofIds_Passport() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[3]/label[1]"));
     }
 
-    public static void clicking_Input_ProofIds_MilitaryID(){
+    public static void clicking_Input_ProofIds_MilitaryID() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath("//div[@id='pro-wizard']/div/div/div[2]/div[4]/label[1]"));
     }
 
-    public static void clicking_Input_ProofIds_MexicanConsulateCard(){
+    public static void clicking_Input_ProofIds_MexicanConsulateCard() {
         waitOnBothErrorMessageAndLoadingGif();
         clickingSomething(By.xpath(""));
     }
@@ -328,16 +336,36 @@ public class clickLinks {
         typeSomething(By.name("email"), "EmailOfFakeness");
     }
 
-    public static void typing_Input_Zipcode_OutOfArea() {
+    public static void typing_Input_ZipCode_OutOfArea() {
         driver.findElement(By.name("zipCode")).sendKeys("90210", Keys.TAB);
     }
 
-    public static void typing_Input_Zipcode_Invalid() {
+    public static void typing_Input_ZipCode_Invalid() {
         driver.findElement(By.name("zipCode")).sendKeys("0", Keys.TAB);
     }
 
-    public static void typing_Input_Zipcode_Good() {
+    public static void typing_Input_ZipCode_Good() {
         driver.findElement(By.name("zipCode")).sendKeys("30188", Keys.TAB);
+    }
+
+    public static void typing_Input_Address1_Good() {
+        waitOnButtonToBeClickable(By.name("pickupaddress1"));
+        typeSomething(By.name("pickupaddress1"), "Address 1 Field");
+    }
+
+    public static void typing_Input_City_Good() {
+        waitOnButtonToBeClickable(By.name("pickupcity"));
+        typeSomething(By.name("pickupcity"), "City");
+    }
+
+    public static void typing_Input_HaulerInformation_ZipCode_Empty() {
+        waitOnButtonToBeClickable(By.name("pickzipCode"));
+        driver.findElement(By.name("pickzipCode")).sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);
+    }
+
+    public static void typing_Input_HaulerInformationScreen_HaulerNotes(){
+        waitOnButtonToBeClickable(By.xpath("//textarea[@class='form-control']"));
+        typeSomething(By.xpath("//textarea[@class='form-control']"),"Test Hauler Screen Notes");
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// Dropdowns//////////////////////////////////////////////////////////////////
@@ -375,19 +403,18 @@ public class clickLinks {
 //        System.out.println(drpDwnList.getText());
     }
 
-    public static void datePicker() {
-        driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(1) > input")).click();
-        String month = "Apr 2024";
-        String day = "30";
+    public static void datePicker_HaulerInformation() {
+        String monthYear = "Apr 2024";
+        driver.findElement(By.name("pickupdate")).click();
         while (true) {
-            String displayedMonthYear = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.day__month_btn.up")).getText();
-            System.out.println(displayedMonthYear);
-            if (displayedMonthYear.equals(month)) {
+            String displayedMonthYear = driver.findElement(By.xpath("//span[@class='day__month_btn up']")).getText();
+            if (displayedMonthYear.equals(monthYear)) {
                 break;
             } else {
-                driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div.form-group > div > div:nth-child(2) > header > span.next")).click();
+                driver.findElement(By.xpath("//div[@class='vdp-datepicker']/div[2]/header[1]/span[3]")).click();
             }
         }
+        clickingSomething(By.xpath("//span[contains(text(),'30')]"));
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
