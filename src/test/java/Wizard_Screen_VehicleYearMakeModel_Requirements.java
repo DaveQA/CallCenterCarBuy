@@ -64,6 +64,6 @@ public class Wizard_Screen_VehicleYearMakeModel_Requirements {
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
-        typing_Input_Zipcode_Good();
+        typing_Input_ZipCode_Good();
     }
 }

@@ -1,5 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.List;
+import java.util.TimeZone;
 
 import static Utilities.clickLinks.*;
 
@@ -7,12 +13,46 @@ public class Wizard_Screen_HaulerInformation {
 
     private static WebDriver driver;
 
-    public static boolean haulerInformation_Requirement_PickUpDate(WebDriver driver1){
+    public static boolean haulerInformation_Requirement_PickUpDate(WebDriver driver1) {
         driver = driver1;
         gettingToThe_HaulerInformation_Screen(driver);
         clicking_Button_Next();
         boolean requiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The pickupdate field is required.')]")).size() > 0;
-//        loggingOutOfApp(driver);
+        loggingOutOfApp(driver);
+        return requiredRedText;
+    }
+
+    public static boolean haulerInformation_Requirement_Address1(WebDriver driver1) {
+        driver = driver1;
+        gettingToThe_HaulerInformation_Screen(driver);
+        datePicker_HaulerInformation();
+        clicking_Button_Next();
+        boolean requiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The pickupaddress1 field is required.')]")).size() > 0;
+        loggingOutOfApp(driver);
+        return requiredRedText;
+    }
+
+    public static boolean haulerInformation_Requirement_City(WebDriver driver1) {
+        driver = driver1;
+        gettingToThe_HaulerInformation_Screen(driver);
+        datePicker_HaulerInformation();
+        typing_Input_Address1_Good();
+        clicking_Button_Next();
+        boolean requiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The pickupcity field is required.')]")).size() > 0;
+        loggingOutOfApp(driver);
+        return requiredRedText;
+    }
+
+    public static boolean haulerInformation_Requirement_ZpiCode(WebDriver driver1) {
+        driver = driver1;
+        gettingToThe_HaulerInformation_Screen(driver);
+        datePicker_HaulerInformation();
+        typing_Input_Address1_Good();
+        typing_Input_City_Good();
+        typing_Input_HaulerInformation_ZipCode_Empty();
+        clicking_Button_Next();
+        boolean requiredRedText = driver.findElements(By.xpath("//p[contains(text(),'The pickzipCode field is required.')]")).size() > 0;
+        loggingOutOfApp(driver);
         return requiredRedText;
     }
 
@@ -28,7 +68,7 @@ public class Wizard_Screen_HaulerInformation {
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
-        typing_Input_Zipcode_Good();
+        typing_Input_ZipCode_Good();
         clicking_Button_Next();
         clicking_Input_VehicleInformationOption_Year();
         waitOnBothErrorMessageAndLoadingGif();
@@ -54,6 +94,4 @@ public class Wizard_Screen_HaulerInformation {
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
     }
-
-
 }

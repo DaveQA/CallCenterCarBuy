@@ -865,43 +865,80 @@ public class ZMainTests {
     @Nested
     @DisplayName("Proof Of Ownership And Identification Section")
     class ProofOfOwnershipAndIdentificationSectionTest {
-        @Nested
-        @DisplayName("Proof Of Ownership And Identification Requirements")
-        class ProofOfOwnershipAndIdentificationRequirementsTest{
-            @Test
-            @DisplayName("Verifying Field Required - Proof of Ownership")
-            public void proofOfOwnership_RequirementCheck_Test(){
-                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_RequirementCheck(driver),"Fields should be required, check application");
-            }
-            @Test
-            @DisplayName("Verifying Field Required - Proof of ID")
-            public void proofOfIdentification_RequirementCheck_Test(){
-                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_RequirementCheck(driver),"Fields should be required, check application");
-            }
-        }
         @Test
         @DisplayName("Proof of Ownership Question Displayed")
-        public void proofOfOwnership_Question_Test(){
-            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_Question(driver),"Proof of Ownership question was not displayed, check application");
+        public void proofOfOwnership_Question_Test() {
+            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_Question(driver), "Proof of Ownership question was not displayed, check application");
         }
+
         @Test
         @DisplayName("Proof of Identification Question Displayed")
-        public void proofOfIdentification_Question_Test(){
-            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_Question(driver),"Proof of Identification question was not displayed, check application");
+        public void proofOfIdentification_Question_Test() {
+            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_Question(driver), "Proof of Identification question was not displayed, check application");
+        }
+
+        @Nested
+        @DisplayName("Proof Of Ownership And Identification Requirements")
+        class ProofOfOwnershipAndIdentificationRequirementsTest {
+            @Test
+            @DisplayName("Verifying Field Required - Proof of Ownership")
+            public void proofOfOwnership_RequirementCheck_Test() {
+                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_RequirementCheck(driver), "Fields should be required, check application");
+            }
+
+            @Test
+            @DisplayName("Verifying Field Required - Proof of ID")
+            public void proofOfIdentification_RequirementCheck_Test() {
+                Assertions.assertFalse(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_RequirementCheck(driver), "Fields should be required, check application");
+            }
         }
     }
 
     @Nested
     @DisplayName("Hauler Information Section")
     class HaulerInformationSectionTest {
+        //screen loads with the Next button enabled - checking for required red text after the Next button click
         @Nested
         @DisplayName("Hauler Information Field Requirements")
         class HaulerInformationFieldRequirementsTest {
             @Test
             @DisplayName("Verifying Field Required - Hauler Information - Pickup Date")
             public void haulerInformation_Requirement_PickUpDate_Test() {
-                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_PickUpDate(driver),"Fields should be required, check application");
+                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_PickUpDate(driver), "Fields should be required, check application");
             }
+
+            @Test
+            @DisplayName("Verifying Field Required - Hauler Information - Address 1")
+            public void haulerInformation_Requirement_Address1_Test() {
+                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_Address1(driver), "Fields should be required, check application");
+            }
+
+            @Test
+            @DisplayName("Verifying Field Required - Hauler Information - City")
+            public void haulerInformation_Requirement_City_Test() {
+                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_City(driver), "Fields should be required, check application");
+            }
+
+            @Test
+            @DisplayName("Verifying Field Required - Hauler Information - Zip Code")
+            public void haulerInformation_Requirement_ZpiCode_Test() {
+                Assertions.assertTrue(Wizard_Screen_HaulerInformation.haulerInformation_Requirement_ZpiCode(driver), "Fields should be required, check application");
+            }
+        }
+    }
+
+    @Nested
+    @DisplayName("Terms Of Agreement Screen")
+    class TermsOfAgreementScreenTest{
+        @Test
+        @DisplayName("Getting to Terms of Agreement Step One")
+        public void termsOfAgreement(){
+            Wizard_Screen_TermsOfAgreement.termsOfAgreement(driver);
+        }
+        @Test
+        @DisplayName("Completing a quote")
+        public void completeQuote(){
+            Wizard_Screen_TermsOfAgreement.completeQuote(driver);
         }
     }
 }
