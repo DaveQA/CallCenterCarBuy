@@ -929,15 +929,16 @@ public class ZMainTests {
 
     @Nested
     @DisplayName("Terms Of Agreement Screen")
-    class TermsOfAgreementScreenTest{
+    class TermsOfAgreementScreenTest {
         @Test
         @DisplayName("Getting to Terms of Agreement Step One")
-        public void termsOfAgreement(){
+        public void termsOfAgreement() {
             Wizard_Screen_TermsOfAgreement.termsOfAgreement(driver);
         }
+
         @Test
         @DisplayName("Completing a quote")
-        public void completeQuote(){
+        public void completeQuote() {
             Wizard_Screen_TermsOfAgreement.completeQuote(driver);
         }
     }

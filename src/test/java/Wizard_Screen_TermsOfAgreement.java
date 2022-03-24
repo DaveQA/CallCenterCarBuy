@@ -10,6 +10,7 @@ public class Wizard_Screen_TermsOfAgreement {
     public static void termsOfAgreement(WebDriver driver1){
         driver = driver1;
         gettingToThe_TermsOfAgreement_Screen(driver);
+        loggingOutOfApp(driver);
     }
 
     public static void completeQuote(WebDriver driver1){
@@ -18,6 +19,7 @@ public class Wizard_Screen_TermsOfAgreement {
         clicking_Button_Next();
         clicking_Button_Next();
         clicking_Button_CompleteQuote();
+        loggingOutOfApp(driver);
     }
 
     public static void gettingToThe_TermsOfAgreement_Screen(WebDriver driver1) {
