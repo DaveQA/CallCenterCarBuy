@@ -300,7 +300,7 @@ public class clickLinks {
         typeSomething(By.id("lastname"), "Doe");
     }
 
-    public static void typing_Input_PrimaryPhoneNumber_Valid() {
+    public static void typing_Input_PrimaryPhoneNumber_Good() {
         typeSomething(By.name("phone"), "5555555");
     }
 
@@ -320,8 +320,28 @@ public class clickLinks {
         typeSomething(By.name("phone"), "11111111111111111111");
     }
 
-    public static void typing_Input_AlternatePhoneNumber_Valid() {
+    public static void typing_Input_PrimaryPhoneNumber_WhiteSpace(){
+        driver.findElement(By.name("phone")).sendKeys(Keys.SPACE);
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_Good() {
         typeSomething(By.name("alternatephone"), "4444444");
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_Short() {
+        typeSomething(By.name("alternatephone"), "4");
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_Long() {
+        typeSomething(By.name("alternatephone"), "012345678901");
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_SpecialCharacters() {
+        typeSomething(By.name("alternatephone"), "@#$%!");
+    }
+
+    public static void typing_Input_AlternatePhoneNumber_AlphaCharacters() {
+        typeSomething(By.name("alternatephone"), "asdf");
     }
 
     public static void typing_Input_Email_Valid() {
