@@ -41,7 +41,7 @@ public class Wizard_Screen_CarPartsAndDamageQuestion {
         typing_LastName();
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        typing_Input_PrimaryPhoneNumber_Valid();
+        typing_Input_PrimaryPhoneNumber_Good();
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();

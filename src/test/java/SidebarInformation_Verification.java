@@ -27,7 +27,7 @@ public class SidebarInformation_Verification {
         typing_LastName();
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        typing_Input_PrimaryPhoneNumber_Valid();
+        typing_Input_PrimaryPhoneNumber_Good();
         String sideBarCustomerInfoPhoneName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[2]")).getText();
         loggingOutOfApp(driver);
         return sideBarCustomerInfoPhoneName;
@@ -41,7 +41,7 @@ public class SidebarInformation_Verification {
         typing_LastName();
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        typing_Input_AlternatePhoneNumber_Valid();
+        typing_Input_AlternatePhoneNumber_Good();
         String sideBarCustomerInfoPhoneName = driver.findElement(By.xpath("//div[@class='mt-list-container list-default']/ul/li[2]/div[2]/p[3]")).getText();
         loggingOutOfApp(driver);
         return sideBarCustomerInfoPhoneName;
@@ -407,7 +407,7 @@ public class SidebarInformation_Verification {
         typing_LastName();
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        typing_Input_PrimaryPhoneNumber_Valid();
+        typing_Input_PrimaryPhoneNumber_Good();
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();

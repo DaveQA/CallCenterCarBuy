@@ -1,11 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.List;
-import java.util.TimeZone;
 
 import static Utilities.clickLinks.*;
 
@@ -64,7 +58,7 @@ public class Wizard_Screen_HaulerInformation {
         typing_LastName();
         clicking_Button_Next();
         clicking_Button_NewQuote();
-        typing_Input_PrimaryPhoneNumber_Valid();
+        typing_Input_PrimaryPhoneNumber_Good();
         typing_Input_Email_Valid();
         clicking_Button_Next();
         waitOnBothErrorMessageAndLoadingGif();
