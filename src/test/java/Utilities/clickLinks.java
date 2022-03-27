@@ -91,7 +91,17 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
-    public static void clicking_Button_CompleteQuote(){
+    public static void clicking_Button_Back() {
+        waitOnBothErrorMessageAndLoadingGif();
+        waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Back')]"));
+        WebElement scrollToButton = driver.findElement(By.xpath("//button[contains(text(),'Back')]"));
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+        ((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, scrollToButton);
+        clickingSomething(By.xpath("//button[contains(text(),'Back')]"));
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void clicking_Button_CompleteQuote() {
         waitOnButtonToBeClickable(By.xpath("//button[contains(text(),'Complete Quote')]"));
         WebElement scrollToButton = driver.findElement(By.xpath("//button[contains(text(),'Complete Quote')]"));
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);" + "var elementTop = arguments[0].getBoundingClientRect().top;" + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
@@ -243,6 +253,25 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
+    public static void typing_Input_MainLogin_WhiteSpace(WebDriver driver1) {
+        driver = driver1;
+        typeSomething(By.name("username"), "");
+        typeSomething(By.name("password"), "");
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void typing_Input_MainLogin_JustUsername(WebDriver driver1) {
+        driver = driver1;
+        typeSomething(By.name("username"), "");
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void typing_Input_MainLogin_JustPassword(WebDriver driver1) {
+        driver = driver1;
+        typeSomething(By.name("password"), "");
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
     public static void typing_Input_MainLogin_Bad(WebDriver driver1) {
         driver = driver1;
         typeSomething(By.name("username"), "mff");
@@ -292,6 +321,25 @@ public class clickLinks {
         waitOnBothErrorMessageAndLoadingGif();
     }
 
+    public static void typing_Input_MitelLogin_WhiteSpace(WebDriver driver1) {
+        driver = driver1;
+        driver.findElement(By.name("username")).sendKeys(Keys.SPACE);
+        driver.findElement(By.name("password")).sendKeys(Keys.SPACE);
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void typing_Input_MitelLogin_JustUsername(WebDriver driver1) {
+        driver = driver1;
+        driver.findElement(By.name("username")).sendKeys(Keys.SPACE);
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
+    public static void typing_Input_MitelLogin_JustPassword(WebDriver driver1) {
+        driver = driver1;
+        driver.findElement(By.name("password")).sendKeys(Keys.SPACE);
+        waitOnBothErrorMessageAndLoadingGif();
+    }
+
     public static void typing_FirstName() {
         typeSomething(By.id("firstname"), "John");
     }
@@ -320,7 +368,7 @@ public class clickLinks {
         typeSomething(By.name("phone"), "11111111111111111111");
     }
 
-    public static void typing_Input_PrimaryPhoneNumber_WhiteSpace(){
+    public static void typing_Input_PrimaryPhoneNumber_WhiteSpace() {
         driver.findElement(By.name("phone")).sendKeys(Keys.SPACE);
     }
 
@@ -380,26 +428,26 @@ public class clickLinks {
 
     public static void typing_Input_HaulerInformation_ZipCode_Empty() {
         waitOnButtonToBeClickable(By.name("pickzipCode"));
-        driver.findElement(By.name("pickzipCode")).sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);
+        driver.findElement(By.name("pickzipCode")).sendKeys(Keys.CONTROL, "a", Keys.BACK_SPACE);
     }
 
-    public static void typing_Input_HaulerInformationScreen_HaulerNotes(){
+    public static void typing_Input_HaulerInformationScreen_HaulerNotes() {
         waitOnButtonToBeClickable(By.xpath("//textarea[@class='form-control']"));
-        typeSomething(By.xpath("//textarea[@class='form-control']"),"Test Hauler Screen Notes");
+        typeSomething(By.xpath("//textarea[@class='form-control']"), "Test Hauler Screen Notes");
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// Dropdowns//////////////////////////////////////////////////////////////////
 
-    public static void pickingYearOfCarRandom() {
-        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > select"));
-        Select objSel = new Select(drpDwnList);
-        List<WebElement> yearOptions = objSel.getOptions();
-        int iCnt = yearOptions.size();
-        Random num = new Random();
-        int iSelect = num.nextInt(iCnt);
-        objSel.selectByIndex(iSelect);
-//        System.out.println(drpDwnList.getText());
-    }
+//    public static void pickingYearOfCarRandom() {
+//        WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-2 > select"));
+//        Select objSel = new Select(drpDwnList);
+//        List<WebElement> yearOptions = objSel.getOptions();
+//        int iCnt = yearOptions.size();
+//        Random num = new Random();
+//        int iSelect = num.nextInt(iCnt);
+//        objSel.selectByIndex(iSelect);
+////        System.out.println(drpDwnList.getText());
+//    }
 
     public static void pickingMakeOfCarRandom() {
         WebElement drpDwnList = driver.findElement(By.cssSelector("#pro-wizard > div:nth-child(1) > div > div:nth-child(2) > div > div.col-md-3 > select"));
@@ -460,12 +508,6 @@ public class clickLinks {
         waitOnErrorMessagePopup();
     }
 
-    public static void waitOnPageToCompletelyLoad() {
-        JavascriptExecutor k = (JavascriptExecutor) driver;
-        if (k.executeScript("return document.readyState").toString().equals("complete")) {
-            System.out.println("Page has loaded");
-        }
-    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
