@@ -20,27 +20,45 @@ public class ZMainTests {
     @DisplayName("Testing the main login page")
     class MainLoginScreenTest {
         @Test
+        @DisplayName("Attempting to login - Valid")
+        public void mainLoginAttempt_Valid_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_Valid(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Was not able to login,check application");
+        }
+
+        @Test
         @DisplayName("Attempting to login - Empty")
-        public void empty_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLogin_Screen.empty_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        public void mainLoginAttempt_Empty_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_Empty(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
         }
 
         @Test
         @DisplayName("Attempting to login - Bad")
-        public void bad_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLogin_Screen.bad_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        public void mainLoginAttempt_Bad_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_Bad(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
         }
 
         @Test
         @DisplayName("Attempting to login - Fake")
-        public void fake_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLogin_Screen.fake_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login");
+        public void mainLoginAttempt_Fake_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_Fake(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
         }
 
         @Test
-        @DisplayName("Attempting to login - Good")
-        public void good_InformationOnTheMainLoginScreen_Test() {
-            Assertions.assertEquals(MainLogin_Screen.good_InformationOnTheMainLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Was not able to login");
+        @DisplayName("Attempting to login - White Space")
+        public void mainLoginAttempt_WhiteSpace_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_WhiteSpace(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
+        }
+
+        @Test
+        @DisplayName("Attempting to login - Just Username")
+        public void mainLoginAttempt_JustUsername_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_JustUsername(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
+        }
+
+        @Test
+        @DisplayName("Attempting to login - Just Password")
+        public void mainLoginAttempt_JustPassword_Test() {
+            Assertions.assertEquals(MainLogin_Screen.mainLoginAttempt_JustPassword(driver), "https://qa-carbuy.pullapart.com/#/login", "Was able to login,check application");
         }
     }
 
@@ -48,36 +66,53 @@ public class ZMainTests {
     @DisplayName("Mitel Login Screen")
     class MitelLoginScreenTest {
         @Test
-        @DisplayName("Empty - Try entering nothing and login")
+        @DisplayName("Attempting to login - Empty")
         public void empty_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLogin_Screen.empty_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_Empty(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on Mitel Login screen");
         }
 
         @Test
-        @DisplayName("Bad - Try entering bad user information and login")
+        @DisplayName("Attempting to login - Bad")
         public void bad_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLogin_Screen.bad_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_Bad(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
-        @DisplayName("Fake - Try entering bad user information and login")
+        @DisplayName("Attempting to login - Fake")
         public void fake_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLogin_Screen.fake_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_Fake(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
 
         @Test
-        @DisplayName("Good - Try entering good user information and login")
+        @DisplayName("Attempting to login - Good")
 // might be better to check the Mitel status on the dashboard
         public void good_InformationOnTheMitelLoginScreen_Test() {
-            Assertions.assertEquals(MitelLogin_Screen.good_InformationOnTheMitelLoginScreen(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_Valid(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "Not on the Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Attempting to login - White Space")
+        public void mitelLoginAttempt_WhiteSpace_Test() {
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_WhiteSpace(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Attempting to login - Just Username")
+        public void mainLoginAttempt_JustUsername_Test() {
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_JustUsername(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
+        }
+
+        @Test
+        @DisplayName("Attempting to login - Just Password")
+        public void mitelLoginAttempt_JustPassword_Test() {
+            Assertions.assertEquals(MitelLogin_Screen.mitelLoginAttempt_JustPassword(driver), "https://qa-carbuy.pullapart.com/#/mitellogin", "Not on the Mitel Login screen");
         }
     }
 
     @Nested
     @DisplayName("Verifying top navigation links")
     class TopNavLinksTests {
-        //Will need to re work this test
-//        @Test
+//        @RepeatedTest(value = 5, name = "Name of Test {currentRepetition} of {totalRepetitions}")
 //        @DisplayName("Verifying Top Nav Link - Dashboard")
 //        public void clicking_TopNavLink_Dashboard_Test() {
 //            Assertions.assertEquals(TopNavLinks_Verification.clicking_TopNavLink_Dashboard(driver), "https://qa-carbuy.pullapart.com/#/dashboard", "URL did not match expected");
@@ -189,30 +224,41 @@ public class ZMainTests {
     class SideBarTests {
         @Nested
         @DisplayName("Sidebar Fields - Customer Information")
-        class CustomerInformationTest {
+        class SidebarFieldsCustomerInformationTest {
 
             @Test
-            @DisplayName("Sidebar matches information entered - Firstname and Lastname")
+            @DisplayName("Verifying Sidebar Information Matches - Firstname and Lastname")
             public void checkingSidebarInformation_FirstAndLastName_Test() {
                 Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_FirstAndLastName(driver), "Name: John Doe", "Sidebar information does not match");
             }
 
             @Test
-            @DisplayName("Sidebar matches information entered - Primary Phone number")
+            @DisplayName("Verifying Sidebar Information Matches - Primary Phone number")
             public void checkingSidebarInformation_PrimaryPhoneNumber_Test() {
                 Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_PrimaryPhoneNumber(driver), "Phone: 5555555", "Sidebar information does not match");
             }
 
             @Test
-            @DisplayName("Sidebar matches information entered - Alternate number")
+            @DisplayName("Verifying Sidebar Information Matches - Alternate number")
             public void checkingSidebarInformation_AlternatePhoneNumber_Test() {
                 Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_AlternatePhoneNumber(driver), "Alt. Phone: 4444444", "Sidebar information does not match");
             }
 
             @Test
-            @DisplayName("Sidebar matches information entered - Email address")
-            public void customerSideBarInfoMatchesEmailEnteredTest() {
+            @DisplayName("Verifying Sidebar Information Matches - Email address")
+            public void customerSideBarInfoMatchesEmailEntered_Test() {
                 Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_EmailAddress(driver), "Email: vip1000682431@gmail.com", "Sidebar information does not match");
+            }
+        }
+
+        @Nested
+        @DisplayName("Sidebar - Offer Amount")
+        class SidebarMatchesInformationEnteredOfferAmountTest {
+            @Test
+            @DisplayName("Verifying Sidebar Information Matches - Offer Amount ")
+            public void checkingSidebarInformation_OfferAmount_Test() throws InterruptedException {
+                Assertions.assertEquals(SidebarInformation_Verification.checkingSidebarInformation_OfferAmount(driver), "TEST", "Sidebar information does not match");
+//                SidebarInformation_Verification.checkingSidebarInformation_OfferAmount(driver);
             }
         }
 
@@ -459,7 +505,7 @@ public class ZMainTests {
                 @Test
                 @DisplayName("Field Validation - Primary Phone Number Blank")
                 public void leavingPrimaryPhoneNumberFieldBlank_Test() {
-                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_PrimaryPhoneNumber_Blank(driver), "The phone field is required.","Validation check failed, please check application");
+                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_PrimaryPhoneNumber_Blank(driver), "The phone field is required.", "Validation check failed, please check application");
                 }
 
                 @Test
@@ -489,8 +535,8 @@ public class ZMainTests {
 
                 @Test
                 @DisplayName("Field Validation - Primary Phone Number - White Space")
-                public void FieldValidationPrimaryPhoneNumberWhiteSpace_Test(){
-                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_PrimaryPhoneNumber_WhiteSpace(driver),"The phone field is required.","Validation check failed, please check application");
+                public void FieldValidationPrimaryPhoneNumberWhiteSpace_Test() {
+                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_PrimaryPhoneNumber_WhiteSpace(driver), "The phone field is required.", "Validation check failed, please check application");
                 }
             }
 
@@ -500,25 +546,26 @@ public class ZMainTests {
                 @Test
                 @DisplayName("Field Validation - Alternate Phone Number - Alpha Characters")
                 public void FieldValidationAlternatePhoneNumber_AlphaCharacters_Test() {
-                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_AlphaCharacter(driver),"The alternatephone field may only contain numeric characters.","Validation check failed, please check application");
+                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_AlphaCharacter(driver), "The alternatephone field may only contain numeric characters.", "Validation check failed, please check application");
                 }
 
                 @Test
                 @DisplayName("Field Validation - Alternate Phone Number - Special Characters")
                 public void FieldValidationAlternatePhoneNumber_SpecialCharacters_Test() {
-                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_AlphaCharacter(driver),"The alternatephone field may only contain numeric characters.","Validation check failed, please check application");
+                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_AlphaCharacter(driver), "The alternatephone field may only contain numeric characters.", "Validation check failed, please check application");
                 }
-//Will fail there is a JIRA card in DEV
+
+                //Will fail there is a JIRA card in DEV
                 @Test
                 @DisplayName("Field Validation - Alternate Phone Number - Short")
                 public void FieldValidationAlternatePhoneNumber_Short_Test() {
-                    Assertions.assertTrue(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_Short(driver),"Validation check failed, please check application");
+                    Assertions.assertTrue(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_Short(driver), "Validation check failed, please check application");
                 }
 
                 @Test
                 @DisplayName("Field Validation - Alternate Phone Number - Long")
                 public void FieldValidationAlternatePhoneNumber_Long_Test() {
-                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_Long(driver),"The alternatephone field may not be greater than 10 characters.","Validation check failed, please check application");
+                    Assertions.assertEquals(Wizard_Step_CustomerInformation.customerInformationField_AlternatePhone_Long(driver), "The alternatephone field may not be greater than 10 characters.", "Validation check failed, please check application");
                 }
             }
         }
@@ -800,8 +847,8 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Vehicle Damage Details")
-    class VehicleDamageDetailsTest {
+    @DisplayName("Wizard Steps - Vehicle Details")
+    class WizardStepsVehicleDetailsTest {
         @Nested
         @DisplayName("Is there damage question")
         class IsThereDamageQuestionTest {
@@ -849,61 +896,69 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Does Vehicle Run Questions")
-    class DoesVehicleRunQuestionsTest {
-        //Question has a default answer and cannot test for requirements - confirming that either choice navigates user to the location pickup question
-        @Test
-        @DisplayName("Does Vehicle Run - No")
-        public void doesVehicleRun_No_Test() {
-            Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_No(driver), "Vehicle Pickup location question not displayed, check application");
+    @DisplayName("Wizard Step - Does Vehicle Run And PickUp Location Questions")
+    class WizardStepDoesVehicleRunAndPickUpLocationQuestionsTest {
+        @Nested
+        @DisplayName("Does Vehicle Run Question")
+        class DoesVehicleRunQuestionTest {
+            //Question has a default answer and cannot test for requirements - confirming that either choice navigates user to the location pickup question
+            @Test
+            @DisplayName("Does Vehicle Run - No")
+            public void doesVehicleRun_No_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_No(driver), "Vehicle Pickup location question not displayed, check application");
+            }
+
+            //Question has a default answer and cannot test for requirements - confirming that either choice navigates user to the location pickup question
+            @Test
+            @DisplayName("Does Vehicle Run - Yes")
+            public void doesVehicleRun_Yes_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_Yes(driver), "Vehicle Pickup location question not displayed, check application");
+            }
         }
 
-        //Question has a default answer and cannot test for requirements - confirming that either choice navigates user to the location pickup question
-        @Test
-        @DisplayName("Does Vehicle Run - Yes")
-        public void doesVehicleRun_Yes_Test() {
-            Assertions.assertTrue(Wizard_Screen_VehicleRun.doesVehicleRun_Yes(driver), "Vehicle Pickup location question not displayed, check application");
+        @Nested
+        @DisplayName("Vehicle Pickup Location Question")
+        class VehiclePickupLocationQuestionTest {
+            //Next button starts out enabled, checking for red text
+            @Test
+            @DisplayName("Vehicle Pickup Location - Neither")
+            public void vehiclePickUpLocation_Neither_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Neither(driver), "Next button enabled, check application");
+            }
+
+            //Checking for the Title Proof of Ownership option is displayed
+            @Test
+            @DisplayName("Vehicle Pickup Location - Residence")
+            public void vehiclePickUpLocation_Residence_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Residence(driver), "Proof of Ownership options where not displayed, check application");
+            }
+
+            //Checking for the Title Proof of Ownership option is displayed
+            @Test
+            @DisplayName("Vehicle Pickup Location - Business")
+            public void vehiclePickUpLocation_Business_Test() {
+                Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Business(driver), "Proof of Ownership options where not displayed, check application");
+            }
         }
     }
 
     @Nested
-    @DisplayName("Vehicle Pickup Location Question")
-    class VehiclePickupLocationQuestionTest {
-        //Next button starts out enabled, checking for red text
-        @Test
-        @DisplayName("Vehicle Pickup Location - Neither")
-        public void vehiclePickUpLocation_Neither_Test() {
-            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Neither(driver), "Next button enabled, check application");
-        }
+    @DisplayName("Wizard Step - Document Section")
+    class WizardStepDocumentSectionTest {
+        @Nested
+        @DisplayName("Proof Of Ownership And Identification Section")
+        class ProofOfOwnershipAndIdentificationSectionTest {
+            @Test
+            @DisplayName("Proof of Ownership Question Displayed")
+            public void proofOfOwnership_Question_Test() {
+                Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_Question(driver), "Proof of Ownership question was not displayed, check application");
+            }
 
-        //Checking for the Title Proof of Ownership option is displayed
-        @Test
-        @DisplayName("Vehicle Pickup Location - Residence")
-        public void vehiclePickUpLocation_Residence_Test() {
-            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Residence(driver), "Proof of Ownership options where not displayed, check application");
-        }
-
-        //Checking for the Title Proof of Ownership option is displayed
-        @Test
-        @DisplayName("Vehicle Pickup Location - Business")
-        public void vehiclePickUpLocation_Business_Test() {
-            Assertions.assertTrue(Wizard_Screen_VehiclePickUpLocation.vehiclePickUpLocation_Business(driver), "Proof of Ownership options where not displayed, check application");
-        }
-    }
-
-    @Nested
-    @DisplayName("Proof Of Ownership And Identification Section")
-    class ProofOfOwnershipAndIdentificationSectionTest {
-        @Test
-        @DisplayName("Proof of Ownership Question Displayed")
-        public void proofOfOwnership_Question_Test() {
-            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfOwnership_Question(driver), "Proof of Ownership question was not displayed, check application");
-        }
-
-        @Test
-        @DisplayName("Proof of Identification Question Displayed")
-        public void proofOfIdentification_Question_Test() {
-            Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_Question(driver), "Proof of Identification question was not displayed, check application");
+            @Test
+            @DisplayName("Proof of Identification Question Displayed")
+            public void proofOfIdentification_Question_Test() {
+                Assertions.assertTrue(Wizard_Screen_ProofOfOwnership_ID.proofOfIdentification_Question(driver), "Proof of Identification question was not displayed, check application");
+            }
         }
 
         @Nested
@@ -924,8 +979,8 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Hauler Information Section")
-    class HaulerInformationSectionTest {
+    @DisplayName("Wizard Step - Hauler Information")
+    class WizardStepHaulerInformationTest {
         //screen loads with the Next button enabled - checking for required red text after the Next button click
         @Nested
         @DisplayName("Hauler Information Field Requirements")
@@ -957,7 +1012,7 @@ public class ZMainTests {
     }
 
     @Nested
-    @DisplayName("Terms Of Agreement Screen")
+    @DisplayName("Wizard Step - Terms Of Agreement")
     class TermsOfAgreementScreenTest {
         @Test
         @DisplayName("Getting to Terms of Agreement Step One")
@@ -969,6 +1024,20 @@ public class ZMainTests {
         @DisplayName("Completing a quote")
         public void completeQuote() {
             Wizard_Screen_TermsOfAgreement.completeQuote(driver);
+        }
+    }
+
+    @Nested
+    @DisplayName("State Laws")
+    class StateLawsTest{
+        @Nested
+        @DisplayName("State Laws - Alabama")
+        class StateLawsAlabamaTest{
+            @Test
+            @DisplayName("Alabama Newer Than Years - 12")
+            public void StateLawsAlabama_NewerThanYears_12(){
+                StateLaws.StateLaws_Alabama_YearNewerThan(driver);
+            }
         }
     }
 }
